@@ -85,7 +85,8 @@
                           <td>
                             <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
-                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Agregar Nota</button>
+                            <br>
+                            <button class="btn btn-primary btn-sm add_grades btn-flat" data-id="<?php echo $row['empid']; ?>" style="margin-top: 10px;"><i class="fa fa-pencil"></i> Agregar Nota</button>
                           </td>
                         </tr>
                       <?php
@@ -109,6 +110,13 @@
   $('.edit').click(function(e){
     e.preventDefault();
     $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $('.add_grades').click(function(e){
+    e.preventDefault();
+    $('#add_grades').modal('show');
     var id = $(this).data('id');
     getRow(id);
   });

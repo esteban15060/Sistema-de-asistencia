@@ -292,3 +292,171 @@
         </div>
     </div>
 </div>    
+
+<!-- ADD GRADES -->
+<div class="modal fade" id="add_grades">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title text-center" style="margin-left: 10px;"><b>AGREGAR NOTAS</b></h4>
+        <p class="text-center"><span class="del_employee_name"></span></p>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="POST" action="employee_add_grades.php">
+          <input type="hidden" class="empid" name="id">
+          
+          <div class="text-center">
+            <div class="row" style="display: inline-block;">
+              <div class="col-xs-5 text-center">
+                <input type="date" class="form-control" id="fecha1" name="fecha1">
+                <label for="fecha1">Fecha Inicio</label>
+              </div>
+              <div class="col-xs-5 text-center">
+                <input type="date" class="form-control" id="fecha2" name="fecha2">
+                <label for="fecha2">Fecha Final</label>
+              </div>
+              <div class="col-xs-2 text-center">
+                <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Guardar</button>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <div class="form-group" style= "padding-top: 20px; padding-bottom: 20px;">
+              <label for="cantidad" class="col-sm-8 control-label">Cantidad de criterios a evaluar: </label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control text-center" name="cantidad" id="cantidad"></input>
+              </div>
+            </div>
+            <div class="form-group" style= "padding-top: 20px; padding-bottom: 20px;">
+                  <label for="criterio12" class="col-sm-5 control-label">Nota Final: </label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control text-center" name="total" id="total" readonly>
+                  </div>
+            </div>
+          </div>
+          <h4 class="text-center"><b>1. Calidad y Productividad</b></h4>
+          <div style="display: flex; justify-content: center;">
+            <div class="col-xs-8 text-center">
+              <div class="form-group">
+                <label class="col-sm-7 control-label" style="text-align: left;">Presión y calidad de trabajo:</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio1" id="criterio1">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-7 control-label" style="text-align: left;">Cantidad de trabajo realizados:</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio2" id="criterio2">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-7 control-label" style="text-align: left;">Creatividad e innovación en sus propuestas:</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio3" id="criterio3">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3" style="margin-top: 20px;">
+              <input type="text" class="form-control text-center" value="SubTotal" readonly>
+              <input type="text" class="form-control text-center" name="subtotal" id="subtotal" readonly style="background-color: white;">
+            </div>
+          </div>
+
+
+          <h4 class="text-center"><b>2. Compromiso</b></h4>
+          <div style="display: flex; justify-content: center;">
+            <div class="col-xs-8 text-center">
+              <div class="form-group">
+                <label for="criterio4" class="col-sm-7 control-label" style="text-align: left;">Trabaja sin necesidad de supervisión:</label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio4" id="criterio4"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="criterio5" class="col-sm-7 control-label" style="text-align: left;">Esfuerzo: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio5" id="criterio5"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="criterio6" class="col-sm-7 control-label" style="text-align: left;">Puntualidad: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio6" id="criterio6"></input>
+                </div>
+              </div>               
+            </div>
+            <div class="col-sm-3" style="margin-top: 20px;">
+              <input type="text" class="form-control text-center" value="SubTotal" readonly>
+              <input type="text" class="form-control text-center" name="subtotal" id="subtotal" readonly style="background-color: white;">
+            </div>           
+          </div>
+
+          <h4 class="text-center"><b>3. Iniciativa / Liderazgo</b></h4>
+          <div style="display: flex; justify-content: center;">
+            <div class="col-xs-8 text-center">
+              <div class="form-group">
+                <label for="criterio7" class="col-sm-7 control-label" style="text-align: left;">Completa sus actividades: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio7" id="criterio7"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="criterio8" class="col-sm-7 control-label" style="text-align: left;">Sugiere mejoras: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio8" id="criterio8"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="criterio9" class="col-sm-7 control-label" style="text-align: left;">Identifica sus errores: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio9" id="criterio9"></input>
+                </div>
+              </div>               
+            </div>
+            <div class="col-sm-3" style="margin-top: 20px;">
+              <input type="text" class="form-control text-center" value="SubTotal" readonly>
+              <input type="text" class="form-control text-center" name="subtotal" id="subtotal" readonly style="background-color: white;">
+            </div>           
+          </div>
+
+          <h4 class="text-center"><b>4. Trabajo en equipo</b></h4>
+          <div style="display: flex; justify-content: center;">
+            <div class="col-xs-8 text-center">
+              <div class="form-group">
+                <label for="criterio10" class="col-sm-7 control-label" style="text-align: left;">Trabaja fluidamente: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio10" id="criterio10"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="criterio11" class="col-sm-7 control-label" style="text-align: left;">Actitud positiva y proactiva: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio11" id="criterio11"></input>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="criterio12" class="col-sm-7 control-label" style="text-align: left;">Promueve el trabajo en equipo: </label>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control text-center" name="criterio12" id="criterio12"></input>
+                </div>
+              </div>               
+            </div>
+            <div class="col-sm-3" style="margin-top: 20px;">
+              <input type="text" class="form-control text-center" value="SubTotal" readonly>
+              <input type="text" class="form-control text-center" name="subtotal" id="subtotal" readonly style="background-color: white;">
+            </div>           
+          </div>
+        
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
