@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Poppins:wght@200;500&family=Roboto+Mono:ital,wght@1,100&display=swap');
 body{
   background-image: url(../img/ma-equipo.jpg);
   background-size: cover;
@@ -346,4 +346,42 @@ body{
 }
 .img_alert{
   width: 100px;
+}
+/*MENU BAR PRACTICANTE*/
+/*MENU BAR PRACTICANTE*/
+.color-menubar-practicante{
+  background-color: #1e3d8f;
+}
+.siderbar-practicantes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icono-centrar{
+  display: block;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  background-color: white;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.enlaces{
+  text-decoration:none; 
+}
+.letraNavBar{
+  font-family: 'Poppins', sans-serif !important;
+}
+.btn_justify{
+  position: absolute;
+    color: #fff;
+    left: 3%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
 }

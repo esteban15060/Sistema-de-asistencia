@@ -26,7 +26,7 @@
           <p style="display:none;"  id="time" class="time-asistencia time-asistencia2"></p>
           <div class="alert alert-dismissible mt20 text-center success__alert asistencia__frace-on asistencia-sep" style="display:none;">
           <span class="result ">
-            <button type="submit" class=" btn_perfil-estadisticas" name="">VISITAR MI PERFIL</button><br>
+            <button type="submit" class=" btn_perfil-estadisticas" name="home-practicante">VISITAR MI PERFIL</button><br>
             <button type="submit" class=" btn_perfil-estadisticas" name="">VER MIS ESTADÍSTICAS</button>
           </span>
         </div>
@@ -55,7 +55,7 @@
               <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
           </div>
           <br>
-          <div class="form-group mx-sm-4 pb-2 asistencia__form"">
+          <div class="form-group mx-sm-4 pb-2 asistencia__form">
             <button type="submit" onclick="removeImput(); stopTime()" class="btn btn-block ingresar asistencia-imput login-btn__asistencia" name="signin">ENTRAR</button>
           </div>
       </form>
