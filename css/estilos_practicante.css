@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Poppins:wght@200;500&family=Roboto+Mono:ital,wght@1,100&display=swap');
 /*MENU BAR PRACTICANTE*/
+/*SIDEBAR*/
 .color-menubar-practicante{
     background-color: #1e3d8f;
   }
@@ -73,6 +74,26 @@
     transform-origin: top left;
     border-radius: 0 10px 10px 0;
   }
-  
-
-  
+  /*NAVBAR*/
+  .diseño-escribir-aqui{
+    width: 500px;
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+  .diseño-escribir-aqui input{
+    border-radius: 15px 15px 15px 15px;
+  }
+  .diseño-escribir-aqui span{
+    background-color: #1e3d8f;
+    border-radius: 15px 15px 15px 15px;
+  }
+  .bg-nav{
+    background-color: #5EB130;
+  }
+  .posicion-fecha{
+    margin-top: 10px;
+    color: white;
+  }
+  .posicion{
+    margin-left: 340px;
+  }
