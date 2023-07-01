@@ -102,6 +102,55 @@
     height: 200px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 30px;
     padding: 20px;
 }
+.estilo-card-perfil{
+  width: 750px;
+  height: 180px;
+  background-image: url("../images/cielo.webp");
+  border-radius: 30px;
+}
+.colorletraperfil{
+  color: #1e3d8f;
+}
+.diseñofechaingresoysalidad{
+  color: white;
+  background-color: #1e3d8f;
+  height: 20px;
+  width: 80px;
+  border-radius: 3px;
+  
+}
+.diseñofecha{
+  color: #1e3d8f;
+  background-color: white;
+  border-color: #1e3d8f;
+  border-width: thick;
+  height: 20px;
+  width: 25px;
+}
+
+.contenedor-fecha {
+  border: 1.5px solid #1e3d8f;
+  height: 22.28572px;
+  background-color: #DDEAFF;
+  padding-left: 0 !important;
+}
+.posicion-border1 {
+  align-items: center;
+  border-left: 1.5px solid #1e3d8f;
+  border-right: 1.5px solid #1e3d8f;
+}
+.posicion-border2 {
+  align-items: center;
+  border-left: 1.5px solid #1e3d8f;
+}
+.posicion-border3 {
+  align-items: center;
+  border-right: 1.5px solid #1e3d8f;
+}
+
+
+
+
