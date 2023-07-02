@@ -2,7 +2,7 @@
 
 <body class="bg-white">
     <?php include 'includes/menu-bar-practicante.php'; ?>
-    <div style="margin-left: 200px; margin-top: 30px;">
+    <div style="margin-left: 200px; margin-top: 30px; container-fluid">
         <div class="estilo-card-perfil">
           <div class="d-flex">
             
