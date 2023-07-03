@@ -1,141 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Poppins:wght@200;500&family=Roboto+Mono:ital,wght@1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Poppins:wght@200;500&family=Roboto+Mono:ital,wght@1,100&display=swap");
 /*MENU BAR PRACTICANTE*/
 /*SIDEBAR*/
-.nav-modelo{
+.nav-modelo {
   margin-left: 150px;
 }
-.color-menubar-practicante{
-    background-color: #1e3d8f;
-  }
-  .siderbar-practicantes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .icono-centrar{
-    display: block;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-  }
-  .logo {
-    background-color: white;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  .enlaces{
-    text-decoration:none; 
-  }
-  .letraNavBar{
-    font-family: 'Poppins', sans-serif;
-  }
-  .btn_justify{
-    position: absolute;
-      color: #fff;
-      left: 3%;
-      top: 6px;
-      font-size: 20px;
-      height: 50px;
-      width: 50px;
-      text-align: center;
-      line-height: 50px;
-  }
-  .nav-items {
-    position: relative;
-  }
-  
-  .nav-items > a {
-    display: block;
-    position: relative;
-    margin-bottom: 10px;
-  }
-  
-  .nav-items > a:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-color: #5EB130;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    transform: scale(1);
-    transform-origin: top left;
-    border-radius: 0 10px 10px 0;
-  }
-  
-  .nav-items > a:hover:before {
-    opacity: 1;
-    transform: scale(1.07);
-  }
-  .enlaces.clicked {
-    background-color: #5EB130;
-    opacity: 1;
-    transform: scale(1.07);
-    transform-origin: top left;
-    border-radius: 0 10px 10px 0;
-  }
-  /*NAVBAR*/
-  .aside-modelo{
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    height: 100vh; 
-    width: 150px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between;
-  }
-  .diseño-escribir-aqui{
-    width: 500px;
-    margin-left: 50px;
-    margin-top: 15px;
-  }
-  .diseño-escribir-aqui input{
-    border-radius: 15px 15px 15px 15px;
-  }
-  .diseño-escribir-aqui span{
-    background-color: #1e3d8f;
-    border-radius: 15px 15px 15px 15px;
-  }
-  .bg-nav{
-    background-color: #5EB130;
-  }
-  .posicion-fecha{
-    margin-top: 10px;
-    color: white;
-  }
-  .posicion{
-    margin-left: 340px;
-  }
-  .estilo-card {
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    padding: 20px;
+.color-menubar-practicante {
+  background-color: #1e3d8f;
 }
-.estilo-card-perfil{
+.siderbar-practicantes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icono-centrar {
+  display: block;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  background-color: white;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.enlaces {
+  text-decoration: none;
+}
+.letraNavBar {
+  font-family: "Poppins", sans-serif;
+}
+.btn_justify {
+  position: absolute;
+  color: #fff;
+  left: 3%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.nav-items {
+  position: relative;
+}
+
+.nav-items > a {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.nav-items > a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: #5eb130;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  transform: scale(1);
+  transform-origin: top left;
+  border-radius: 0 10px 10px 0;
+}
+
+.nav-items > a:hover:before {
+  opacity: 1;
+  transform: scale(1.07);
+}
+.enlaces.clicked {
+  background-color: #5eb130;
+  opacity: 1;
+  transform: scale(1.07);
+  transform-origin: top left;
+  border-radius: 0 10px 10px 0;
+}
+/*NAVBAR*/
+.aside-modelo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.diseño-escribir-aqui {
+  width: 500px;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+.diseño-escribir-aqui input {
+  border-radius: 15px 15px 15px 15px;
+}
+.diseño-escribir-aqui span {
+  background-color: #1e3d8f;
+  border-radius: 15px 15px 15px 15px;
+}
+.bg-nav {
+  background-color: #5eb130;
+}
+.posicion-fecha {
+  margin-top: 10px;
+  color: white;
+}
+.posicion {
+  margin-left: 340px;
+}
+.estilo-card {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 20px;
+}
+.estilo-card-perfil {
   width: 750px;
   height: 180px;
   background-image: url("../images/cielo.webp");
   border-radius: 30px;
 }
-.colorletraperfil{
+.colorletraperfil {
   color: #1e3d8f;
 }
-.diseñofechaingresoysalidad{
+.diseñofechaingresoysalidad {
   color: white;
   background-color: #1e3d8f;
   height: 20px;
   width: 80px;
   border-radius: 3px;
-  
 }
-.diseñofecha{
+.diseñofecha {
   color: #1e3d8f;
   background-color: white;
   border-color: #1e3d8f;
@@ -147,7 +146,7 @@
 .contenedor-fecha {
   border: 1.5px solid #1e3d8f;
   height: 22.28572px;
-  background-color: #DDEAFF;
+  background-color: #ddeaff;
   padding-left: 0 !important;
 }
 .posicion-border1 {
@@ -164,7 +163,19 @@
   border-right: 1.5px solid #1e3d8f;
 }
 
+/* Calendario Practicante */
+.buttons {
+  margin-bottom: 40px;
+}
 
+.buttons button {
+  background-color: #54af0c;
+  border: none;
+  padding: 8px 75px;
+  border-radius: 54px;
+  color: white;
+  margin: 0 25px;
+}
 
 /*pantallas*/
 /* Estilos generales aquí */
@@ -183,7 +194,7 @@
   .posicion-perfil {
     margin-left: 20px;
   }
-  .aside-modelo{
+  .aside-modelo {
     position: static;
     margin-left: 230px;
     top: unset;
@@ -199,7 +210,7 @@
     padding-top: 20px;
     min-height: 0;
   }
- 
+
   .nav-items {
     margin-left: 22%;
     margin-right: 20%;
@@ -210,10 +221,10 @@
   .nav-items a {
     margin: 5px;
   }
-  .salir{
+  .salir {
     margin-top: 15px;
   }
-  .navbar>.container-fluid{
+  .navbar > .container-fluid {
     justify-content: center;
   }
 }
@@ -232,7 +243,7 @@
   .posicion-perfil {
     margin-left: 20px;
   }
-  .aside-modelo{
+  .aside-modelo {
     position: static;
     margin-left: 0;
     top: unset;
@@ -248,7 +259,7 @@
     padding-top: 20px;
     min-height: 0;
   }
- 
+
   .nav-items {
     margin-left: 25%;
     margin-right: 12%;
@@ -259,16 +270,16 @@
   .nav-items a {
     margin: 5px;
   }
-  .salir{
+  .salir {
     margin-top: 15px;
   }
-  .navbar>.container-fluid{
+  .navbar > .container-fluid {
     justify-content: center;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 2560px) {
-  .posicion{
+  .posicion {
     margin-left: 25%;
     margin-right: 5%;
   }
