@@ -3,7 +3,7 @@
     // Verificar si se ha enviado el formulario
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Conexión a la base de datos
-        $conn = mysqli_connect('127.0.0.1:3310', 'root', '', 'asistencia');
+        $conn = mysqli_connect('localhost', 'root', '', 'asistencia');
 
         // Verificar conexión
         if (!$conn) {
@@ -35,7 +35,7 @@
           <div class="d-flex">
             
             <div>
-                <h2 class="letraNavBar ps-5 pt-2 colorletraperfil">Bienvenido <?php echo $row['firstname'] ;?></h2>
+                <h2 class="letraNavBar ps-5 pt-2 colorletraperfil">Bienvenido, <?php echo $row['firstname'] ;?></h2>
                 <small class="letraNavBar ps-5 pt-1 colorletraperfil fw-bold text-wraper">Aquí encontrarás información necesaria sobre tus estadídticas y desempeño.</small>
                 <div class="d-flex pt-3">
                     <h6 class="letraNavBar ps-5 colorletraperfil fw-normal" style="margin-left: 30px;">Comunicaciones</h6>

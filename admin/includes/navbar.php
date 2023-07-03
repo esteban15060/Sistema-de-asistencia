@@ -1,4 +1,33 @@
 <header class="main-header">
+<?php
+    // Verificar si se ha enviado el formulario
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Conexión a la base de datos
+        $conn = mysqli_connect('localhost', 'root', '', 'asistencia');
+
+        // Verificar conexión
+        if (!$conn) {
+        die("Error al conectar a la base de datos: " . mysqli_connect_error());
+        }
+
+        // Obtener el código del practicante
+        $codigo = $_POST['employee_id'];
+
+        // Consultar los datos del practicante
+        $query = "SELECT * FROM employees WHERE employee_id='$codigo'";
+        $result = mysqli_query($conn, $query);
+
+        // Verificar si se encontraron resultados
+        if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        } else {
+        echo "<div class='alert alert-danger'>No se encontró ningún practicante con el código ingresado.</div>";
+        }
+
+        // Cerrar la conexión a la base de datos
+         mysqli_close($conn);
+    }
+?>
     <!-- Logo -->
     <a href="home.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->

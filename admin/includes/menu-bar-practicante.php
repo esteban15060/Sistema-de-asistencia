@@ -30,7 +30,7 @@
       </div>
       <div class="circle-container d-flex me-5 posicion-perfil">
         <img class="rounded-circle" src="../images/fondo-prueba.png" alt="perfil" height="40" width="40">
-        <h6 class="ps-3 letraNavBar posicion-fecha">María Hernandez</h6>
+        <h6 class="ps-3 letraNavBar posicion-fecha"><?php echo $row['firstname'] ;?></h6>
       </div>
    </div>
 </nav>
@@ -44,7 +44,7 @@
          <h6 class="text-center text-light letraNavBar">INICIO</h6>
       </a>
       <br>
-      <a class="enlaces" href="perfil-practicante.php" onclick="toggleButtonColor(event, 'button2')" id="button2">
+      <a class="enlaces clicked" href="perfil-practicante.php" onclick="toggleButtonColor(event, 'button2')" id="button2">
          <img class="icono-centrar" src="../img/icono-perfil.webp" height="40" width="40">
          <h6 class="text-center text-light letraNavBar">MI PERFIL</h6>
       </a>
