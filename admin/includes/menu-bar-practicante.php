@@ -1,3 +1,23 @@
+<?php
+   $meses = array(
+      1 => 'enero',
+      2 => 'febrero',
+      3 => 'marzo',
+      4 => 'abril',
+      5 => 'mayo',
+      6 => 'junio',
+      7 => 'julio',
+      8 => 'agosto',
+      9 => 'septiembre',
+      10 => 'octubre',
+      11 => 'noviembre',
+      12 => 'diciembre'
+   );
+
+   $diaActual = date("d");
+   $mesActual = $meses[date("n")];
+
+?>
 <nav class="navbar navbar-expand-lg bg-nav nav-modelo">
    <div class="container-fluid">
       <div class="input-group mb-3 diseño-escribir-aqui">
@@ -5,7 +25,7 @@
         <span class="ps-5"></span>
       </div>
       <div class="d-flex posicion">
-        <h6 class="pe-3 letraNavBar posicion-fecha">22 Junio</h6>
+        <h6 class="pe-3 letraNavBar posicion-fecha"><?php echo $diaActual . " de ".  $mesActual; ?></h6>
         <img src="../img/notificacion.webp" alt="notificacion" height="40" width="40">
       </div>
       <div class="circle-container d-flex me-5 posicion-perfil">
