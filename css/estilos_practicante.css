@@ -232,11 +232,9 @@
 }
 /*OTRO DISEÑO*/
 .card {
-  width: 300px;
-  height: 200px;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 20px;
 }
 
@@ -250,6 +248,114 @@
   width: 600px;
   height: 501.6px;
 }
+#estados-evaluados div img{
+  width: 30px;
+  height: 30px;
+}
+#estados-evaluados div p{
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+#estados-evaluados div .icono-estado{
+  width: 24px;
+  height: 30px;
+}
+
+.progress-circular{
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: conic-gradient(#D9D9D9 180deg,#00D7C9 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+.progress-circular::after{
+  position: absolute;
+  content: '';
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff;
+}
+.progress-circular2{
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: conic-gradient(#D9D9D9 180deg,#FF0000 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+.progress-circular2::after{
+  position: absolute;
+  content: '';
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff;
+}
+.value{
+  padding: 19px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  padding-left: 19px;
+  border: 1px solid #D9D9D9;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: 500;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.value2{
+  padding: 29px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-left: 29px;
+  border: 1px solid #D9D9D9;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: 500;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.letra-pequena{
+  font-size: 10px;
+  font-weight: 500;
+}
+#estados-evaluados{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; 
+  grid-template-areas: "estado-1 estado-2"
+                       "estado-3 estado-4";
+  gap: 40px;
+
+}
+#estado-1{
+  grid-area: estado-1;
+}
+#estado-2{
+  grid-area: estado-2;
+}
+#estado-3{
+  grid-area: estado-3;
+}
+#estado-4{
+  grid-area: estado-4;
+}
+
 /*CARD LOGROS*/
 .perfil-logros{
   width: 541.6px;

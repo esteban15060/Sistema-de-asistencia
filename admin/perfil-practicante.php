@@ -39,8 +39,46 @@
             <p>Contenido de la tarjeta.</p>
         </div>
         <div class="card perfil-estado-perfil" id="estado">
-            <h1>Título de la tarjeta</h1>
-            <p>Contenido de la tarjeta.</p>
+            <h5 class="letraNavBar colorletraperfil">ESTADO DEL PERFIL</h5>
+            <hr class="mt-0">
+            <div id="estados-evaluados">
+                <div id="estado-1">
+                    <div class="d-flex">
+                        <img src="../img/horas-realizadas.webp">
+                        <p class="letraNavBar colorletraperfil">Total horas realizadas</p>
+                    </div>
+                    <div class="progress-circular">
+                            <span class="letraNavBar value">160<span class="letraNavBar letra-pequena">Horas</span></span>
+                    </div>
+                </div>
+                <div id="estado-2">
+                    <div class="d-flex">
+                        <img class="icono-estado" src="../img/dias-agregados.webp">
+                        <p class="letraNavBar colorletraperfil">Días agregados</p>
+                    </div>
+                    <div class="progress-circular">
+                            <span class="letraNavBar value2">2<span class="letraNavBar letra-pequena">Días</span></span>
+                    </div>
+                </div>
+                <div id="estado-3">
+                    <div class="d-flex">
+                        <img src="../img/icono-faltas-injustificadas.webp">
+                        <p class="letraNavBar colorletraperfil">Faltas injustificadas</p>
+                    </div>
+                    <div class="progress-circular2">
+                            <span class="letraNavBar value2">1<span class="letraNavBar letra-pequena">Días</span></span>
+                    </div>
+                </div>
+                <div id="estado-4">
+                    <div class="d-flex">
+                        <img class="icono-estado" src="../img/icono-horas-pendientes.webp">
+                        <p class="letraNavBar colorletraperfil">Horas pendientes de recuperación</p>
+                    </div>
+                    <div class="progress-circular2">
+                            <span class="letraNavBar value">4.5<span class="letraNavBar letra-pequena">Horas</span></span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card perfil-logros" id="logros">
             <h1>Título de la tarjeta</h1>
