@@ -26,8 +26,8 @@
           <div class="alert alert-dismissible mt20 text-center success__alert asistencia__frace-on asistencia-sep" style="display:none;">
           <span class="result">
   
-            <form method="post" action="admin/perfil-practicante.php">
-              <input type="hidden" class="form-control" id="input2" name="employee_id" required onkeyup="escribirEnAmbos()"><br>
+            <form method="post" action="admin/perfil-practicante.php" class="form__ver-perfil">
+              <input type="hidden" class="form-control" id="input2" name="employee_id" required onkeyup="escribirEnAmbos()">
               <input type="submit" class=" btn_perfil-estadisticas" value="VISITAR MI PERFIL"><br>
               <button name="estadisticas" type="button" class=" btn_perfil-estadisticas">VER MIS ESTADÍSTICAS</button>
             </form>

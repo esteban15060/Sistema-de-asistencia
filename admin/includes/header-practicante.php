@@ -43,3 +43,32 @@
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<?php
+    // Verificar si se ha enviado el formulario
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Conexión a la base de datos
+        include 'includes/conn.php';
+
+        // Obtener el código del practicante
+        $codigo = $_POST['employee_id'];
+
+        // Consultar los datos del practicante
+		$query = "SELECT e.*, p.description AS position, n.nombre_negocio AS negocio, s.time_in AS ingreso, s.time_out AS salida FROM employees e
+              LEFT JOIN position p ON e.negocio_id = p.id
+			  LEFT JOIN negocio n ON e.negocio_id = n.id
+			  LEFT JOIN schedules s ON e.negocio_id = s.id
+              WHERE e.employee_id='$codigo'";
+        // $query = "SELECT * FROM employees WHERE employee_id='$codigo'";
+        $result = mysqli_query($conn, $query);
+
+        // Verificar si se encontraron resultados
+        if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        } else {
+        echo "<div class='alert alert-danger'>No se encontró ningún practicante con el código ingresado.</div>";
+        }
+
+        // Cerrar la conexión a la base de datos
+         mysqli_close($conn);
+    }
+?>

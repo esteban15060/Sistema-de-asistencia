@@ -316,6 +316,9 @@ body{
 .btn_perfil-estadisticas:hover{
   background-color: #5eb130;
 }
+.form__ver-perfil{
+  padding-top: 10px;
+}
 .asistencia-sep{
   margin: 0;
   padding: 0;

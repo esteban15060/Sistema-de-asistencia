@@ -1,23 +1,4 @@
-<?php
-   $meses = array(
-      1 => 'enero',
-      2 => 'febrero',
-      3 => 'marzo',
-      4 => 'abril',
-      5 => 'mayo',
-      6 => 'junio',
-      7 => 'julio',
-      8 => 'agosto',
-      9 => 'septiembre',
-      10 => 'octubre',
-      11 => 'noviembre',
-      12 => 'diciembre'
-   );
-
-   $diaActual = date("d");
-   $mesActual = $meses[date("n")];
-
-?>
+<?php include 'includes/fecha-practicante.php' ?>
 <nav class="navbar navbar-expand-lg bg-nav nav-modelo">
    <div class="container-fluid">
       <div class="input-group mb-3 diseño-escribir-aqui">
@@ -39,25 +20,53 @@
       <img class="logo" src="../images/neon-house-led-logo.png" alt="logo" height="80">
    </div>
    <div class="nav-items">
-      <a class="enlaces" href="home-practicante.php" onclick="toggleButtonColor(event, 'button1')" id="button1" >
-         <img class="icono-centrar" src="../img/icono-home.webp" height="40" width="40">
-         <h6 class="text-center text-light letraNavBar">INICIO</h6>
-      </a>
+      <div class="enlaces" href="home-practicante.php" id="button1" >
+         <form method="post" action="home-practicante.php" class="form__ver-perfil">
+            <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+            <button type="submit" class="enlaces__btn" id="button1">
+               <a class="enlaces" href="#" id="button1" >
+                  <img class="icono-centrar" src="../img/icono-home.webp" height="40" width="40">
+                  <h6 class="text-center text-light letraNavBar">INICIO</h6>
+               </a>
+            </button>
+         </form>
+      </div>
       <br>
-      <a class="enlaces clicked" href="perfil-practicante.php" onclick="toggleButtonColor(event, 'button2')" id="button2">
-         <img class="icono-centrar" src="../img/icono-perfil.webp" height="40" width="40">
-         <h6 class="text-center text-light letraNavBar">MI PERFIL</h6>
-      </a>
+      <div class="enlaces clicked" href="home-practicante.php" id="button1" >
+         <form method="post" action="perfil-practicante.php" class="form__ver-perfil">
+            <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+            <button type="submit" class="enlaces__btn" id="button1">
+               <a class="enlaces" href="#" id="button1" >
+                  <img class="icono-centrar" src="../img/icono-perfil.webp" height="40" width="40">
+                  <h6 class="text-center text-light letraNavBar">MI PERFIL</h6>
+               </a>
+            </button>
+         </form>
+      </div>
       <br>
-      <a class="enlaces" href="home-practicante.php" onclick="toggleButtonColor(event, 'button3')" id="button3">
-         <img class="icono-centrar" src="../img/icono-estadistica.webp" height="40" width="40">
-         <h6 class="text-center text-light letraNavBar" style="width: 120px; margin-left: 15px;">ESTADISTICAS Y LOGROS</h6>
-      </a>
+      <div class="enlaces" id="button1" >
+         <form method="post" action="home-practicante.php" class="form__ver-perfil">
+            <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+            <button type="submit" class="enlaces__btn" id="button1">
+               <a class="enlaces" href="#" id="button1" >
+                  <img class="icono-centrar" src="../img/icono-estadistica.webp" height="40" width="40">
+                  <h6 class="text-center text-light letraNavBar" style="width: 120px; margin-left: 15px;">ESTADISTICAS Y LOGROS</h6>
+               </a>
+            </button>
+         </form>
+      </div>
       <br>
-      <a class="enlaces" href="home-practicante.php" onclick="toggleButtonColor(event, 'button4')" id="button4">
-         <img class="icono-centrar" src="../img/icono-calendario.webp" height="40" width="40">
-         <h6 class="text-center text-light letraNavBar" style="width: 110px; margin-left: 20px;">CALENDARIO O AGENDA</h6>
-      </a>
+      <div class="enlaces" id="button1" >
+         <form method="post" action="home-practicante.php" class="form__ver-perfil">
+            <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+            <button type="submit" class="enlaces__btn" id="button1">
+               <a class="enlaces" href="#" id="button1" >
+                  <img class="icono-centrar" src="../img/icono-calendario.webp" height="40" width="40">
+                  <h6 class="text-center text-light letraNavBar" style="width: 110px; margin-left: 20px;">CALENDARIO O AGENDA</h6>
+               </a>
+            </button>
+         </form>
+      </div>
    </div>
    <div class="mb-3 salir">
       <a class="enlaces" href="#">
