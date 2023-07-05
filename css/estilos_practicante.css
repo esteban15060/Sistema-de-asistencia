@@ -237,10 +237,15 @@
   border-radius: 12px;
   padding: 20px;
 }
+.colorlinea{
+  color: #1e3d8f;
+  border-width: 2px;
+}
+
 
 /*CARD ESTADISTICA DESEMPEÑO*/
 .perfil-estadistica-desempeño{
-  width: 541.6px;
+  width: 461.6px;
   height: 341.6px;
 }
 /*CARD ESTADO PERFIL */
@@ -358,10 +363,37 @@
 
 /*CARD LOGROS*/
 .perfil-logros{
-  width: 541.6px;
+  width: 461.6px;
   height: 341.6px;
 }
-
+#logros .encabezado{
+  justify-content: space-between;
+}
+.circle-logro {
+  width: 95px;
+  height: 95px;
+  background-color: #1E4DA9;
+  border-radius: 50%;
+}
+.circle-logro2 {
+  width: 95px;
+  height: 95px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+#logros div a{
+  text-decoration: none;
+}
+#logros div img{
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+}
+#logros div p{
+  padding-left: 20px;
+  font-weight: bold;
+}
 
 /* Calendario Practicante */
 .buttons {

@@ -2,7 +2,7 @@
 
 <body class="bg-white">
     <?php include 'includes/menu-bar-practicante.php'; ?>
-    <div style="margin-left: 200px; margin-top: 30px;" class="container-fluid" id="grid-perfil">
+    <div style="margin-left: 240px; margin-top: 30px;" class="container-fluid" id="grid-perfil">
         <div class="d-flex estilo-card-perfil">
             
             <div class="tarjeta-perfil" id="perfil">
@@ -40,7 +40,7 @@
         </div>
         <div class="card perfil-estado-perfil" id="estado">
             <h5 class="letraNavBar colorletraperfil">ESTADO DEL PERFIL</h5>
-            <hr class="mt-0">
+            <hr class="mt-0 colorlinea">
             <div id="estados-evaluados">
                 <div id="estado-1">
                     <div class="d-flex">
@@ -81,12 +81,30 @@
             </div>
         </div>
         <div class="card perfil-logros" id="logros">
-            <h1>Título de la tarjeta</h1>
-            <p>Contenido de la tarjeta.</p>
+            <div class="d-flex encabezado">
+                <h6 class="letraNavBar colorletraperfil">Logros</h6>
+                <a class="letraNavBar colorletraperfil">Ver más >></a>
+            </div>
+            <div class="d-flex">
+                <div class="circle-logro"></div>
+                <div class="circle-logro2"></div>
+                <div class="circle-logro2"></div>
+            </div>
+            <hr class=" colorlinea">
+            <div class="d-flex encabezado">
+                <h6 class="letraNavBar colorletraperfil">Recordatorio Semanal</h6>
+                <a class="letraNavBar colorletraperfil">Ver más >></a>
+            </div>
+            <div class="d-flex">
+                <img src="../img/icono-recordatorio.webp">
+                <p class="letraNavBar colorletraperfil">Viernes 23 de Junio - Exposición de informes mensuales</p>
+            </div>
+            <div class="d-flex">
+                <img src="../img/icono-recordatorio.webp">
+                <p class="letraNavBar colorletraperfil">Sábado 24 de Junio - Presentación página web</p>
+            </div>
         </div>
         
-        </div>
-       
     </div>
     
 </body>
