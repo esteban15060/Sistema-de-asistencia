@@ -34,6 +34,7 @@
 
         <li><a href="position.php"><i class="fa fa-suitcase"></i> Cargos</a></li>
         <li><a href="negocio.php"><i class="fa fa-suitcase"></i> Unidad de Negocio</a></li>
+        <li><a href="vista-asistencia.php"><i class="fa fa-eye"></i> Vista de asistencia</a></li>
         <li class="header">CONSULTAS</li>
         <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Horarios</span></a></li>
         <li class="header">EXPORTAR</li>
