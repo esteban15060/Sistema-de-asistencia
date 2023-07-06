@@ -110,7 +110,16 @@
   .posicion{
     margin-left: 340px;
   }
-
+  .form__ver-perfil{
+    padding-top: 10px;
+  }
+  .enlaces__btn{
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-top: 5px;
+  }
   /* USO DEL GRID PARA ORGANIZAR Y ESTRUCTURAR LA ETIQUETA DIV CON ID GRID-PERFIL*/
   #grid-perfil{
     display: grid;
@@ -135,12 +144,12 @@
   }
 
   /*CARD PERFIL*/
-
   .tarjeta-perfil div h2{
     padding-left: 30px;
     padding-top: 14px;
     margin-bottom: 0;
     height: 44px;
+    width: 100%;
   }
   .tarjeta-perfil div p{
     padding-left: 30px;

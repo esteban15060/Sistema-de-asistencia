@@ -54,7 +54,7 @@ date_default_timezone_set('America/Lima');
 					}
 				}
 			}
-			else{
+			if ($status == 'out'){
 				$sql = "SELECT *, attendance.id AS uid FROM attendance LEFT JOIN employees ON employees.id=attendance.employee_id WHERE attendance.employee_id = '$id' AND date = '$date_now'";
 				$query = $conn->query($sql);
 				if($query->num_rows < 1){
@@ -123,6 +123,9 @@ date_default_timezone_set('America/Lima');
 					}
 					
 				}
+			}
+			if ($status == 'perfil'){
+				$output['message'] = '<p class="bienvenida">¡Hola, '.$row['firstname'].' '.$row['lastname'].'!</p> <p class="registro__exitoso">¿A qué seccion de tu perfil quieres ingresar?</p>';
 			}
 		}
 		else{

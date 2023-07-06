@@ -311,9 +311,13 @@ body{
   transition: .3s;
   top: -20px;
   color: #1e3d8f;
+  margin: 10px;
 }
 .btn_perfil-estadisticas:hover{
   background-color: #5eb130;
+}
+.form__ver-perfil{
+  padding-top: 10px;
 }
 .asistencia-sep{
   margin: 0;
