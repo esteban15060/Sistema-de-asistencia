@@ -312,6 +312,12 @@ body{
   top: -20px;
   color: #1e3d8f;
 }
+.btn_perfil-estadisticas1{
+  margin-bottom: 15px;
+}
+.form__ver-perfil{
+  padding-top: 10px;
+}
 .btn_perfil-estadisticas:hover{
   background-color: #5eb130;
 }

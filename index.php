@@ -32,10 +32,13 @@
             <div id="clock"></div>
           </body>
           <p style="display:none;"  id="time" class="time-asistencia time-asistencia2"></p>
-          <div class="alert alert-dismissible mt20 text-center success__alert asistencia__frace-on asistencia-sep" style="display:none;">
+          <div class="alert alert-dismissible text-center success__alert asistencia__frace-on asistencia-sep" style="display:none;">
           <span class="result ">
-            <button type="submit" class=" btn_perfil-estadisticas" name="">VISITAR MI PERFIL</button><br>
-            <button type="submit" class=" btn_perfil-estadisticas" name="">VER MIS ESTADÍSTICAS</button>
+            <form method="post" action="admin/perfil-practicante.php" class="form__ver-perfil">
+              <input type="hidden" class="form-control" id="input2" name="employee_id" required onkeyup="escribirEnAmbos()"><br>
+              <input type="submit" class=" btn_perfil-estadisticas btn_perfil-estadisticas1" value="VISITAR MI PERFIL"><br>
+              <button name="estadisticas" type="button" class=" btn_perfil-estadisticas">VER MIS ESTADÍSTICAS</button>
+            </form>
           </span>
         </div>
         </div>
@@ -55,11 +58,11 @@
             <select class="form-control asistencia-imput select__imput" placeholder="Elegir Turno" name="status">
               <option value="in">INGRESO</option>
               <option value="out">SALIDA</option>
-              <!--<option>MI PERFIL</option>-->
+              <option value="perfil">MI PERFIL</option>
             </select>
           </div>
           <div class="form-group mx-sm-4 pt-3 asistencia__form"> 
-              <input class="form-control asistencia-imput code__imput" placeholder="CÓDIGO ID" id="employee" name="employee" required>
+              <input class="form-control asistencia-imput code__imput" placeholder="CÓDIGO ID" id="input1" name="employee" required onkeyup="escribirEnAmbos()">
               <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
           </div>
           <br>
@@ -101,7 +104,12 @@
     </div>
   </div>
 </div>
-
+<script>
+  function escribirEnAmbos() {
+    var valor = document.getElementById("input1").value;
+    document.getElementById("input2").value = valor;
+  }
+</script>
 
 <?php include 'scripts.php' ?>
 <script type="text/javascript">

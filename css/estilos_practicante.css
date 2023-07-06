@@ -77,6 +77,13 @@
     transform-origin: top left;
     border-radius: 0 10px 10px 0;
   }
+  .enlaces__btn{
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-top: 5px;
+  }
   /*NAVBAR*/
   .aside-modelo{
     position: fixed; 

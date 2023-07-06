@@ -7,20 +7,30 @@
             
             <div class="tarjeta-perfil" id="perfil">
                 <div>
-                    <h2 class="letraNavBar colorletraperfil">Bienvenida, María</h2>
+                    <?php
+                        $cadena = $row['firstname'];
+                        $separador = " ";
+                        $array = explode($separador, $cadena);
+                    ?>
+                    <h2 class="letraNavBar colorletraperfil">Bienvenido, <?php echo $array[0] ;?></h2>
                     <p class="letraNavBar colorletraperfil  text-wraper">Aquí encontrarás información necesaria sobre tus estadísticas y desempeño.</p>
                 </div>
                 <div class="d-flex perfil-presentacion">
-                    <h6 class="letraNavBar  colorletraperfil fw-normal" style="margin-left: 30px;">Comunicaciones</h6>
+                    <h6 class="letraNavBar  colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['position'] ;?></h6>
                     <h6 class="letraNavBar colorletraperfil fw-normal" style="margin-left: 70px;">Pre Profesional</h6>
                 </div>
-                <h6 class="letraNavBar perfil-presentacion2 colorletraperfil fw-normal" style="margin-left: 30px;">Digimedia</h6>
+                <h6 class="letraNavBar perfil-presentacion2 colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['negocio'] ;?></h6>
                 <div class="d-flex perfil-contrato">
                     <h6 class="letraNavBar diseñoFechaIngreso">Ingreso:</h6>
                      <div class="ps-1 d-flex contenedor-fecha ms-2">
-                         <h6 class="letraNavBar posicion-border3 diseñofecha text-center">07</h6>
-                         <h6 class="letraNavBar posicion-border1 diseñofecha text-center" style="margin-left: 10px;">05</h6>
-                         <h6 class="letraNavBar posicion-border2 diseñofecha text-center" style="margin-left: 10px;">23</h6>
+                        <?php
+                            $cadena2 = $row['created_on'];
+                            $separador2 = "-";
+                            $array2 = explode($separador2, $cadena2);
+                        ?>
+                         <h6 class="letraNavBar posicion-border3 diseñofecha text-center"><?php echo $array2[2] ;?></h6>
+                         <h6 class="letraNavBar posicion-border1 diseñofecha text-center" style="margin-left: 10px;"><?php echo $array2[1] ;?></h6>
+                         <h6 class="letraNavBar posicion-border2 diseñofecha text-center" style="margin-left: 10px;"><?php echo $array2[0][2].$array2[0][3] ;?></h6>
                      </div>
                     <h6 class="letraNavBar diseñoFechaSalida">Salida:</h6>
                     <div class="ps-1 d-flex contenedor-fecha ms-2">
