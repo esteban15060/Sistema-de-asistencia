@@ -450,7 +450,7 @@ body{
   margin: 20px 10px;
   min-width: 430px;
   max-width: 430px;
-  background-color: #1e3c8fc8;
+  background-color: #1e3d8f;
   text-align: center;
   border-radius: 30px;
   display: inline-block;
@@ -475,7 +475,7 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #5eb130;
+  background-color: #cfcfcf;
   overflow-y: auto;
   height: 350px;
 }
@@ -563,7 +563,7 @@ body{
   border-radius: 30px;
 }
 .modal-fondo__fondos{
-  background-color: #5eb130;
+  background-color: #cfcfcf;
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
@@ -583,7 +583,7 @@ body{
   border-radius: 20px 20px 0 0;
 }
 .modal-fondo__fondo-cacciones{
-  background-color: #245bc8;
+  background-color: #1e3d8f;
   text-align: center;
   padding: 10px;
   border-radius: 0 0 20px 20px;
