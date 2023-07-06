@@ -248,6 +248,16 @@
   width: 461.6px;
   height: 341.6px;
 }
+#estadistica-desempeño div div p{
+  font-size: 12px;
+}
+#estadistica-desempeño div div h6{
+  margin-bottom: 0;
+}
+.ver-mas{
+  padding-left: 97px;
+  padding-top: 9px;
+}
 /*CARD ESTADO PERFIL */
 .perfil-estado-perfil{
   width: 600px;

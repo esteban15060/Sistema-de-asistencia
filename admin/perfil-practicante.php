@@ -37,11 +37,11 @@
         <div class="card perfil-estadistica-desempeño" id="estadistica-desempeño">
             <div class="d-flex encabezado">
                 <div>
-                    <h5 class="letraNavBar colorletraperfil">Estadísticas de desempeño</h5>
-                    <p class="letraNavBar colorletraperfil text-wraper">Última semana</p>
+                    <h6 class="letraNavBar colorletraperfil">Estadísticas de desempeño</h6>
+                    <p class="letraNavBar colorletraperfil">Última semana</p>
                 </div>
-                <div>
-                    <a class="letraNavBar colorletraperfil ms-5"><u>Ver más</u> >>></a>
+                <div class="ver-mas">
+                    <a class="letraNavBar colorletraperfil"><u>Ver más</u> >>></a>
                 </div>
             </div>
             <div class="grafico-container">
