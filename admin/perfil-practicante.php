@@ -35,8 +35,18 @@
             </div>
         </div>
         <div class="card perfil-estadistica-desempeño" id="estadistica-desempeño">
-            <h1>Título de la tarjeta</h1>
-            <p>Contenido de la tarjeta.</p>
+            <div class="d-flex encabezado">
+                <div>
+                    <h5 class="letraNavBar colorletraperfil">Estadísticas de desempeño</h5>
+                    <p class="letraNavBar colorletraperfil text-wraper">Última semana</p>
+                </div>
+                <div>
+                    <a class="letraNavBar colorletraperfil ms-5"><u>Ver más</u> >>></a>
+                </div>
+            </div>
+            <div class="grafico-container">
+                <canvas id="bar-chart"></canvas>
+            </div>
         </div>
         <div class="card perfil-estado-perfil" id="estado">
             <h5 class="letraNavBar colorletraperfil">ESTADO DEL PERFIL</h5>
@@ -83,7 +93,7 @@
         <div class="card perfil-logros" id="logros">
             <div class="d-flex encabezado">
                 <h6 class="letraNavBar colorletraperfil">Logros</h6>
-                <a class="letraNavBar colorletraperfil">Ver más >></a>
+                <a class="letraNavBar colorletraperfil"><u>Ver más </u>>></a>
             </div>
             <div class="d-flex">
                 <div class="circle-logro"></div>
@@ -93,21 +103,88 @@
             <hr class=" colorlinea">
             <div class="d-flex encabezado">
                 <h6 class="letraNavBar colorletraperfil">Recordatorio Semanal</h6>
-                <a class="letraNavBar colorletraperfil">Ver más >></a>
+                <a class="letraNavBar colorletraperfil"><u>Ver más </u>>></a>
             </div>
-            <div class="d-flex">
-                <img src="../img/icono-recordatorio.webp">
-                <p class="letraNavBar colorletraperfil">Viernes 23 de Junio - Exposición de informes mensuales</p>
-            </div>
-            <div class="d-flex">
-                <img src="../img/icono-recordatorio.webp">
-                <p class="letraNavBar colorletraperfil">Sábado 24 de Junio - Presentación página web</p>
+            <div class="mt-3">
+                <div class="d-flex">
+                    <img src="../img/icono-recordatorio.webp">
+                    <p class="letraNavBar colorletraperfil">Viernes 23 de Junio - Exposición de informes mensuales</p>
+                </div>
+                <div class="d-flex">
+                    <img src="../img/icono-recordatorio.webp">
+                    <p class="letraNavBar colorletraperfil">Sábado 24 de Junio - Presentación página web</p>
+                </div>
             </div>
         </div>
         
     </div>
-    
+    <script>
+       
+        var ctx = document.getElementById('bar-chart').getContext('2d');
+        
+        var data = {
+            labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            datasets: [
+                {
+                    label: 'Compromiso',
+                    data: [1, 2, 3, 4, 5, 6],
+                    backgroundColor: '#00D7C9', // color cian
+                    borderWidth: 1
+                },
+                {
+                    label: 'Calidad y Productividad',
+                    data: [7, 8, 9, 10, 11, 12],
+                    backgroundColor: '#003B93', // color azul
+                    borderWidth: 1
+                },
+                {
+                    label: 'Iniciativa y Liderazgo',
+                    data: [10, 11, 12, 13, 14, 15],
+                    backgroundColor: '#189834', // color verde
+                    borderWidth: 1
+                },
+                {
+                    label: 'Trabajo en Equipo',
+                    data: [13, 14, 15, 16, 17, 18],
+                    backgroundColor: '#7B22B9', // color morado
+                    borderWidth: 1
+                },
+            ]
+        };
+
+        var options = {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+
+
+        var options = {
+            responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+        };
+
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
 </body>
+
 
 
 
