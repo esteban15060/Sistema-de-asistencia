@@ -4,7 +4,7 @@ include 'vista-coneccion.php';
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
 
-  $stmt = $pdo->prepare("SELECT * FROM imagenes WHERE id = ?");
+  $stmt = $pdo->prepare("SELECT * FROM imagen_frase WHERE id = ?");
   $stmt->execute([$id]);
   $imagen = $stmt->fetch();
 
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Actualizar la información de la imagen en la base de datos
-  $stmt = $pdo->prepare("UPDATE imagenes SET frase_motivacional = ?, nombre = ? WHERE id = ?");
+  $stmt = $pdo->prepare("UPDATE imagen_frase SET frase_motivacional = ?, nombre = ? WHERE id = ?");
   $stmt->execute([$fraseMotivacional, $rutaImagen, $id]);
 
   // Redirigir a la página de ver_imagenes.php después de editar

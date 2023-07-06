@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Mover la imagen a la carpeta destino
   if (move_uploaded_file($imagen['tmp_name'], $rutaImagen)) {
     // Insertar la imagen en la base de datos
-    $stmt = $pdo->prepare("INSERT INTO imagenes (nombre, frase_motivacional) VALUES (?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO imagen_frase (nombre, frase_motivacional) VALUES (?, ?)");
     $stmt->execute([$nombreImagen, $frase]);
 
     header("Location: vista-asistencia.php");

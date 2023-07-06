@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 01-03-2023 a las 22:12:08
--- Versión del servidor: 5.7.41-cll-lve
--- Versión de PHP: 7.4.33
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 06-07-2023 a las 21:18:58
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `n1m5g3f0_asistencia`
+-- Base de datos: `asistencia`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +35,7 @@ CREATE TABLE `admin` (
   `lastname` varchar(50) NOT NULL,
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `admin`
@@ -59,7 +58,7 @@ CREATE TABLE `attendance` (
   `status` int(1) NOT NULL,
   `time_out` time NOT NULL,
   `num_hr` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `attendance`
@@ -6458,7 +6457,7 @@ INSERT INTO `attendance` (`id`, `employee_id`, `date`, `time_in`, `status`, `tim
 (6394, 166, '2023-02-28', '14:35:13', 0, '18:15:16', 3.6666666666667),
 (6395, 131, '2023-02-28', '14:50:23', 0, '21:55:14', 6.0666666666667),
 (6396, 212, '2023-02-28', '15:00:11', 0, '18:03:08', 3.0333333333333),
-(6397, 132, '2023-03-01', '08:04:57', 1, '13:41:20', 3.6833333333333),
+(6397, 132, '2023-03-01', '01:00:00', 1, '01:00:00', 7),
 (6398, 148, '2023-03-01', '08:41:17', 1, '13:33:14', 3.55),
 (6399, 156, '2023-03-01', '08:47:13', 1, '13:34:07', 3.5666666666667),
 (6400, 174, '2023-03-01', '08:47:54', 1, '14:05:18', 4.0833333333333),
@@ -6529,7 +6528,12 @@ INSERT INTO `attendance` (`id`, `employee_id`, `date`, `time_in`, `status`, `tim
 (6465, 177, '2023-03-01', '13:34:52', 1, '18:01:04', 3.4333333333333),
 (6466, 130, '2023-03-01', '14:00:21', 0, '18:00:22', 4),
 (6467, 131, '2023-03-01', '14:56:57', 0, '00:00:00', 0),
-(6468, 166, '2023-03-01', '15:08:57', 0, '17:19:30', 2.1666666666667);
+(6468, 166, '2023-03-01', '15:08:57', 0, '17:19:30', 2.1666666666667),
+(6469, 1, '2023-06-26', '16:39:34', 0, '00:00:00', 0),
+(6470, 1, '2023-07-03', '09:15:41', 0, '00:00:00', 0),
+(6471, 1, '2023-07-04', '11:20:53', 0, '00:00:00', 0),
+(6472, 6, '2023-07-06', '00:26:35', 1, '00:00:00', 0),
+(6473, 12, '2023-07-06', '14:04:14', 0, '00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -6542,7 +6546,7 @@ CREATE TABLE `cashadvance` (
   `date_advance` date NOT NULL,
   `employee_id` varchar(15) NOT NULL,
   `amount` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -6554,7 +6558,7 @@ CREATE TABLE `deductions` (
   `id` int(11) NOT NULL,
   `description` varchar(100) NOT NULL,
   `amount` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -6574,212 +6578,239 @@ CREATE TABLE `employees` (
   `position_id` int(11) NOT NULL,
   `schedule_id` int(11) NOT NULL,
   `photo` varchar(200) NOT NULL,
-  `created_on` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `created_on` date NOT NULL,
+  `date_in` date DEFAULT NULL,
+  `date_out` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `employees`
 --
 
-INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `address`, `contact_info`, `gender`, `negocio_id`, `position_id`, `schedule_id`, `photo`, `created_on`) VALUES
-(1, 'FEN961780453', 'Noelia', 'Ventura', '', '', 'Female', 6, 1, 1, '', '2022-10-01'),
-(4, 'RUG348962150', 'Andres ', 'Porras Chuquillanqui', '', '', 'Male', 6, 1, 3, '', '2022-10-01'),
-(6, 'EOX940186375', 'RaÃºl Edwin', 'Pomahuali Rivera', '', '', 'Male', 1, 2, 2, '', '2022-10-01'),
-(7, 'QGH079512638', 'Gloria ', 'Zarate Guerra', '', '', 'Female', 1, 2, 2, '', '2022-10-01'),
-(8, 'LAU738409621', 'Lizbeth ', 'Vilcatoma', '', '', 'Female', 1, 6, 2, '', '2022-10-01'),
-(9, 'HUK468137052', 'Nataly Yeraldy ', 'Padilla SaldaÃ±a', '', '', 'Female', 1, 6, 19, '', '2022-10-01'),
-(10, 'RVH795623180', 'Kety', 'Tineo Arce', '', '', 'Female', 1, 6, 3, '', '2022-10-01'),
-(11, 'DNF368417095', 'Eyder ', 'Aguirre Lombardi', '', '', 'Female', 1, 3, 2, '', '2022-10-01'),
-(12, 'CQK129874035', 'Madeley Shiomara ', ' Ataucuri Vera', '', '', 'Female', 1, 3, 25, '', '2022-10-01'),
-(13, 'WLO069571834', 'David Ivan ', 'Espinoza Alegre', '', '', 'Male', 1, 4, 2, '', '2022-10-01'),
-(14, 'MLQ687193250', 'JosÃ© Gabriel ', ' Castillo SipÃ¡n', '', '', 'Male', 1, 4, 3, '', '2022-10-01'),
-(15, 'OSZ534076982', 'Diego Fernando ', 'Zenteno Sandova', '', '', 'Male', 1, 4, 3, '', '2022-10-01'),
-(16, 'ZVX864927035', 'Paul Benji ', 'Cadillo Segura', '', '', 'Male', 1, 5, 2, '', '2022-10-01'),
-(17, 'TQI375604829', 'Anissa Yasmin ', ' SÃ¡nchez LÃ³pez', '', '', 'Female', 1, 8, 24, '', '2022-10-01'),
-(19, 'TQM749231560', 'Luciana Catherine ', ' Ruiz AvedaÃ±o', '', '', 'Female', 1, 8, 23, '', '2022-10-01'),
-(20, 'ZHU139076482', 'Diego Alonso ', ' Zaquinaula Ortiz', '', '', 'Male', 2, 2, 2, '', '2022-10-01'),
-(22, 'BQD348297650', 'DaÃ­n NicolÃ¡s', 'Barrios Lizonde', '', '', 'Male', 2, 3, 2, '', '2022-10-01'),
-(23, 'PWD758019264', 'Jesus Miguel ', 'Apaza Ramos', '', '', 'Male', 2, 3, 3, '', '2022-10-01'),
-(24, 'KGB235614970', 'Fiorela Angela ', 'Zapata Coronado', '', '', 'Female', 2, 4, 2, '', '2022-10-01'),
-(25, 'JGU625317894', 'Ariet ', ' Cuadros Cueva', '', '', 'Female', 2, 4, 3, '', '2022-10-01'),
-(26, 'WGX863517409', 'Nicoll Milary ', 'Alvarez Valenzuela', '', '', 'Female', 2, 5, 3, '', '2022-10-01'),
-(27, 'ROK267305918', 'Mauricio Enrique ', 'Guzman Martos', '', '', 'Male', 2, 8, 2, '', '2022-10-01'),
-(28, 'GPK037512468', 'Fiorella Alessandra', 'Chiara Huiza', '', '', 'Female', 2, 8, 2, '', '2022-10-01'),
-(29, 'OUY671329804', 'Jorge Augusto ', 'Alvarado Revilla ', '', '', 'Male', 2, 8, 3, '', '2022-10-01'),
-(30, 'DGQ624801357', 'Brigitt Pilar ', 'CarriÃ³n Jaimes', '', '', 'Female', 3, 2, 2, '', '2022-10-01'),
-(31, 'ORX980634152', 'Graice Sofia', ' Yauri Lapa ', '', '', 'Female', 3, 2, 2, '', '2022-10-01'),
-(33, 'UXW201738645', 'Alexandra ', ' Romero Hermosilla', '', '', 'Female', 3, 3, 2, '', '2022-10-01'),
-(34, 'GDX816430925', 'Ysabel ', ' Sevillano', '', '', 'Female', 3, 3, 3, '', '2022-10-01'),
-(35, 'PSW842651039', 'Oxana Abril ', 'Prudencio Ramos', '', '', 'Female', 3, 3, 3, '', '2022-10-01'),
-(37, 'CMP045728391', 'Fatima ', ' Gomez Quillama', '', '', 'Female', 3, 5, 2, '', '2022-10-01'),
-(40, 'LSO079132564', 'Heber ', 'Quispe Tenorio', '', '', 'Male', 3, 8, 2, '', '2022-10-01'),
-(41, 'REZ207913465', 'Ariadna Ximena', ' Vargas Quiroz', '', '', 'Female', 3, 8, 3, '', '2022-10-01'),
-(42, 'DLU395614207', 'Gonzalo Alexis', ' FarÃ­as Campomanes', '', '', 'Male', 3, 8, 3, '', '2022-10-01'),
-(43, 'NLD206354917', 'Allisson Nicol', ' Flores Correa', '', '', 'Female', 4, 2, 2, '', '2022-10-01'),
-(44, 'IZX486795103', 'Valeria ', 'Mejia Fernadez', '', '', 'Female', 4, 6, 5, '', '2022-10-01'),
-(45, 'OSV328105697', 'Jessica ', 'Pazo Palomino', '', '', 'Female', 4, 6, 6, '', '2022-10-01'),
-(47, 'WTE469283017', 'Nataly Naomi ', 'Cuayla Huaman', '', '', 'Female', 4, 3, 7, '', '2022-10-01'),
-(48, 'HVA795368124', 'Angie Sirley ', 'Matos Paucar', '', '', 'Female', 4, 3, 8, '', '2022-10-01'),
-(50, 'MDU827094315', 'Rashell Naomi ', 'Ledesma Orihuela', '', '', 'Female', 4, 4, 7, '', '2022-10-01'),
-(51, 'RCN608457392', 'Kevin Francisco ', 'Trujillo Rosales', '', '', 'Male', 4, 5, 2, '', '2022-10-01'),
-(52, 'IES975241068', 'Jose Maria Andre ', 'Bautista Valdivia', '', '', 'Male', 4, 5, 2, '', '2022-10-01'),
-(53, 'QAJ412375809', 'Lucia Fernanda ', 'Vidal Herrera', '', '', 'Female', 4, 8, 9, '', '2022-10-01'),
-(54, 'MSL129583470', 'Nayeli ', 'Picon Vera', '', '', 'Female', 4, 8, 10, '', '2022-10-01'),
-(55, 'NHW756423891', 'Luis ', 'Alberto Tito ', '', '', 'Male', 4, 8, 3, '', '2022-10-01'),
-(56, 'IVK754138906', 'Valeria Alexandra ', 'DÃ¡valos Valderrama', '', '', 'Female', 3, 4, 2, '', '2022-10-01'),
-(58, 'ALK194685023', ' Lucy Madeline ', 'Daga Berrospi', '', '', 'Female', 5, 6, 12, '', '2022-10-05'),
-(59, 'KSQ135946702', 'Leslie Carolin ', 'Vera Cusi', '', '', 'Female', 5, 6, 5, '', '2022-10-05'),
-(60, 'BKO245603918', 'Jeniffer Brillith ', ' Torre Espinoza', '', '', 'Female', 5, 9, 14, '', '2022-10-05'),
-(61, 'VPJ397518206', 'Rosa Tatiana ', 'Cordova Ponce', '', '', 'Female', 5, 9, 15, '', '2022-10-05'),
-(62, 'IRM796258041', 'DAVID ', ' VALLADOLID AYBAR', '', '', 'Male', 4, 7, 2, '', '2022-10-05'),
-(63, 'YCK451897602', 'EDWIN ', ' MONTALVO PAICO', '', '', 'Male', 4, 7, 2, '', '2022-10-05'),
-(64, 'TZP396528041', 'Johann Meyer ', ' Bazan Alvarez', '', '', 'Male', 4, 7, 2, '', '2022-10-05'),
-(65, 'ZAI630827194', 'Ricardo Angel ', 'Ccallme Angelino', '', '', 'Male', 3, 7, 16, '', '2022-10-05'),
-(66, 'HES792860514', 'Saul Sneider', ' Chavez Chico', '', '', 'Male', 3, 7, 17, '', '2022-10-05'),
-(67, 'CIA147360285', 'Americo Ryan Leonel ', ' Rosales Granados', '', '', 'Male', 3, 7, 16, '', '2022-10-05'),
-(69, 'LJT485719263', 'Yahaira Eugenia ', 'Gaspar Chauca', '', '', 'Female', 4, 8, 18, '', '2022-10-05'),
-(70, 'VZD713452698', 'Nataly Marlene', 'Conde Mosquera', '', '', 'Female', 1, 6, 19, '', '2022-10-05'),
-(71, 'FDH972608314', 'Diego ', 'Guerra Valle', '', '', 'Male', 1, 5, 3, '', '2022-10-05'),
-(72, 'ZJS759638420', 'Valery ', 'Tornero', '', '', 'Female', 1, 6, 2, '', '2022-10-06'),
-(73, 'PWZ831496270', 'Kevin Orlando ', 'Carrasco Torres', '', '', 'Male', 3, 7, 19, '', '2022-10-06'),
-(74, 'MVO541397286', 'Joel ', 'Ravenna Macayo', '', '', 'Male', 3, 7, 3, '', '2022-10-06'),
-(75, 'AUY154867302', 'Desiree Jasmin ', ' Meregildo Palomino', '', '', 'Female', 1, 3, 21, '', '2022-10-06'),
-(76, 'EFU583670129', 'ALEXANDRA CRISTINA', 'TOVAR AGUIRRE', '', '', 'Female', 2, 2, 3, '', '2022-10-07'),
-(77, 'XIL354928076', 'Wilber Diego', 'Canchari Serrano', '', '', 'Male', 2, 5, 2, '', '2022-10-07'),
-(78, 'LKW105679328', 'Daniela', 'Angulo', '', '', 'Female', 1, 2, 3, '', '2022-10-07'),
-(80, 'RSE849652371', 'NILDA EUNICE ', ' CHUJUTALLI AGUILAR ', '', '', 'Female', 2, 5, 2, '', '2022-10-10'),
-(81, 'RBW368721495', 'KAREN STEPHANIE ', 'QUICAÃ‘O ROSAS ', '', '', 'Female', 3, 2, 19, '', '2022-10-11'),
-(82, 'CHP518327460', 'Karla Isabel', ' Villarroel Rodriguez', '', '', 'Female', 4, 3, 2, '', '2022-10-11'),
-(83, 'GOA180375462', 'ANDRE', 'CORDERO CACHAY', '', '', 'Male', 2, 3, 2, '', '2022-10-11'),
-(84, 'DEG248963107', 'Marco Antonio ', 'Serrano Cueva ', '', '', 'Male', 4, 8, 2, '', '2022-10-13'),
-(85, 'NXZ624731085', 'LETICIA CAROLAY ', 'JUAREZ PEREZ', '', '', 'Female', 6, 1, 2, '', '2022-10-13'),
-(86, 'IYF704356218', 'Salvador Antonio ', ' Astuhuaman Mendoza', '', '', 'Male', 4, 2, 2, '', '2022-10-13'),
-(87, 'EYN810672395', 'Ashley Abigail ', 'Mori Mendoza', '', '', 'Female', 3, 2, 2, '', '2022-10-13'),
-(88, 'LVP329418057', 'Nathaly ', 'Esquives', '', '', 'Female', 1, 8, 3, '', '2022-10-17'),
-(89, 'SUN298045173', 'Jorge Misael', 'Alvarez Lopez', '', '', 'Male', 4, 4, 10, '', '2022-10-18'),
-(90, 'AVP279613540', 'Diana Elian ', 'Solis Saenz', '', '', 'Female', 6, 1, 2, '', '2022-10-18'),
-(91, 'KOH951307684', 'Diego ', 'Atocsa', '', '', 'Male', 1, 8, 19, '', '2022-10-18'),
-(93, 'VXS035416897', 'Daniel Alejandro ', 'Sanchez CÃ¡ceres', '', '', 'Male', 2, 8, 3, '', '2022-10-20'),
-(94, 'NLT351978402', 'Danitza Thalia', 'Albites Chavez', '', '', 'Female', 5, 8, 3, '', '2022-10-21'),
-(96, 'TOB570348162', 'Adhemar Alessandro ', 'Romero Urbina', '', '', 'Female', 4, 7, 2, '', '2022-10-24'),
-(97, 'QSL843762159', 'Percy Maucaylle ', 'Huaman', '', '', 'Male', 4, 7, 2, '', '2022-10-24'),
-(99, 'GRY328094761', 'Fiorella ', 'Gutierrez', '', '', 'Female', 1, 2, 2, '', '2022-10-24'),
-(100, 'TBQ934058617', 'Martha Chaquira ', 'Adauto Basteres', '', '', 'Female', 2, 2, 3, '', '2022-10-24'),
-(101, 'NVW316452089', 'Nelvia Estefany ', 'Narvaez Correa', '', '', 'Female', 2, 2, 3, '', '2022-10-28'),
-(103, 'GCO564138972', 'Luis Alberto', 'GarcÃ­a PÃ©rez ', '', '', 'Male', 3, 5, 2, '', '2022-10-31'),
-(104, 'PYJ571496203', 'Kevin Edgar ', 'Ayerbe Miraya', '', '', 'Male', 1, 3, 26, '', '2022-10-31'),
-(105, 'EPX805623147', 'Josseph David', 'Bellido Quispe', '', '', 'Male', 1, 5, 3, '', '2022-11-03'),
-(106, 'ZOQ951320784', 'Alex Jesus', 'Varillas Huamani', '', '', 'Male', 4, 5, 2, '', '2022-11-03'),
-(109, 'FQN957402183', 'Gianfranco Antonio', 'Cavana Velez de Villa', '', '', 'Male', 6, 1, 3, '', '2022-11-09'),
-(110, 'PEF937645102', 'Alejandro Miguel', 'Ayala Arias', '', '', 'Male', 3, 2, 2, '', '2022-11-09'),
-(112, 'KUY352407698', 'Cristian Alberto ', ' Rodriguez Rodas', '', '', 'Male', 1, 2, 3, '', '2022-11-10'),
-(114, 'FNM130725864', 'Alicia ', 'Quiroz Cabrera', '', '', 'Female', 4, 2, 3, '', '2022-11-12'),
-(115, 'FEA436208159', 'PAOLA ', 'PADILLA PASTOR', '', '', 'Female', 1, 6, 2, '', '2022-11-24'),
-(116, 'NUS271540398', 'Gabriela Guadalupe ', 'Alvarez Lucas', '', '', 'Female', 3, 2, 3, '', '2022-11-24'),
-(117, 'TQV946157083', 'Anthonella Elisbeth ', 'Orosco Gonzales.', '', '', 'Female', 3, 2, 2, '', '2022-11-24'),
-(118, 'BNS293780614', 'Danitza Thalia ', 'Albites Chavez', '', '', 'Female', 4, 6, 3, '', '2022-11-28'),
-(119, 'LSH632814759', 'Michael ', 'Campos', '', '', 'Male', 3, 5, 3, '', '2022-12-01'),
-(120, 'MHR695082174', 'Arianna Yamilet', 'Rodriguez Gonzales', '', '', 'Female', 3, 3, 2, '', '2022-12-06'),
-(121, 'OSA914380526', 'Vivian Tifanny ', 'Alfaro Quispe', '', '', 'Female', 1, 5, 2, '', '2022-12-07'),
-(122, 'LEQ237918546', 'Lorena Belen ', 'Guarniz Cosamalon ', '', '', 'Female', 1, 6, 2, '', '2022-12-07'),
-(123, 'HJT291478506', 'Pamela Dayana ', 'BendezÃº Del Castillo', '', '', 'Female', 2, 3, 2, '', '2022-12-12'),
-(124, 'VNQ586273904', 'Masaru Alexis ', 'Moromisato Kameya', '', '', 'Hombre', 3, 2, 2, '', '2022-12-12'),
-(125, 'LYV056947132', 'Milagros Karina ', 'Joaquin Rios', '', '', 'Female', 3, 3, 2, '', '2022-12-12'),
-(126, 'JQP265713890', 'Rafaella Liliana ', 'Martinez Montalvo', '', '', 'Female', 4, 4, 10, '', '2022-12-12'),
-(127, 'IGJ016549273', 'Dayana Nicol ', 'Chero Villano', '', '', 'Female', 7, 2, 2, '', '2022-12-14'),
-(128, 'OIB823701659', 'Ronald Alexis ', 'Alvarez Lopez', '', '', 'Male', 7, 2, 3, '', '2022-12-14'),
-(129, 'QTB847265930', 'Angie Gianella', 'Collantes Talavera', '', '', 'Female', 7, 6, 2, '', '2022-12-14'),
-(130, 'ZCF317962048', 'Kimberly Angie', 'Miranda HernÃ¡ndez', '', '', 'Female', 7, 6, 3, '', '2022-12-14'),
-(131, 'DIU920356814', 'Betzabeth Viviana', ' Tafur Tarazona', '', '', 'Female', 7, 10, 3, '', '2022-12-14'),
-(132, 'AOF062951437', 'Karina Lissette', 'Yllia CastaÃ±eda', '', '', 'Female', 6, 1, 1, '', '2022-12-14'),
-(133, 'EGZ745980312', 'Carolina Meylin', 'Pinedo Tello', '', '', 'Female', 3, 4, 3, '', '2022-12-15'),
-(134, 'RYD587360421', 'Melissa Alexandra', 'Mendez Pizarro', '', '', 'Female', 4, 6, 2, '', '2022-12-15'),
-(135, 'CNE846932750', 'Elison ', 'Rodriguez Silva', '', '', 'Male', 4, 6, 3, '', '2022-12-16'),
-(136, 'CKE631724580', 'Jhon Anderson', 'Barja Espinoza', '', '', 'Male', 4, 7, 2, '', '2022-12-20'),
-(137, 'KTV580139624', 'Leslie Sofia', 'DÃ­az Minaya', '', '', 'Female', 1, 6, 2, '', '2022-12-22'),
-(138, 'RSX735692081', 'MarÃ­a JosÃ© ', 'Huayanay De La Cruz.', '', '', 'Female', 1, 6, 2, '', '2022-12-22'),
-(139, 'LZQ398175046', 'CÃ©sar Mauricio', 'DÃ¡vila Choy', '', '', 'Male', 2, 3, 2, '', '2022-12-23'),
-(140, 'SIN381940567', 'RocÃ­o del Pilar', 'ChavarrÃ­a Flores', '', '', 'Female', 4, 3, 2, '', '2022-12-23'),
-(141, 'GCA859672013', 'Rodolfo JesÃºs', 'Valentino Gutierrez', '', '', 'Male', 2, 8, 2, '', '2022-12-23'),
-(142, 'XRZ639045172', 'Valeria Fernanda', 'Torres Atachagua', '', '', 'Female', 1, 8, 2, '', '2022-12-27'),
-(143, 'DBM150263987', 'Diego Sebastian', 'Mayorga Salazar', '', '', 'Hombre', 2, 4, 3, '', '2022-12-27'),
-(144, 'GEB437285190', 'ThaÃ­s', 'Sarmiento Cachay', '', '', 'Female', 3, 8, 2, '', '2022-12-29'),
-(145, 'SCB312406987', 'Alonso', 'Oviedo GutiÃ©rrez', '', '', 'Hombre', 4, 8, 3, '', '2022-12-30'),
-(146, 'HZY843967201', 'Joseph Andre', 'Martinez Castillo', '', '', 'Male', 2, 8, 2, '', '2023-01-02'),
-(147, 'KBO341570892', 'Maria Pia del Rosario', 'Motta ZuÃ±iga', '', '', 'Female', 2, 8, 2, '', '2023-01-02'),
-(148, 'MYJ751236089', 'Yulisa Marinela ', 'Saavedra Jimenez', '', '', 'Female', 4, 2, 1, '', '2023-01-02'),
-(150, 'SEU346872915', 'Luis', 'Rebata Montecinos', '', '', 'Male', 1, 8, 2, '', '2023-01-04'),
-(151, 'UIY197846035', 'SHEILA JULISA ', 'ORTIZ SOLIS', '', '', 'Female', 1, 1, 3, '', '2023-01-04'),
-(152, 'ZNJ760348925', 'JosÃ© Luis', 'Campos Quispe', '', '', 'Male', 8, 7, 2, '', '2023-01-05'),
-(153, 'BAC940375186', 'Angie Nicolle ', ' Sotero Sandoval', '', '', 'Female', 4, 3, 2, '', '2023-01-05'),
-(154, 'WUJ805126437', 'Francisco Antonio', 'Vargas Donayre', '', '', 'Male', 8, 7, 2, '', '2023-01-09'),
-(155, 'OTQ796502431', 'Yoselyn Astrid', ' Garcia Caicay', '', '', 'Female', 6, 11, 2, '', '2023-01-10'),
-(156, 'VEB327580496', 'Flor Meliza', 'Alcca Velazque', '', '', 'Female', 6, 1, 2, '', '2023-01-11'),
-(157, 'KRT043976258', 'Yssamara', 'Ruiz Bustamante', '', '', 'Female', 1, 3, 2, '', '2023-01-11'),
-(159, 'RSP349810752', 'Ricki ', 'Landa Lucana', '', '', 'Male', 1, 2, 3, '', '2023-01-11'),
-(160, 'XTJ836079245', 'Eduardo Jahir', 'MontaÃ±o Condemayta', '', '', 'Male', 8, 7, 2, '', '2023-01-12'),
-(161, 'XGT364150287', 'Sandra Camila', 'Chuquispuma Jurado', '', '', 'Female', 6, 1, 2, '', '2023-01-12'),
-(162, 'XHV742168530', 'Edward', 'Ocampo Leyva', '', '', 'Male', 1, 2, 3, '', '2023-01-13'),
-(163, 'AYT301497658', 'Renato AndrÃ©', 'Calderon Arredondo', '', '', 'Hombre', 3, 8, 3, '', '2023-01-14'),
-(164, 'UMT802793451', 'Anamile', 'Puntillo Ramirez', '', '', 'Female', 3, 8, 3, '', '2023-01-14'),
-(165, 'GUO596720814', 'Daniel Junior', 'Asencios Ortiz', '', '', 'Male', 1, 8, 3, '', '2023-01-14'),
-(166, 'QWG635497201', 'Galilea Alejandra', 'Santa cruz susanibar', '', '', 'Female', 1, 4, 3, '', '2023-01-16'),
-(167, 'QUM759364128', 'Fatima camille', 'Zapata Vega', '', '', 'Female', 4, 8, 2, '', '2023-01-19'),
-(168, 'KDX516840273', 'Matthew Dominick', 'Gallardo Azabache', '', '', 'Male', 1, 3, 2, '', '2023-01-20'),
-(169, 'XUN370514269', 'Angie Amarilis ', 'Ramos Solis', '', '', 'Female', 4, 4, 2, '', '2023-01-20'),
-(170, 'DNH789062154', 'Daniel Alonso', 'Del Carpio Zavala', '', '', 'Male', 2, 2, 2, '', '2023-01-21'),
-(171, 'RTM754913862', 'Marko Alfonso', 'Otero Jimenez', '', '', 'Male', 3, 5, 2, '', '2023-01-22'),
-(172, 'IBH683754920', 'Jeanluck Dylan', 'Arbieto Herrera', '', '', 'Male', 2, 5, 2, '', '2023-01-22'),
-(173, 'WGU786031592', 'Luana Flavia', 'Cervantes Ruiz', '', '', 'Female', 4, 5, 2, '', '2023-01-23'),
-(174, 'FVX610952478', 'Geraldine ', 'Mitma rodriguez', '', '', 'Female', 1, 5, 2, '', '2023-01-24'),
-(176, 'WQG980562437', 'Jeny Yesenia', 'Salvador Mancisidor', '', '', 'Female', 3, 4, 2, '', '2023-01-24'),
-(177, 'IVB843921670', 'Nayeli Liz ', 'Cabllero flores', '', '', 'Female', 1, 3, 3, '', '2023-01-25'),
-(178, 'XSZ905672481', 'Alexandra Danitza', 'Calixto CarriÃ³n ', '', '', 'Female', 2, 8, 2, '', '2023-01-25'),
-(179, 'QOG951287603', 'Mireya Briggitte ', 'Cordova Quispe', '', '', 'Female', 1, 4, 2, '', '2023-01-26'),
-(180, 'QMJ350692814', 'Yesenia Paola', 'Gorvenia YnfanzÃ³n', '', '', 'Female', 1, 5, 2, '', '2023-01-28'),
-(181, 'GLW906574231', 'Leydi Flor', 'Porras Jimenez', '', '', 'Female', 2, 5, 2, '', '2023-01-30'),
-(182, 'FEY524396870', 'Pablo David', 'Huamani Injante', '', '', 'Male', 8, 7, 2, '', '2023-01-30'),
-(183, 'UFE320618457', 'Shirley Jennifer Giselle', 'Reyes Aguilar', '', '', 'Female', 8, 7, 3, '', '2023-01-30'),
-(185, 'UBP471385620', 'Judith araceli ', 'salhua llamocca', '', '', 'Female', 4, 8, 2, '', '2023-01-30'),
-(186, 'PRQ106984253', 'Brenda Lizzet ', 'Bernuy Carranza', '', '', 'Female', 3, 4, 2, '', '2023-02-01'),
-(187, 'UEZ045763912', 'Erick Jordan', 'Carrillo Silva', '', '', 'Male', 8, 7, 1, '', '2023-02-02'),
-(188, 'MHL701659428', 'Miluska Lourdes', 'UbillÃºs Segura', '', '', 'Female', 1, 3, 2, '', '2023-02-03'),
-(189, 'PYB981630452', 'Dania Nicole', 'Lezama Avila', '', '', 'Female', 1, 6, 2, '', '2023-02-06'),
-(190, 'CTO701289536', 'JesÃºs Alonso', 'RamÃ­rez Olivares', '', '', 'Male', 2, 3, 2, '', '2023-02-07'),
-(191, 'MYT518724369', 'Camila Deniss', 'Perez Cassana', '', '', 'Female', 1, 2, 2, '', '2023-02-08'),
-(192, 'EWC076193845', 'Camila NoemÃ­', 'Visalot HuamÃ¡n', '', '', 'Female', 2, 5, 3, '', '2023-02-08'),
-(193, 'ENR974513286', 'Maria Elena del Pilar ', 'Inca Villagomez', '', '', 'Female', 1, 2, 2, '', '2023-02-08'),
-(194, 'HOA805246397', 'Abigail Yamile ', 'Mendoza Martinez', '', '', 'Female', 2, 8, 2, '', '2023-02-08'),
-(195, 'QRS865409327', 'Jorge Vladimir ', 'Picon Minaya', '', '', 'Female', 4, 8, 3, '', '2023-02-09'),
-(198, 'UBN481523907', 'Maria Fernanda Isabel', 'Gonzales Romero', '', '', 'Female', 4, 4, 2, '', '2023-02-10'),
-(199, 'YOJ307452916', 'Lucy Veronica', 'Mejia De la Cruz', '', '', 'Female', 2, 5, 3, '', '2023-02-10'),
-(200, 'VFW349580621', 'Anggela Libertad Karla', 'MeoÃ±o SantivaÃ±ez', '', '', 'Female', 2, 4, 2, '', '2023-02-10'),
-(201, 'FJX917208536', 'Darlyn DesirÃ©e', 'Vela RamÃ­rez', '', '', 'Female', 1, 4, 2, '', '2023-02-10'),
-(202, 'JTX407912653', 'Najib Gael Antonio', 'Perez Zubieta', '', '', 'Male', 4, 5, 2, '', '2023-02-13'),
-(203, 'PSA375421689', 'Adrian Alfonso', 'Quispe Antyhua', '', '', 'Male', 8, 7, 2, '', '2023-02-13'),
-(204, 'CEO571906234', 'NÃ­colas Aron', 'Valverde Solis', '', '', 'Male', 8, 7, 2, '', '2023-02-13'),
-(205, 'ZPJ651790284', 'Sidney', 'Chirinos Saavedra', '', '', 'Female', 3, 5, 2, '', '2023-02-14'),
-(206, 'XYL940173852', 'Nadia Cristal', 'Vasquez Tarazona', '', '', 'Female', 2, 4, 2, '', '2023-02-14'),
-(207, 'LQY146938502', 'Alessandra Valeria', 'Ponce Gabriel', '', '', 'Female', 4, 5, 3, '', '2023-02-15'),
-(208, 'NDA487562913', 'Balmer Junior', ' Aldave Huaman', '', '', 'Male', 8, 7, 3, '', '2023-02-15'),
-(209, 'VCD756021894', 'Napier Neftali', 'Aguilar Urquiza', '', '', 'Male', 8, 7, 3, '', '2023-02-15'),
-(210, 'KNW693025841', 'Jorge', 'Falconi LudeÃ±a', '', '', 'Male', 8, 7, 2, '', '2023-02-15'),
-(211, 'TWU562401789', 'Alonso Smith', ' Ruiz CÃ¡rdenas ', '', '', 'Male', 8, 7, 2, '', '2023-02-15'),
-(212, 'NQU895046317', 'Christa Annie', 'ChÃ¡vez Jara', '', '', 'Female', 1, 5, 3, '', '2023-02-15'),
-(213, 'HCA134825670', 'Shirley Milagros', 'MejÃ­a Lugo', '', '', 'Female', 2, 8, 2, '', '2023-02-16'),
-(214, 'PSJ194607538', 'Noelia Alondra', 'DÃ­az Puscan', '', '', 'Female', 3, 8, 3, '', '2023-02-16'),
-(215, 'YPT395824701', 'Jesus Enrique ', ' Angeldonis MasloucÃ¡n', '', '', 'Male', 8, 7, 2, '', '2023-02-20'),
-(216, 'QHK345708269', 'Dannilo Teofilo ', 'Torres Navarro', '', '950337612', 'Female', 8, 7, 2, '', '2023-02-20'),
-(217, 'BZQ084671592', 'Jhelen Escarly ', 'Tovar Quintanilla', '', '', 'Female', 6, 2, 3, '', '2023-02-20'),
-(218, 'NRZ607348259', 'Alan Jesus ', 'Zorrilla Damazo', '', '', 'Male', 3, 5, 3, '', '2023-02-20'),
-(219, 'GUF095134286', 'Evelyn Geraldyne', ' Maza AzaÃ±ero', '', '', 'Female', 4, 5, 3, '', '2023-02-21'),
-(220, 'VXG357128406', 'Renato Misael ', 'Lucen Flores', '', '', 'Female', 4, 5, 2, '', '2023-02-22'),
-(221, 'EOW360287495', 'Johanna del Rosario', 'Ruiz Santos', '', '', 'Female', 4, 5, 3, '', '2023-02-23'),
-(222, 'XPB278943016', 'Martin Ramon', 'More Cubas', '', '', 'Male', 2, 2, 3, '', '2023-02-25'),
-(223, 'XPO619740253', 'Oswaldo Mathias', ' Ã‘opo DÃ­az', '', '', 'Male', 1, 5, 2, '', '2023-02-27'),
-(224, 'AGL897536024', 'Martin Ramon', 'More Cubas', '', '', 'Male', 2, 2, 3, '', '2023-02-27'),
-(225, 'HEW810426379', 'Alessia Lucia', 'Zapata Andrade', '', '', 'Female', 2, 8, 3, '', '2023-02-27'),
-(227, 'CGQ184972056', ' ALEXA FERNANDA', ' LEON MADRID ', '', '', 'Female', 9, 12, 2, '', '2023-03-01');
+INSERT INTO `employees` (`id`, `employee_id`, `firstname`, `lastname`, `address`, `contact_info`, `gender`, `negocio_id`, `position_id`, `schedule_id`, `photo`, `created_on`, `date_in`, `date_out`) VALUES
+(1, 'FEN961780453', 'Noelia', 'Ventura', '', '', 'Female', 6, 1, 1, '', '2022-10-01', NULL, NULL),
+(4, 'RUG348962150', 'Andres ', 'Porras Chuquillanqui', '', '', 'Male', 6, 1, 3, '', '2022-10-01', NULL, NULL),
+(6, 'EOX940186375', 'RaÃºl Edwin', 'Pomahuali Rivera', '', '', 'Male', 1, 2, 2, '', '2022-10-01', NULL, NULL),
+(7, 'QGH079512638', 'Gloria ', 'Zarate Guerra', '', '', 'Female', 1, 2, 2, '', '2022-10-01', NULL, NULL),
+(8, 'LAU738409621', 'Lizbeth ', 'Vilcatoma', '', '', 'Female', 1, 6, 2, '', '2022-10-01', NULL, NULL),
+(9, 'HUK468137052', 'Nataly Yeraldy ', 'Padilla SaldaÃ±a', '', '', 'Female', 1, 6, 19, '', '2022-10-01', NULL, NULL),
+(10, 'RVH795623180', 'Kety', 'Tineo Arce', '', '', 'Female', 1, 6, 3, '', '2022-10-01', NULL, NULL),
+(11, 'DNF368417095', 'Eyder ', 'Aguirre Lombardi', '', '', 'Female', 1, 3, 2, '', '2022-10-01', NULL, NULL),
+(12, 'CQK129874035', 'Madeley Shiomara ', ' Ataucuri Vera', '', '', 'Female', 1, 3, 25, '', '2022-10-01', NULL, NULL),
+(13, 'WLO069571834', 'David Ivan ', 'Espinoza Alegre', '', '', 'Male', 1, 4, 2, '', '2022-10-01', NULL, NULL),
+(14, 'MLQ687193250', 'JosÃ© Gabriel ', ' Castillo SipÃ¡n', '', '', 'Male', 1, 4, 3, '', '2022-10-01', NULL, NULL),
+(15, 'OSZ534076982', 'Diego Fernando ', 'Zenteno Sandova', '', '', 'Male', 1, 4, 3, '', '2022-10-01', NULL, NULL),
+(16, 'ZVX864927035', 'Paul Benji ', 'Cadillo Segura', '', '', 'Male', 1, 5, 2, '', '2022-10-01', NULL, NULL),
+(17, 'TQI375604829', 'Anissa Yasmin ', ' SÃ¡nchez LÃ³pez', '', '', 'Female', 1, 8, 24, '', '2022-10-01', NULL, NULL),
+(19, 'TQM749231560', 'Luciana Catherine ', ' Ruiz AvedaÃ±o', '', '', 'Female', 1, 8, 23, '', '2022-10-01', NULL, NULL),
+(20, 'ZHU139076482', 'Diego Alonso ', ' Zaquinaula Ortiz', '', '', 'Male', 2, 2, 2, '', '2022-10-01', NULL, NULL),
+(22, 'BQD348297650', 'DaÃ­n NicolÃ¡s', 'Barrios Lizonde', '', '', 'Male', 2, 3, 2, '', '2022-10-01', NULL, NULL),
+(23, 'PWD758019264', 'Jesus Miguel ', 'Apaza Ramos', '', '', 'Male', 2, 3, 3, '', '2022-10-01', NULL, NULL),
+(24, 'KGB235614970', 'Fiorela Angela ', 'Zapata Coronado', '', '', 'Female', 2, 4, 2, '', '2022-10-01', NULL, NULL),
+(25, 'JGU625317894', 'Ariet ', ' Cuadros Cueva', '', '', 'Female', 2, 4, 3, '', '2022-10-01', NULL, NULL),
+(26, 'WGX863517409', 'Nicoll Milary ', 'Alvarez Valenzuela', '', '', 'Female', 2, 5, 3, '', '2022-10-01', NULL, NULL),
+(27, 'ROK267305918', 'Mauricio Enrique ', 'Guzman Martos', '', '', 'Male', 2, 8, 2, '', '2022-10-01', NULL, NULL),
+(28, 'GPK037512468', 'Fiorella Alessandra', 'Chiara Huiza', '', '', 'Female', 2, 8, 2, '', '2022-10-01', NULL, NULL),
+(29, 'OUY671329804', 'Jorge Augusto ', 'Alvarado Revilla ', '', '', 'Male', 2, 8, 3, '', '2022-10-01', NULL, NULL),
+(30, 'DGQ624801357', 'Brigitt Pilar ', 'CarriÃ³n Jaimes', '', '', 'Female', 3, 2, 2, '', '2022-10-01', NULL, NULL),
+(31, 'ORX980634152', 'Graice Sofia', ' Yauri Lapa ', '', '', 'Female', 3, 2, 2, '', '2022-10-01', NULL, NULL),
+(33, 'UXW201738645', 'Alexandra ', ' Romero Hermosilla', '', '', 'Female', 3, 3, 2, '', '2022-10-01', NULL, NULL),
+(34, 'GDX816430925', 'Ysabel ', ' Sevillano', '', '', 'Female', 3, 3, 3, '', '2022-10-01', NULL, NULL),
+(35, 'PSW842651039', 'Oxana Abril ', 'Prudencio Ramos', '', '', 'Female', 3, 3, 3, '', '2022-10-01', NULL, NULL),
+(37, 'CMP045728391', 'Fatima ', ' Gomez Quillama', '', '', 'Female', 3, 5, 2, '', '2022-10-01', NULL, NULL),
+(40, 'LSO079132564', 'Heber ', 'Quispe Tenorio', '', '', 'Male', 3, 8, 2, '', '2022-10-01', NULL, NULL),
+(41, 'REZ207913465', 'Ariadna Ximena', ' Vargas Quiroz', '', '', 'Female', 3, 8, 3, '', '2022-10-01', NULL, NULL),
+(42, 'DLU395614207', 'Gonzalo Alexis', ' FarÃ­as Campomanes', '', '', 'Male', 3, 8, 3, '', '2022-10-01', NULL, NULL),
+(43, 'NLD206354917', 'Allisson Nicol', ' Flores Correa', '', '', 'Female', 4, 2, 2, '', '2022-10-01', NULL, NULL),
+(44, 'IZX486795103', 'Valeria ', 'Mejia Fernadez', '', '', 'Female', 4, 6, 5, '', '2022-10-01', NULL, NULL),
+(45, 'OSV328105697', 'Jessica ', 'Pazo Palomino', '', '', 'Female', 4, 6, 6, '', '2022-10-01', NULL, NULL),
+(47, 'WTE469283017', 'Nataly Naomi ', 'Cuayla Huaman', '', '', 'Female', 4, 3, 7, '', '2022-10-01', NULL, NULL),
+(48, 'HVA795368124', 'Angie Sirley ', 'Matos Paucar', '', '', 'Female', 4, 3, 8, '', '2022-10-01', NULL, NULL),
+(50, 'MDU827094315', 'Rashell Naomi ', 'Ledesma Orihuela', '', '', 'Female', 4, 4, 7, '', '2022-10-01', NULL, NULL),
+(51, 'RCN608457392', 'Kevin Francisco ', 'Trujillo Rosales', '', '', 'Male', 4, 5, 2, '', '2022-10-01', NULL, NULL),
+(52, 'IES975241068', 'Jose Maria Andre ', 'Bautista Valdivia', '', '', 'Male', 4, 5, 2, '', '2022-10-01', NULL, NULL),
+(53, 'QAJ412375809', 'Lucia Fernanda ', 'Vidal Herrera', '', '', 'Female', 4, 8, 9, '', '2022-10-01', NULL, NULL),
+(54, 'MSL129583470', 'Nayeli ', 'Picon Vera', '', '', 'Female', 4, 8, 10, '', '2022-10-01', NULL, NULL),
+(55, 'NHW756423891', 'Luis ', 'Alberto Tito ', '', '', 'Male', 4, 8, 3, '', '2022-10-01', NULL, NULL),
+(56, 'IVK754138906', 'Valeria Alexandra ', 'DÃ¡valos Valderrama', '', '', 'Female', 3, 4, 2, '', '2022-10-01', NULL, NULL),
+(58, 'ALK194685023', ' Lucy Madeline ', 'Daga Berrospi', '', '', 'Female', 5, 6, 12, '', '2022-10-05', NULL, NULL),
+(59, 'KSQ135946702', 'Leslie Carolin ', 'Vera Cusi', '', '', 'Female', 5, 6, 5, '', '2022-10-05', NULL, NULL),
+(60, 'BKO245603918', 'Jeniffer Brillith ', ' Torre Espinoza', '', '', 'Female', 5, 9, 14, '', '2022-10-05', NULL, NULL),
+(61, 'VPJ397518206', 'Rosa Tatiana ', 'Cordova Ponce', '', '', 'Female', 5, 9, 15, '', '2022-10-05', NULL, NULL),
+(62, 'IRM796258041', 'DAVID ', ' VALLADOLID AYBAR', '', '', 'Male', 4, 7, 2, '', '2022-10-05', NULL, NULL),
+(63, 'YCK451897602', 'EDWIN ', ' MONTALVO PAICO', '', '', 'Male', 4, 7, 2, '', '2022-10-05', NULL, NULL),
+(64, 'TZP396528041', 'Johann Meyer ', ' Bazan Alvarez', '', '', 'Male', 4, 7, 2, '', '2022-10-05', NULL, NULL),
+(65, 'ZAI630827194', 'Ricardo Angel ', 'Ccallme Angelino', '', '', 'Male', 3, 7, 16, '', '2022-10-05', NULL, NULL),
+(66, 'HES792860514', 'Saul Sneider', ' Chavez Chico', '', '', 'Male', 3, 7, 17, '', '2022-10-05', NULL, NULL),
+(67, 'CIA147360285', 'Americo Ryan Leonel ', ' Rosales Granados', '', '', 'Male', 3, 7, 16, '', '2022-10-05', NULL, NULL),
+(69, 'LJT485719263', 'Yahaira Eugenia ', 'Gaspar Chauca', '', '', 'Female', 4, 8, 18, '', '2022-10-05', NULL, NULL),
+(70, 'VZD713452698', 'Nataly Marlene', 'Conde Mosquera', '', '', 'Female', 1, 6, 19, '', '2022-10-05', NULL, NULL),
+(71, 'FDH972608314', 'Diego ', 'Guerra Valle', '', '', 'Male', 1, 5, 3, '', '2022-10-05', NULL, NULL),
+(72, 'ZJS759638420', 'Valery ', 'Tornero', '', '', 'Female', 1, 6, 2, '', '2022-10-06', NULL, NULL),
+(73, 'PWZ831496270', 'Kevin Orlando ', 'Carrasco Torres', '', '', 'Male', 3, 7, 19, '', '2022-10-06', NULL, NULL),
+(74, 'MVO541397286', 'Joel ', 'Ravenna Macayo', '', '', 'Male', 3, 7, 3, '', '2022-10-06', NULL, NULL),
+(75, 'AUY154867302', 'Desiree Jasmin ', ' Meregildo Palomino', '', '', 'Female', 1, 3, 21, '', '2022-10-06', NULL, NULL),
+(76, 'EFU583670129', 'ALEXANDRA CRISTINA', 'TOVAR AGUIRRE', '', '', 'Female', 2, 2, 3, '', '2022-10-07', NULL, NULL),
+(77, 'XIL354928076', 'Wilber Diego', 'Canchari Serrano', '', '', 'Male', 2, 5, 2, '', '2022-10-07', NULL, NULL),
+(78, 'LKW105679328', 'Daniela', 'Angulo', '', '', 'Female', 1, 2, 3, '', '2022-10-07', NULL, NULL),
+(80, 'RSE849652371', 'NILDA EUNICE ', ' CHUJUTALLI AGUILAR ', '', '', 'Female', 2, 5, 2, '', '2022-10-10', NULL, NULL),
+(81, 'RBW368721495', 'KAREN STEPHANIE ', 'QUICAÃ‘O ROSAS ', '', '', 'Female', 3, 2, 19, '', '2022-10-11', NULL, NULL),
+(82, 'CHP518327460', 'Karla Isabel', ' Villarroel Rodriguez', '', '', 'Female', 4, 3, 2, '', '2022-10-11', NULL, NULL),
+(83, 'GOA180375462', 'ANDRE', 'CORDERO CACHAY', '', '', 'Male', 2, 3, 2, '', '2022-10-11', NULL, NULL),
+(84, 'DEG248963107', 'Marco Antonio ', 'Serrano Cueva ', '', '', 'Male', 4, 8, 2, '', '2022-10-13', NULL, NULL),
+(85, 'NXZ624731085', 'LETICIA CAROLAY ', 'JUAREZ PEREZ', '', '', 'Female', 6, 1, 2, '', '2022-10-13', NULL, NULL),
+(86, 'IYF704356218', 'Salvador Antonio ', ' Astuhuaman Mendoza', '', '', 'Male', 4, 2, 2, '', '2022-10-13', NULL, NULL),
+(87, 'EYN810672395', 'Ashley Abigail ', 'Mori Mendoza', '', '', 'Female', 3, 2, 2, '', '2022-10-13', NULL, NULL),
+(88, 'LVP329418057', 'Nathaly ', 'Esquives', '', '', 'Female', 1, 8, 3, '', '2022-10-17', NULL, NULL),
+(89, 'SUN298045173', 'Jorge Misael', 'Alvarez Lopez', '', '', 'Male', 4, 4, 10, '', '2022-10-18', NULL, NULL),
+(90, 'AVP279613540', 'Diana Elian ', 'Solis Saenz', '', '', 'Female', 6, 1, 2, '', '2022-10-18', NULL, NULL),
+(91, 'KOH951307684', 'Diego ', 'Atocsa', '', '', 'Male', 1, 8, 19, '', '2022-10-18', NULL, NULL),
+(93, 'VXS035416897', 'Daniel Alejandro ', 'Sanchez CÃ¡ceres', '', '', 'Male', 2, 8, 3, '', '2022-10-20', NULL, NULL),
+(94, 'NLT351978402', 'Danitza Thalia', 'Albites Chavez', '', '', 'Female', 5, 8, 3, '', '2022-10-21', NULL, NULL),
+(96, 'TOB570348162', 'Adhemar Alessandro ', 'Romero Urbina', '', '', 'Female', 4, 7, 2, '', '2022-10-24', NULL, NULL),
+(97, 'QSL843762159', 'Percy Maucaylle ', 'Huaman', '', '', 'Male', 4, 7, 2, '', '2022-10-24', NULL, NULL),
+(99, 'GRY328094761', 'Fiorella ', 'Gutierrez', '', '', 'Female', 1, 2, 2, '', '2022-10-24', NULL, NULL),
+(100, 'TBQ934058617', 'Martha Chaquira ', 'Adauto Basteres', '', '', 'Female', 2, 2, 3, '', '2022-10-24', NULL, NULL),
+(101, 'NVW316452089', 'Nelvia Estefany ', 'Narvaez Correa', '', '', 'Female', 2, 2, 3, '', '2022-10-28', NULL, NULL),
+(103, 'GCO564138972', 'Luis Alberto', 'GarcÃ­a PÃ©rez ', '', '', 'Male', 3, 5, 2, '', '2022-10-31', NULL, NULL),
+(104, 'PYJ571496203', 'Kevin Edgar ', 'Ayerbe Miraya', '', '', 'Male', 1, 3, 26, '', '2022-10-31', NULL, NULL),
+(105, 'EPX805623147', 'Josseph David', 'Bellido Quispe', '', '', 'Male', 1, 5, 3, '', '2022-11-03', NULL, NULL),
+(106, 'ZOQ951320784', 'Alex Jesus', 'Varillas Huamani', '', '', 'Male', 4, 5, 2, '', '2022-11-03', NULL, NULL),
+(109, 'FQN957402183', 'Gianfranco Antonio', 'Cavana Velez de Villa', '', '', 'Male', 6, 1, 3, '', '2022-11-09', NULL, NULL),
+(110, 'PEF937645102', 'Alejandro Miguel', 'Ayala Arias', '', '', 'Male', 3, 2, 2, '', '2022-11-09', NULL, NULL),
+(112, 'KUY352407698', 'Cristian Alberto ', ' Rodriguez Rodas', '', '', 'Male', 1, 2, 3, '', '2022-11-10', NULL, NULL),
+(114, 'FNM130725864', 'Alicia ', 'Quiroz Cabrera', '', '', 'Female', 4, 2, 3, '', '2022-11-12', NULL, NULL),
+(115, 'FEA436208159', 'PAOLA ', 'PADILLA PASTOR', '', '', 'Female', 1, 6, 2, '', '2022-11-24', NULL, NULL),
+(116, 'NUS271540398', 'Gabriela Guadalupe ', 'Alvarez Lucas', '', '', 'Female', 3, 2, 3, '', '2022-11-24', NULL, NULL),
+(117, 'TQV946157083', 'Anthonella Elisbeth ', 'Orosco Gonzales.', '', '', 'Female', 3, 2, 2, '', '2022-11-24', NULL, NULL),
+(118, 'BNS293780614', 'Danitza Thalia ', 'Albites Chavez', '', '', 'Female', 4, 6, 3, '', '2022-11-28', NULL, NULL),
+(119, 'LSH632814759', 'Michael ', 'Campos', '', '', 'Male', 3, 5, 3, '', '2022-12-01', NULL, NULL),
+(120, 'MHR695082174', 'Arianna Yamilet', 'Rodriguez Gonzales', '', '', 'Female', 3, 3, 2, '', '2022-12-06', NULL, NULL),
+(121, 'OSA914380526', 'Vivian Tifanny ', 'Alfaro Quispe', '', '', 'Female', 1, 5, 2, '', '2022-12-07', NULL, NULL),
+(122, 'LEQ237918546', 'Lorena Belen ', 'Guarniz Cosamalon ', '', '', 'Female', 1, 6, 2, '', '2022-12-07', NULL, NULL),
+(123, 'HJT291478506', 'Pamela Dayana ', 'BendezÃº Del Castillo', '', '', 'Female', 2, 3, 2, '', '2022-12-12', NULL, NULL),
+(124, 'VNQ586273904', 'Masaru Alexis ', 'Moromisato Kameya', '', '', 'Hombre', 3, 2, 2, '', '2022-12-12', NULL, NULL),
+(125, 'LYV056947132', 'Milagros Karina ', 'Joaquin Rios', '', '', 'Female', 3, 3, 2, '', '2022-12-12', NULL, NULL),
+(126, 'JQP265713890', 'Rafaella Liliana ', 'Martinez Montalvo', '', '', 'Female', 4, 4, 10, '', '2022-12-12', NULL, NULL),
+(127, 'IGJ016549273', 'Dayana Nicol ', 'Chero Villano', '', '', 'Female', 7, 2, 2, '', '2022-12-14', NULL, NULL),
+(128, 'OIB823701659', 'Ronald Alexis ', 'Alvarez Lopez', '', '', 'Male', 7, 2, 3, '', '2022-12-14', NULL, NULL),
+(129, 'QTB847265930', 'Angie Gianella', 'Collantes Talavera', '', '', 'Female', 7, 6, 2, '', '2022-12-14', NULL, NULL),
+(130, 'ZCF317962048', 'Kimberly Angie', 'Miranda HernÃ¡ndez', '', '', 'Female', 7, 6, 3, '', '2022-12-14', NULL, NULL),
+(131, 'DIU920356814', 'Betzabeth Viviana', ' Tafur Tarazona', '', '', 'Female', 7, 10, 3, '', '2022-12-14', NULL, NULL),
+(132, 'AOF062951437', 'Karina Lissette', 'Yllia CastaÃ±eda', '', '', 'Female', 6, 1, 1, '', '2022-12-14', NULL, NULL),
+(133, 'EGZ745980312', 'Carolina Meylin', 'Pinedo Tello', '', '', 'Female', 3, 4, 3, '', '2022-12-15', NULL, NULL),
+(134, 'RYD587360421', 'Melissa Alexandra', 'Mendez Pizarro', '', '', 'Female', 4, 6, 2, '', '2022-12-15', NULL, NULL),
+(135, 'CNE846932750', 'Elison ', 'Rodriguez Silva', '', '', 'Male', 4, 6, 3, '', '2022-12-16', NULL, NULL),
+(136, 'CKE631724580', 'Jhon Anderson', 'Barja Espinoza', '', '', 'Male', 4, 7, 2, '', '2022-12-20', NULL, NULL),
+(137, 'KTV580139624', 'Leslie Sofia', 'DÃ­az Minaya', '', '', 'Female', 1, 6, 2, '', '2022-12-22', NULL, NULL),
+(138, 'RSX735692081', 'MarÃ­a JosÃ© ', 'Huayanay De La Cruz.', '', '', 'Female', 1, 6, 2, '', '2022-12-22', NULL, NULL),
+(139, 'LZQ398175046', 'CÃ©sar Mauricio', 'DÃ¡vila Choy', '', '', 'Male', 2, 3, 2, '', '2022-12-23', NULL, NULL),
+(140, 'SIN381940567', 'RocÃ­o del Pilar', 'ChavarrÃ­a Flores', '', '', 'Female', 4, 3, 2, '', '2022-12-23', NULL, NULL),
+(141, 'GCA859672013', 'Rodolfo JesÃºs', 'Valentino Gutierrez', '', '', 'Male', 2, 8, 2, '', '2022-12-23', NULL, NULL),
+(142, 'XRZ639045172', 'Valeria Fernanda', 'Torres Atachagua', '', '', 'Female', 1, 8, 2, '', '2022-12-27', NULL, NULL),
+(143, 'DBM150263987', 'Diego Sebastian', 'Mayorga Salazar', '', '', 'Hombre', 2, 4, 3, '', '2022-12-27', NULL, NULL),
+(144, 'GEB437285190', 'ThaÃ­s', 'Sarmiento Cachay', '', '', 'Female', 3, 8, 2, '', '2022-12-29', NULL, NULL),
+(145, 'SCB312406987', 'Alonso', 'Oviedo GutiÃ©rrez', '', '', 'Hombre', 4, 8, 3, '', '2022-12-30', NULL, NULL),
+(146, 'HZY843967201', 'Joseph Andre', 'Martinez Castillo', '', '', 'Male', 2, 8, 2, '', '2023-01-02', NULL, NULL),
+(147, 'KBO341570892', 'Maria Pia del Rosario', 'Motta ZuÃ±iga', '', '', 'Female', 2, 8, 2, '', '2023-01-02', NULL, NULL),
+(148, 'MYJ751236089', 'Yulisa Marinela ', 'Saavedra Jimenez', '', '', 'Female', 4, 2, 1, '', '2023-01-02', NULL, NULL),
+(150, 'SEU346872915', 'Luis', 'Rebata Montecinos', '', '', 'Male', 1, 8, 2, '', '2023-01-04', NULL, NULL),
+(151, 'UIY197846035', 'SHEILA JULISA ', 'ORTIZ SOLIS', '', '', 'Female', 1, 1, 3, '', '2023-01-04', NULL, NULL),
+(152, 'ZNJ760348925', 'JosÃ© Luis', 'Campos Quispe', '', '', 'Male', 8, 7, 2, '', '2023-01-05', NULL, NULL),
+(153, 'BAC940375186', 'Angie Nicolle ', ' Sotero Sandoval', '', '', 'Female', 4, 3, 2, '', '2023-01-05', NULL, NULL),
+(154, 'WUJ805126437', 'Francisco Antonio', 'Vargas Donayre', '', '', 'Male', 8, 7, 2, '', '2023-01-09', NULL, NULL),
+(155, 'OTQ796502431', 'Yoselyn Astrid', ' Garcia Caicay', '', '', 'Female', 6, 11, 2, '', '2023-01-10', NULL, NULL),
+(156, 'VEB327580496', 'Flor Meliza', 'Alcca Velazque', '', '', 'Female', 6, 1, 2, '', '2023-01-11', NULL, NULL),
+(157, 'KRT043976258', 'Yssamara', 'Ruiz Bustamante', '', '', 'Female', 1, 3, 2, '', '2023-01-11', NULL, NULL),
+(159, 'RSP349810752', 'Ricki ', 'Landa Lucana', '', '', 'Male', 1, 2, 3, '', '2023-01-11', NULL, NULL),
+(160, 'XTJ836079245', 'Eduardo Jahir', 'MontaÃ±o Condemayta', '', '', 'Male', 8, 7, 2, '', '2023-01-12', NULL, NULL),
+(161, 'XGT364150287', 'Sandra Camila', 'Chuquispuma Jurado', '', '', 'Female', 6, 1, 2, '', '2023-01-12', NULL, NULL),
+(162, 'XHV742168530', 'Edward', 'Ocampo Leyva', '', '', 'Male', 1, 2, 3, '', '2023-01-13', NULL, NULL),
+(163, 'AYT301497658', 'Renato AndrÃ©', 'Calderon Arredondo', '', '', 'Hombre', 3, 8, 3, '', '2023-01-14', NULL, NULL),
+(164, 'UMT802793451', 'Anamile', 'Puntillo Ramirez', '', '', 'Female', 3, 8, 3, '', '2023-01-14', NULL, NULL),
+(165, 'GUO596720814', 'Daniel Junior', 'Asencios Ortiz', '', '', 'Male', 1, 8, 3, '', '2023-01-14', NULL, NULL),
+(166, 'QWG635497201', 'Galilea Alejandra', 'Santa cruz susanibar', '', '', 'Female', 1, 4, 3, '', '2023-01-16', NULL, NULL),
+(167, 'QUM759364128', 'Fatima camille', 'Zapata Vega', '', '', 'Female', 4, 8, 2, '', '2023-01-19', NULL, NULL),
+(168, 'KDX516840273', 'Matthew Dominick', 'Gallardo Azabache', '', '', 'Male', 1, 3, 2, '', '2023-01-20', NULL, NULL),
+(169, 'XUN370514269', 'Angie Amarilis ', 'Ramos Solis', '', '', 'Female', 4, 4, 2, '', '2023-01-20', NULL, NULL),
+(170, 'DNH789062154', 'Daniel Alonso', 'Del Carpio Zavala', '', '', 'Male', 2, 2, 2, '', '2023-01-21', NULL, NULL),
+(171, 'RTM754913862', 'Marko Alfonso', 'Otero Jimenez', '', '', 'Male', 3, 5, 2, '', '2023-01-22', NULL, NULL),
+(172, 'IBH683754920', 'Jeanluck Dylan', 'Arbieto Herrera', '', '', 'Male', 2, 5, 2, '', '2023-01-22', NULL, NULL),
+(173, 'WGU786031592', 'Luana Flavia', 'Cervantes Ruiz', '', '', 'Female', 4, 5, 2, '', '2023-01-23', NULL, NULL),
+(174, 'FVX610952478', 'Geraldine ', 'Mitma rodriguez', '', '', 'Female', 1, 5, 2, '', '2023-01-24', NULL, NULL),
+(176, 'WQG980562437', 'Jeny Yesenia', 'Salvador Mancisidor', '', '', 'Female', 3, 4, 2, '', '2023-01-24', NULL, NULL),
+(177, 'IVB843921670', 'Nayeli Liz ', 'Cabllero flores', '', '', 'Female', 1, 3, 3, '', '2023-01-25', NULL, NULL),
+(178, 'XSZ905672481', 'Alexandra Danitza', 'Calixto CarriÃ³n ', '', '', 'Female', 2, 8, 2, '', '2023-01-25', NULL, NULL),
+(179, 'QOG951287603', 'Mireya Briggitte ', 'Cordova Quispe', '', '', 'Female', 1, 4, 2, '', '2023-01-26', NULL, NULL),
+(180, 'QMJ350692814', 'Yesenia Paola', 'Gorvenia YnfanzÃ³n', '', '', 'Female', 1, 5, 2, '', '2023-01-28', NULL, NULL),
+(181, 'GLW906574231', 'Leydi Flor', 'Porras Jimenez', '', '', 'Female', 2, 5, 2, '', '2023-01-30', NULL, NULL),
+(182, 'FEY524396870', 'Pablo David', 'Huamani Injante', '', '', 'Male', 8, 7, 2, '', '2023-01-30', NULL, NULL),
+(183, 'UFE320618457', 'Shirley Jennifer Giselle', 'Reyes Aguilar', '', '', 'Female', 8, 7, 3, '', '2023-01-30', NULL, NULL),
+(185, 'UBP471385620', 'Judith araceli ', 'salhua llamocca', '', '', 'Female', 4, 8, 2, '', '2023-01-30', NULL, NULL),
+(186, 'PRQ106984253', 'Brenda Lizzet ', 'Bernuy Carranza', '', '', 'Female', 3, 4, 2, '', '2023-02-01', NULL, NULL),
+(187, 'UEZ045763912', 'Erick Jordan', 'Carrillo Silva', '', '', 'Male', 8, 7, 1, '', '2023-02-02', NULL, NULL),
+(188, 'MHL701659428', 'Miluska Lourdes', 'UbillÃºs Segura', '', '', 'Female', 1, 3, 2, '', '2023-02-03', NULL, NULL),
+(189, 'PYB981630452', 'Dania Nicole', 'Lezama Avila', '', '', 'Female', 1, 6, 2, '', '2023-02-06', NULL, NULL),
+(190, 'CTO701289536', 'JesÃºs Alonso', 'RamÃ­rez Olivares', '', '', 'Male', 2, 3, 2, '', '2023-02-07', NULL, NULL),
+(191, 'MYT518724369', 'Camila Deniss', 'Perez Cassana', '', '', 'Female', 1, 2, 2, '', '2023-02-08', NULL, NULL),
+(192, 'EWC076193845', 'Camila NoemÃ­', 'Visalot HuamÃ¡n', '', '', 'Female', 2, 5, 3, '', '2023-02-08', NULL, NULL),
+(193, 'ENR974513286', 'Maria Elena del Pilar ', 'Inca Villagomez', '', '', 'Female', 1, 2, 2, '', '2023-02-08', NULL, NULL),
+(194, 'HOA805246397', 'Abigail Yamile ', 'Mendoza Martinez', '', '', 'Female', 2, 8, 2, '', '2023-02-08', NULL, NULL),
+(195, 'QRS865409327', 'Jorge Vladimir ', 'Picon Minaya', '', '', 'Female', 4, 8, 3, '', '2023-02-09', NULL, NULL),
+(198, 'UBN481523907', 'Maria Fernanda Isabel', 'Gonzales Romero', '', '', 'Female', 4, 4, 2, '', '2023-02-10', NULL, NULL),
+(199, 'YOJ307452916', 'Lucy Veronica', 'Mejia De la Cruz', '', '', 'Female', 2, 5, 3, '', '2023-02-10', NULL, NULL),
+(200, 'VFW349580621', 'Anggela Libertad Karla', 'MeoÃ±o SantivaÃ±ez', '', '', 'Female', 2, 4, 2, '', '2023-02-10', NULL, NULL),
+(201, 'FJX917208536', 'Darlyn DesirÃ©e', 'Vela RamÃ­rez', '', '', 'Female', 1, 4, 2, '', '2023-02-10', NULL, NULL),
+(202, 'JTX407912653', 'Najib Gael Antonio', 'Perez Zubieta', '', '', 'Male', 4, 5, 2, '', '2023-02-13', NULL, NULL),
+(203, 'PSA375421689', 'Adrian Alfonso', 'Quispe Antyhua', '', '', 'Male', 8, 7, 2, '', '2023-02-13', NULL, NULL),
+(204, 'CEO571906234', 'NÃ­colas Aron', 'Valverde Solis', '', '', 'Male', 8, 7, 2, '', '2023-02-13', NULL, NULL),
+(205, 'ZPJ651790284', 'Sidney', 'Chirinos Saavedra', '', '', 'Female', 3, 5, 2, '', '2023-02-14', NULL, NULL),
+(206, 'XYL940173852', 'Nadia Cristal', 'Vasquez Tarazona', '', '', 'Female', 2, 4, 2, '', '2023-02-14', NULL, NULL),
+(207, 'LQY146938502', 'Alessandra Valeria', 'Ponce Gabriel', '', '', 'Female', 4, 5, 3, '', '2023-02-15', NULL, NULL),
+(208, 'NDA487562913', 'Balmer Junior', ' Aldave Huaman', '', '', 'Male', 8, 7, 3, '', '2023-02-15', NULL, NULL),
+(209, 'VCD756021894', 'Napier Neftali', 'Aguilar Urquiza', '', '', 'Male', 8, 7, 3, '', '2023-02-15', NULL, NULL),
+(210, 'KNW693025841', 'Jorge', 'Falconi LudeÃ±a', '', '', 'Male', 8, 7, 2, '', '2023-02-15', NULL, NULL),
+(211, 'TWU562401789', 'Alonso Smith', ' Ruiz CÃ¡rdenas ', '', '', 'Male', 8, 7, 2, '', '2023-02-15', NULL, NULL),
+(212, 'NQU895046317', 'Christa Annie', 'ChÃ¡vez Jara', '', '', 'Female', 1, 5, 3, '', '2023-02-15', NULL, NULL),
+(213, 'HCA134825670', 'Shirley Milagros', 'MejÃ­a Lugo', '', '', 'Female', 2, 8, 2, '', '2023-02-16', NULL, NULL),
+(214, 'PSJ194607538', 'Noelia Alondra', 'DÃ­az Puscan', '', '', 'Female', 3, 8, 3, '', '2023-02-16', NULL, NULL),
+(215, 'YPT395824701', 'Jesus Enrique ', ' Angeldonis MasloucÃ¡n', '', '', 'Male', 8, 7, 2, '', '2023-02-20', NULL, NULL),
+(216, 'QHK345708269', 'Dannilo Teofilo ', 'Torres Navarro', '', '950337612', 'Female', 8, 7, 2, '', '2023-02-20', NULL, NULL),
+(217, 'BZQ084671592', 'Jhelen Escarly ', 'Tovar Quintanilla', '', '', 'Female', 6, 2, 3, '', '2023-02-20', NULL, NULL),
+(218, 'NRZ607348259', 'Alan Jesus ', 'Zorrilla Damazo', '', '', 'Male', 3, 5, 3, '', '2023-02-20', NULL, NULL),
+(219, 'GUF095134286', 'Evelyn Geraldyne', ' Maza AzaÃ±ero', '', '', 'Female', 4, 5, 3, '', '2023-02-21', NULL, NULL),
+(220, 'VXG357128406', 'Renato Misael ', 'Lucen Flores', '', '', 'Female', 4, 5, 2, '', '2023-02-22', NULL, NULL),
+(221, 'EOW360287495', 'Johanna del Rosario', 'Ruiz Santos', '', '', 'Female', 4, 5, 3, '', '2023-02-23', NULL, NULL),
+(222, 'XPB278943016', 'Martin Ramon', 'More Cubas', '', '', 'Male', 2, 2, 3, '', '2023-02-25', NULL, NULL),
+(223, 'XPO619740253', 'Oswaldo Mathias', ' Ã‘opo DÃ­az', '', '', 'Male', 1, 5, 2, '', '2023-02-27', NULL, NULL),
+(224, 'AGL897536024', 'Martin Ramon', 'More Cubas', '', '', 'Male', 2, 2, 3, '', '2023-02-27', NULL, NULL),
+(225, 'HEW810426379', 'Alessia Lucia', 'Zapata Andrade', '', '', 'Female', 2, 8, 3, '', '2023-02-27', NULL, NULL),
+(227, 'CGQ184972056', ' ALEXA FERNANDA', ' LEON MADRID ', '', '', 'Female', 9, 12, 2, '', '2023-03-01', NULL, NULL),
+(228, 'AMP710824693', 'Christian Jesus', 'Leon Angulo', 'Av. La Paz 769', '', 'Male', 4, 7, 1, '99ca77e1dd1c78dbdd7dd64878df0cc0.jpg', '2023-06-21', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fondo`
+--
+
+CREATE TABLE `fondo` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `fondo`
+--
+
+INSERT INTO `fondo` (`id`, `nombre`) VALUES
+(1, 'FOTO-C1-2.webp'),
+(9, 'FOTO-C1-2.webp'),
+(10, 'FOTO-CI-1.webp'),
+(11, 'FOTO-CI-3.webp'),
+(12, 'FOTO-CI-4.webp'),
+(13, 'FOTO-CI-5.webp'),
+(14, 'FOTO-CI-6.webp');
 
 -- --------------------------------------------------------
 
@@ -6791,7 +6822,33 @@ CREATE TABLE `imagenes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(500) DEFAULT NULL,
   `ruta` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagen_frase`
+--
+
+CREATE TABLE `imagen_frase` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `frase_motivacional` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `imagen_frase`
+--
+
+INSERT INTO `imagen_frase` (`id`, `nombre`, `frase_motivacional`) VALUES
+(1, 'Motivacion.png', '¡La edad no es barrera. Es una limitación que pones en tu mente!'),
+(3, 'MPM-motivar-equipo-ventas.png', '¡Cuanto más duramente trabajo, más suerte tengo!'),
+(4, 'c359128bd1390a9fdabeaf7d0f317c3a.png', '¡A veces la adversidad es lo que necesitas encarar para ser exitoso!'),
+(5, '3989540.png', '¡Para tener éxito tu deseo de alcanzarlo debe ser mayor que tu miedo al fracaso!'),
+(6, '2368348.png', '¡Asegúrate de que colocas tus pies en el lugar correcto, y luego mantente firme!'),
+(7, 'Motivacion.png', '¡La edad no es barrera. Es una limitación que pones en tu mente!'),
+(8, 'Creativity-pana.png', '¡El futuro pertenece a aquellos que creen en la belleza de sus sueños!'),
+(9, '2942904.png', '¡No pares cuando estés cansado. Para cuando hayas terminado!');
 
 -- --------------------------------------------------------
 
@@ -6801,8 +6858,8 @@ CREATE TABLE `imagenes` (
 
 CREATE TABLE `negocio` (
   `id` int(11) NOT NULL,
-  `nombre_negocio` varchar(150) CHARACTER SET latin1 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nombre_negocio` varchar(150) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `negocio`
@@ -6831,7 +6888,7 @@ CREATE TABLE `overtime` (
   `hours` double NOT NULL,
   `rate` double NOT NULL,
   `date_overtime` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -6852,7 +6909,7 @@ CREATE TABLE `papelera` (
   `schedule_id` int(11) NOT NULL,
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -6864,7 +6921,7 @@ CREATE TABLE `position` (
   `id` int(11) NOT NULL,
   `description` varchar(150) NOT NULL,
   `rate` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `position`
@@ -6893,7 +6950,7 @@ INSERT INTO `position` (`id`, `description`, `rate`) VALUES
 CREATE TABLE `rango` (
   `id` int(11) NOT NULL,
   `rango` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `rango`
@@ -6913,7 +6970,7 @@ CREATE TABLE `schedules` (
   `id` int(11) NOT NULL,
   `time_in` time NOT NULL,
   `time_out` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `schedules`
@@ -6986,9 +7043,21 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `fondo`
+--
+ALTER TABLE `fondo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `imagen_frase`
+--
+ALTER TABLE `imagen_frase`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -7035,7 +7104,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6469;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6474;
 
 --
 -- AUTO_INCREMENT de la tabla `cashadvance`
@@ -7053,13 +7122,25 @@ ALTER TABLE `deductions`
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=228;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
+
+--
+-- AUTO_INCREMENT de la tabla `fondo`
+--
+ALTER TABLE `fondo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `imagen_frase`
+--
+ALTER TABLE `imagen_frase`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `negocio`
@@ -7090,17 +7171,6 @@ ALTER TABLE `rango`
 --
 ALTER TABLE `schedules`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-COMMIT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`rango`) REFERENCES `rango` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'crud_imagenes';
+$db   = 'asistencia';
 $user = 'root';
 $pass = '';
 

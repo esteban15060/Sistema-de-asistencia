@@ -3,7 +3,7 @@
 <?php
   include 'admin/vista-coneccion.php';
 
-  $stmt1 = $pdo->query("SELECT * FROM imagenes LIMIT 1");
+  $stmt1 = $pdo->query("SELECT * FROM imagen_frase LIMIT 1");
   $imagen1 = $stmt1->fetch();
 
   $stmt4 = $pdo->query("SELECT * FROM fondo LIMIT 1");
@@ -177,6 +177,6 @@ moment.lang('es', {
 
 <?php 
   include('admin/includes/conn.php');
-  $query = "select * from imagenes";
+  $query = "select * from imagen_frase";
   $resultado = mysqli_query($conn,$query);
 ?>
