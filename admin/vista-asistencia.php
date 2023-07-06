@@ -31,10 +31,10 @@
             $stmt4 = $pdo->query("SELECT * FROM fondo LIMIT 1");
             $imagen4 = $stmt4->fetch();
 
-            $stmt1 = $pdo->query("SELECT * FROM imagenes LIMIT 1");
+            $stmt1 = $pdo->query("SELECT * FROM imagen_frase LIMIT 1");
             $imagen1 = $stmt1->fetch();
 
-            $stmt = $pdo->query("SELECT * FROM imagenes WHERE id > 1");
+            $stmt = $pdo->query("SELECT * FROM imagen_frase WHERE id > 1");
             $imagenes = $stmt->fetchAll();
           ?>
             <div class="modal-fondo">
