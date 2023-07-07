@@ -1,3 +1,4 @@
+header - adentro
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,6 @@
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   	<!-- Bootstrap 3.3.7 -->
   	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-     <link href="sidebars.css" rel="stylesheet">
-
   	<!-- Font Awesome -->
   	<link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   	<!-- Ionicons -->
@@ -35,7 +34,6 @@
   	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   	<![endif]-->
 
-    <link rel="stylesheet" href="../css/estilos_nav.css">
   	<!-- Google Font -->
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -139,7 +137,7 @@
 
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
       <link rel="stylesheet" href="../dist/css/AdminLTE.css">
-      <link rel="stylesheet" href="../css/estilos.css">
+
 
 </body>
 
