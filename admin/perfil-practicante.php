@@ -12,7 +12,13 @@
                         $separador = " ";
                         $array = explode($separador, $cadena);
                     ?>
-                    <h2 class="letraNavBar colorletraperfil">Bienvenido, <?php echo $array[0] ;?></h2>
+                    <h2 class="letraNavBar colorletraperfil"><?php
+                        if ($row['gender'] == 'Female'){
+                            echo 'Bienvenida, ';
+                        } else {
+                            echo 'Bienvenido, ';
+                        }
+                    ?> <?php echo $array[0] ;?></h2>
                     <p class="letraNavBar colorletraperfil  text-wraper">Aquí encontrarás información necesaria sobre tus estadísticas y desempeño.</p>
                 </div>
                 <div class="d-flex perfil-presentacion">
@@ -22,26 +28,26 @@
                 <h6 class="letraNavBar perfil-presentacion2 colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['negocio'] ;?></h6>
                 <div class="d-flex perfil-contrato">
                     <h6 class="letraNavBar diseñoFechaIngreso">Ingreso:</h6>
-                     <div class="ps-1 d-flex contenedor-fecha ms-2">
+                    <div class="ps-1 d-flex contenedor-fecha ms-2">
                         <?php
                             $cadena2 = $row['created_on'];
                             $separador2 = "-";
                             $array2 = explode($separador2, $cadena2);
                         ?>
-                         <h6 class="letraNavBar posicion-border3 diseñofecha text-center"><?php echo $array2[2] ;?></h6>
-                         <h6 class="letraNavBar posicion-border1 diseñofecha text-center" style="margin-left: 10px;"><?php echo $array2[1] ;?></h6>
-                         <h6 class="letraNavBar posicion-border2 diseñofecha text-center" style="margin-left: 10px;"><?php echo $array2[0][2].$array2[0][3] ;?></h6>
-                     </div>
+                        <h6 class="letraNavBar posicion-border3 diseñofecha text-center"><?php echo $array2[2] ;?></h6>
+                        <h6 class="letraNavBar posicion-border1 diseñofecha text-center" style="margin-left: 10px;"><?php echo $array2[1] ;?></h6>
+                        <h6 class="letraNavBar posicion-border2 diseñofecha text-center" style="margin-left: 10px;"><?php echo $array2[0][2].$array2[0][3] ;?></h6>
+                    </div>
                     <h6 class="letraNavBar diseñoFechaSalida">Salida:</h6>
                     <div class="ps-1 d-flex contenedor-fecha ms-2">
-                         <h6 class="letraNavBar posicion-border3  diseñofecha text-center">09</h6>
-                         <h6 class="letraNavBar posicion-border1  diseñofecha text-center" style="margin-left: 10px;">08</h6>
-                         <h6 class="letraNavBar posicion-border2  diseñofecha text-center" style="margin-left: 10px;">23</h6>
-                     </div>
+                        <h6 class="letraNavBar posicion-border3  diseñofecha text-center">09</h6>
+                        <h6 class="letraNavBar posicion-border1  diseñofecha text-center" style="margin-left: 10px;">08</h6>
+                        <h6 class="letraNavBar posicion-border2  diseñofecha text-center" style="margin-left: 10px;">23</h6>
+                    </div>
                 </div>
             </div>
             <div  class="perfil-yuntas">
-                <img src="../img/yuntas.webp">
+                <?php include 'includes/perfil_hombre-mijer.php'?>
             </div>
         </div>
         <div class="card perfil-estadistica-desempeño" id="estadistica-desempeño">
@@ -129,7 +135,6 @@
         
     </div>
     <script>
-       
         var ctx = document.getElementById('bar-chart').getContext('2d');
         
         var data = {
