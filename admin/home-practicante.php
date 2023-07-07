@@ -9,12 +9,12 @@
         <span class="ps-5"></span>
       </div>
       <div class="d-flex posicion">
-        <h6 class="pe-3 letraNavBar posicion-fecha"><?php echo $diaActual . " de ".  $mesActual; ?></h6>
-        <img src="../img/notificacion.webp" alt="notificacion" height="40" width="40">
+         <h6 class="pe-3 letraNavBar posicion-fecha"><?php echo $diaActual . " de ".  $mesActual; ?></h6>
+         <img src="../img/notificacion.webp" alt="notificacion" height="40" width="40">
       </div>
       <div class="circle-container d-flex me-5 posicion-perfil">
-        <img class="rounded-circle" src="../images/fondo-prueba.png" alt="perfil" height="40" width="40">
-        <h6 class="ps-3 letraNavBar posicion-fecha"><?php echo $row['firstname'] ;?></h6>
+         <?php include 'includes/fotoperfil.php';?>
+         <h6 class="ps-3 letraNavBar posicion-fecha"><?php echo $row['firstname'] ;?></h6>
       </div>
    </div>
 </nav>

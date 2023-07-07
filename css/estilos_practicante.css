@@ -117,6 +117,9 @@
   .posicion{
     margin-left: 340px;
   }
+  .img__perfil{
+    border-radius: 100%;
+  }
 
   /* USO DEL GRID PARA ORGANIZAR Y ESTRUCTURAR LA ETIQUETA DIV CON ID GRID-PERFIL*/
   #grid-perfil{
