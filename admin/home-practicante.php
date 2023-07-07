@@ -25,7 +25,7 @@
    <div class="nav-items">
       <div class="enlaces clicked" href="home-practicante.php" id="button1" >
          <form method="post" action="home-practicante.php" class="form__ver-perfil">
-            <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+            <input id="idPracticante" type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
                <a class="enlaces" href="#" id="button1" >
                   <img class="icono-centrar" src="../img/icono-home.webp" height="40" width="40">
@@ -78,14 +78,11 @@
       </a>
    </div>
 </aside>
+   <div style="margin-left: 280px; margin-top: 30px; padding: 0 20px;">   
+   </div>
+</div>
 
-
-    <div style="margin-left: 280px; margin-top: 30px; padding: 0 20px;">
-        
-    </div>
-    </div>
-
-    <script>
+<script>
    function salirMiPerfil() {
       Swal.fire({
       title: '¿Estás seguro de que quieres salir de tu perfil?',
@@ -112,6 +109,13 @@
         const button = document.getElementById(buttonId);
         button.classList.add("clicked");
     }
+</script>
+<script>
+   let idPracticante = document.getElementById("idPracticante");
+   if (idPracticante.value.length > 15) {
+      window.location.href = "../index.php";
+   }
+   
 </script>
 </body>
 
