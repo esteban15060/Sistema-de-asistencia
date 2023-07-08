@@ -2,7 +2,7 @@
 
 <body class="bg-white">
     <?php include 'includes/menu-bar-practicante.php'; ?>
-    <div style="margin-left: 240px; margin-top: 30px;" class="container-fluid" id="grid-perfil">
+    <div  class="container-fluid" id="grid-perfil">
         <div class="d-flex estilo-card-perfil">
             
             <div class="tarjeta-perfil" id="perfil">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="d-flex perfil-presentacion">
                     <h6 class="letraNavBar  colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['position'] ;?></h6>
-                    <h6 class="letraNavBar colorletraperfil fw-normal" style="margin-left: 70px;">Pre Profesional</h6>
+                    <h6 class="letraNavBar colorletraperfil fw-normal tipo-job" style="margin-left: 70px;">Pre Profesional</h6>
                 </div>
                 <h6 class="letraNavBar perfil-presentacion2 colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['negocio'] ;?></h6>
                 <div class="d-flex perfil-contrato">
@@ -57,7 +57,7 @@
                     <p class="letraNavBar colorletraperfil">Última semana</p>
                 </div>
                 <div class="ver-mas">
-                    <a class="letraNavBar colorletraperfil"><u>Ver más</u> >>></a>
+                    <a class="letraNavBar colorletraperfil">Ver más >></a>
                 </div>
             </div>
             <div class="grafico-container">
@@ -109,7 +109,7 @@
         <div class="card perfil-logros" id="logros">
             <div class="d-flex encabezado">
                 <h6 class="letraNavBar colorletraperfil">Logros</h6>
-                <a class="letraNavBar colorletraperfil"><u>Ver más </u>>></a>
+                <a class="letraNavBar colorletraperfil">Ver más >></a>
             </div>
             <div class="d-flex">
                 <div class="circle-logro"></div>
@@ -119,7 +119,7 @@
             <hr class=" colorlinea">
             <div class="d-flex encabezado">
                 <h6 class="letraNavBar colorletraperfil">Recordatorio Semanal</h6>
-                <a class="letraNavBar colorletraperfil"><u>Ver más </u>>></a>
+                <a class="letraNavBar colorletraperfil">Ver más >></a>
             </div>
             <div class="mt-3">
                 <div class="d-flex">
@@ -136,7 +136,7 @@
     </div>
     <script>
         var ctx = document.getElementById('bar-chart').getContext('2d');
-        
+
         var data = {
             labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
             datasets: [
@@ -169,27 +169,20 @@
 
         var options = {
             responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom', // Colocar la leyenda en la parte inferior
+                },
+            },
             scales: {
+                x: {
+                    beginAtZero: true,
+                    reverse: false,
+                },
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }
-        };
-
-        var barChart = new Chart(ctx, {
-            type: 'bar',
-            data: data,
-            options: options
-        });
-
-
-        var options = {
-            responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
         };
 
         var barChart = new Chart(ctx, {
