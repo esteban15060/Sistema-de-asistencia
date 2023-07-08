@@ -431,6 +431,77 @@
   margin: 0 25px;
 }
 
+/*  ESTILOS HOME PRACTICANTE*/
+#home-practicante {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 100px;
+  grid-row-gap: 50px;
+  margin-left: 280px; 
+  margin-top: 30px; 
+  padding: 0 20px;
+}
+
+.home-head {
+  padding: 2px 0 2px 20px;
+  background-color: #54af0c;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.home-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e4da9;
+}
+
+#home-practicante .festividades .festividades-image {
+  width: 345px;
+  height: 278px;
+  margin: 0 auto 30px;
+  background-color: #d9d9d9;
+}
+
+#home-practicante .festividades .festividades-description {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#home-practicante .festividades .festividades-btns {
+  display: flex;
+}
+
+#home-practicante .festividades .festividades-btns div {
+  width: 40px;
+  height: 40px;
+  background-color: #d9d9d9;
+  margin: 0px 15px 0;
+}
+
+#home-practicante .anuncios {
+  margin-bottom: 60px;
+}
+
+#home-practicante .calendario {
+  text-align: right;
+}
+
+#home-practicante .calendario div {
+  width: 450px;
+  height: 300px;
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+#home-practicante .calendario .calendario-mes {
+  font-size: 25px;
+  color: #1e4da9;
+  border-bottom: 1px solid #1e4da9;
+}
+
 /*pantallas*/
 /* Estilos generales aquí */
 

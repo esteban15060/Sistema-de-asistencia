@@ -79,7 +79,41 @@
    </div>
 </aside>
 
-   <div style="margin-left: 280px; margin-top: 30px; padding: 0 20px;">
+   <div id="home-practicante">
+      <div class="festividades">
+            <div class="home-head">FESTIVIDADES</div>
+            <h4 class="home-title">¡Feliz día del padre!</h4>
+            <div class="festividades-image">
+
+            </div>
+            <p class="festividades-description">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec eros
+               orci. Nunc varius eros at feugiat
+               aliquet. Fusce faucibus nec velit sed tristique. Praesent eleifend ipsum a ante vehicula ornare.
+            </p>
+            <div class="festividades-btns">
+               <div></div>
+               <div></div>
+               <div></div>
+            </div>
+         </div>
+
+         <div class="calendario">
+            <div>
+               <p class="calendario-mes">JUNIO</p>
+            </div>
+            <a href="#">Ver más >></a>
+         </div>
+
+         <div class="anuncios">
+            <div class="home-head">
+               ANUNCIOS
+            </div>
+            <h4 class="home-title">Nueva Actualización del manual del trabajador</h4>
+            <div class="anuncios-download">Archivo Adjunto</div>
+         </div>
+
+      </div>
    </div>
 </div>
 
