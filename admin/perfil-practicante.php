@@ -57,12 +57,57 @@
                     <p class="letraNavBar colorletraperfil">Última semana</p>
                 </div>
                 <div class="ver-mas">
-                    <a class="letraNavBar colorletraperfil">Ver más >></a>
+                    <a class="letraNavBar text-light">Ver más >></a>
                 </div>
             </div>
-            <div class="grafico-container">
-                <canvas id="bar-chart"></canvas>
+            <hr class="mt-0 colorlinea">
+            <div id="flower-graphic">
+                <div id="flower-body">
+                    <div>
+                        <h3 class="letraNavBar text-light nota-flower1">14</h3>
+                        <div class="flower-body-1">
+                            <div class="petal-1-1"></div>
+                            <div class="petal-1-2"></div>
+                            <div class="petal-1-3"></div>        
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="letraNavBar text-light nota-flower2">14</h3>
+                        <div class="flower-body-2">
+                            <div class="petal-2-1"></div>
+                            <div class="petal-2-2"></div>
+                            <div class="petal-2-3"></div>        
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="letraNavBar text-light nota-flower3">14</h3>
+                        <div class="flower-body-3">
+                            <div class="petal-3-1"></div>
+                            <div class="petal-3-2"></div>
+                            <div class="petal-3-3"></div>        
+                        </div>  
+                    </div>          
+                </div>
+                <div id="graph-legend">
+                    <div class="d-flex">
+                        <div class="square-legend-1"></div>
+                        <p class="letraNavBar colorletraperfil">Aspectos Personales</p>
+                    </div>
+                    <div class="d-flex">
+                        <div class="square-legend-2"></div>
+                        <p class="letraNavBar colorletraperfil">Aspectos academicos</p>
+                    </div>
+                    <div class="d-flex">
+                        <div class="square-legend-3"></div>
+                        <p class="letraNavBar colorletraperfil">Aspectos profesionales</p>
+                    </div>
+                </div>
+                <div id="average-note">
+                    <h6 class="letraNavBar text-light">Promedio = 14</h6>
+                </div>
             </div>
+            
+            
         </div>
         <div class="card perfil-estado-perfil" id="estado">
             <h5 class="letraNavBar colorletraperfil">ESTADO DEL PERFIL</h5>
@@ -112,9 +157,9 @@
                 <a class="letraNavBar colorletraperfil">Ver más >></a>
             </div>
             <div class="d-flex">
-                <div class="circle-logro"></div>
-                <div class="circle-logro2"></div>
-                <div class="circle-logro2"></div>
+                <div class="circle-logro"><img class="imagen-logro"  src="../img/bronce-insignia.webp"></img></div>
+                <div class="circle-logro2"><img class="imagen-logro"  src="../img/plata-insignia_1.webp"></div>
+                <div class="circle-logro2"><img class="imagen-logro"  src="../img/oro-insignia_1.webp"></div>
             </div>
             <hr class=" colorlinea">
             <div class="d-flex encabezado">
@@ -134,63 +179,6 @@
         </div>
         
     </div>
-    <script>
-        var ctx = document.getElementById('bar-chart').getContext('2d');
-
-        var data = {
-            labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-            datasets: [
-                {
-                    label: 'Compromiso',
-                    data: [1, 2, 3, 4, 5, 6],
-                    backgroundColor: '#00D7C9', // color cian
-                    borderWidth: 1
-                },
-                {
-                    label: 'Calidad y Productividad',
-                    data: [7, 8, 9, 10, 11, 12],
-                    backgroundColor: '#003B93', // color azul
-                    borderWidth: 1
-                },
-                {
-                    label: 'Iniciativa y Liderazgo',
-                    data: [10, 11, 12, 13, 14, 15],
-                    backgroundColor: '#189834', // color verde
-                    borderWidth: 1
-                },
-                {
-                    label: 'Trabajo en Equipo',
-                    data: [13, 14, 15, 16, 17, 18],
-                    backgroundColor: '#7B22B9', // color morado
-                    borderWidth: 1
-                },
-            ]
-        };
-
-        var options = {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'bottom', // Colocar la leyenda en la parte inferior
-                },
-            },
-            scales: {
-                x: {
-                    beginAtZero: true,
-                    reverse: false,
-                },
-                y: {
-                    beginAtZero: true,
-                }
-            }
-        };
-
-        var barChart = new Chart(ctx, {
-            type: 'bar',
-            data: data,
-            options: options
-        });
-    </script>
 </body>
 
 
