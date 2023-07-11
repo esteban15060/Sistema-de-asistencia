@@ -6,7 +6,7 @@
         <div class="d-flex estilo-card-perfil">
             
             <div class="tarjeta-perfil" id="perfil">
-                <div>
+                <div class="target-perfil">
                     <?php
                         $cadena = $row['firstname'];
                         $separador = " ";

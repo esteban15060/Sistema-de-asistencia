@@ -759,6 +759,9 @@
     margin-left: 0px;
     place-items: center;
   }
+  .target-perfil{
+    width: 260px;
+  }
   .estilo-card-perfil{
     display: initial !important;
     width: 270px;
@@ -774,6 +777,9 @@
     padding-top: 0px;
     display: initial !important;
     padding-left: 25px;
+  }
+  .perfil-presentacion2{
+    margin-left: 0px !important;
   }
   .tipo-job{
     margin-left: 30px !important;
@@ -1018,7 +1024,7 @@
   }
   #grid-perfil {
     place-items: center;
-    margin-left: 180px;
+    margin-left: 172px;
   }
   .estilo-card-perfil{
     width: 450px;
@@ -1287,9 +1293,217 @@
     margin-left: 100px;
   }
 }
-@media (min-width: 1420px) and (max-width: 2560px){
+@media (min-width: 1420px) and (max-width: 1600px){
   #grid-perfil{
     place-items: center;
     margin-left: 15%;
+  }
+}
+@media (min-width: 1600px){
+  .posicion-fecha{
+    font-size: 20px;
+  }
+  #grid-perfil{
+    place-items: center;
+    margin-left: 15%;
+  }
+  .estilo-card-perfil{
+    width: 700px;
+    height: 300px;
+    background-image: url(../images/cielo4.webp);
+  }
+  .tarjeta-perfil div h2{
+    padding-top: 24px;
+    font-size: 36px;
+  }
+  .tarjeta-perfil div p{
+    font-size: 11px;
+    width: 390px;
+    margin-top: 26px;
+  }
+  .perfil-presentacion{
+    margin-top: 18px;
+  }
+  .perfil-presentacion h6{
+    font-size: 18px;
+    margin-top: 13px;
+  }
+  .tarjeta-perfil h6{
+    font-size: 18px;
+    margin-top: 13px;
+  }
+  .perfil-contrato{
+    margin-top: 24px;
+  }
+  .diseñoFechaIngreso{
+    font-size: 21px !important;
+    width: 103px;
+    padding-top: 4px;
+    height: 35px;
+  }
+  .diseñoFechaSalida{
+    font-size: 21px !important;
+    width: 103px;
+    padding-top: 4px;
+    height: 35px;
+  }
+  .contenedor-fecha{
+    height: 27.6px;
+    width: 98.6px;
+    margin-top: 16px;
+  }
+  .diseñofecha{
+    height: 26px;
+    width: 22px;
+    font-size: 17px;
+    margin-top: 0 !important;
+  }
+  .contenedor-fecha h6{
+    width: 98.6px;
+  }
+  .perfil-yuntas{
+    margin-top: 53px;
+    padding: 23px;
+  }
+  .perfil-yuntas img{
+    width: 183px;
+    height: 223px;
+  }
+  .perfil-estado-perfil{
+    width: 700px;
+    height: 620px;
+  }
+  #estado h5{
+    font-size: 22px;
+  }
+  #estado-1 div img{
+    width: 41px;
+    height: 36px;
+  }
+  #estado-1 div p{
+    font-size: 18px;
+  }
+  #estado-2 div p{
+    font-size: 18px;
+  }
+  #estado-3 div img{
+    width: 41px;
+    height: 36px;
+  }
+  #estado-3 div p{
+    font-size: 18px;
+  }
+  #estado-4 div p{
+    font-size: 18px;
+  }
+  #estado-2 div .icono-estado{
+    width: 34px;
+    height: 40px;
+  }
+  #estado-4 div .icono-estado{
+    width: 34px;
+    height: 40px;
+  }
+  .progress-circular{
+    width: 130px;
+    height: 130px;
+  }
+  .value{
+    padding: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 21px;
+    font-size: 32px;
+  }
+  .value2{
+    padding: 33px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 39px;
+    font-size: 32px;
+  }
+  .progress-circular::after{
+    width: 107px;
+    height: 107px;
+  }
+  .progress-circular2{
+    width: 130px;
+    height: 130px;
+  }
+  .progress-circular2::after{
+    width: 107px;
+    height: 107px;
+  }
+  .perfil-estadistica-desempeño{
+    width: 600px;
+    height: 460px;
+  }
+  #encabezado-estadistica div h6{
+    font-size: 24px;
+  }
+  #encabezado-estadistica div p{
+    font-size: 17px !important;
+  }
+  .ver-mas a{
+    font-size: 17px;
+  }
+  #graph-legend{
+    width: 230px;
+  }
+  #estadistica-desempeño div div p{
+    font-size: 15px;
+  }
+  .nota-flower1{
+    top: 42%;
+    left: 25%;
+  }
+  .flower-body-2{
+    top: calc(100% - 266px);
+    left: calc(50% - 100px - 208px);
+  }
+  .nota-flower2{
+    top: 58%;
+    left: 14%;
+  }
+  .nota-flower3{
+    top: 57%;
+    left: 37%;
+  }
+  #average-note{
+    height: 29px;
+    width: 180px;
+    margin-top: 42px;
+  }
+  #average-note h6{
+    font-size: 22px;
+  }
+  .flower-body-3{
+    top: calc(100% - 348px);
+    left: calc(50% - 179px);
+  }
+  .perfil-logros{
+    width: 600px;
+    height: 460px;
+  }
+  .encabezado h6{
+    font-size: 22px;
+  }
+  .encabezado a{
+    font-size: 17px;
+  }
+  .circle-logro{
+    width: 135px;
+    height: 135px;
+  }
+  .circle-logro2{
+    width: 135px;
+    height: 135px;
+  }
+  .imagen-logro{
+    width: 160px !important;
+    height: 160px !important;
+  }
+  #logros div p{
+    font-size: 20px;
   }
 }
