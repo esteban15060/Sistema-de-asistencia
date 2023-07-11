@@ -757,6 +757,7 @@
                         "logros";
     gap: 20px;
     margin-left: 0px;
+    place-items: center;
   }
   .estilo-card-perfil{
     display: initial !important;
@@ -794,6 +795,81 @@
   .perfil-yuntas{
     margin-top: -180px;
     margin-left: 90px;
+  }
+  #encabezado-estadistica{
+    display: initial !important;
+  }
+  #encabezado-estadistica .ver-mas{
+    margin-bottom: 10px;
+  }
+  #estadistica-desempeño{
+    width: 291.6px;
+    height: 491.6px;
+  }
+  #flower-graphic {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "flower-body"
+      "graph-legend" 
+      "average-note";
+  }
+  .nota-flower1{
+    left: 52%;
+    transform: translate(-50%, -227%);
+  }
+  .nota-flower2{
+    left: 28%;
+    transform: translate(-50%,-393%);
+  }
+  .flower-body-2{
+    top: calc(100% - 283px);
+    left: calc(50% - 100px - 56px);
+  }
+  .nota-flower3{
+    left: 76%;
+    transform: translate(-50%,-391%);
+  }
+  .flower-body-3{
+    top: calc(100% - 364px);
+    left: calc(50% - 27px);
+  }
+  .legend{
+    width: 250px;
+  }
+  #average-note{
+    margin-left: 20%;
+  }
+  .perfil-estado-perfil{
+    width: 291.6px;
+    height: 851.6px;
+  }
+  #estados-evaluados{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto; 
+    grid-template-areas: "estado-1" 
+                         "estado-2"
+                         "estado-3" 
+                         "estado-4";
+    gap: 40px;
+  
+  }
+  .perfil-logros{
+    width: 291.6px;
+    height: 641.6px;
+  }
+  .logros-logrados{
+    display: initial !important;
+    align-self: center;
+  }
+  .circle-logro{
+    margin-bottom: 10px;
+  }
+  .circle-logro2{
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -854,8 +930,18 @@
                         "logros";
     gap: 20px;
     margin-left: 0px;
+    place-items: center;
   }
-  
+  .estilo-card-perfil{
+    width: 550px;
+  }
+  .perfil-yuntas{
+    padding: 0;
+    margin-top: 20px;
+  }
+  .perfil-estado-perfil{
+    width: 541.6px;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 1023px) {
@@ -905,11 +991,305 @@
   .navbar>.container-fluid{
     justify-content: center;
   }
+  #grid-perfil {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "perfil" 
+                        "estadistica-desempeño" 
+                        "estado" 
+                        "logros";
+    gap: 20px;
+    margin-left: 0px;
+    place-items: center;
+  }
 }
 
-@media (min-width: 1024px) and (max-width: 2560px) {
+@media (min-width: 1022px) and (max-width: 1257px) {
+  .posicion .posicion-fecha{
+    width: 91px;
+  }
+  .posicion-perfil .posicion-fecha{
+    width: 136px;
+  }
   .posicion{
-    margin-left: 25%;
+    margin-left: 17%;
     margin-right: 5%;
+  }
+  #grid-perfil {
+    place-items: center;
+    margin-left: 180px;
+  }
+  .estilo-card-perfil{
+    width: 450px;
+    background-image: url(../images/cielo3.webp);
+  }
+  .tarjeta-perfil div h2{
+    font-size: 24px;
+  }
+  .tarjeta-perfil div p{
+    font-size: 7px;
+    width: 270px;
+    margin-top: 0;
+  }
+  .perfil-presentacion{
+    padding-left: 15pxpx;
+  }
+  .perfil-presentacion h6{
+    font-size: 12.3px;
+  }
+  .tipo-job{
+    margin-left: 50px !important;
+  }
+  .perfil-presentacion2{
+    padding-left: 25px;
+    font-size: 12.3px;
+  }
+  .perfil-contrato{
+    margin-top: 20px;
+    padding-left: 12px;
+  }
+  .diseñoFechaIngreso{
+    font-size: 14px;
+    height: 23px;
+    width: 65px;
+    align-self: center;
+    padding: 2px;
+  }
+  .diseñoFechaSalida{
+    font-size: 13px;
+    height: 23px;
+    width: 56px;
+    align-self: center;
+    padding: 2px;
+  }
+  .contenedor-fecha{
+    height: 14.6px;
+    width: 72.6px;
+    margin-left: 4px !important;
+    margin-top: 4px;
+  }
+  .perfil-yuntas{
+    margin-top: 10px;
+    padding: 21px;
+  }
+  .perfil-yuntas img{
+    width: 108px;
+    height: 149px;
+  }
+  .diseñofecha{
+    height: 13px;
+    width: 17px;
+    font-size: 12px;
+  }
+  .perfil-estado-perfil{
+    width: 450px;
+  }
+  #estado h5{
+    font-size: 15px;
+  }
+  #estado-1 div p{
+    font-size: 12px;
+  }
+  #estado-1 div img{
+    width: 27px;
+    height: 27px;
+  }
+  .progress-circular{
+    width: 103px;
+    height: 102px;
+  }
+  .progress-circular::after{
+    width: 85px;
+    height: 87px;
+  }
+  .value{
+    padding: 15px;
+    padding-right: 22px;
+    padding-left: 18px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 16px;
+  }
+  #estado-2 div p{
+    font-size: 12px;
+  }
+  #estado-2 div img{
+    width: 27px;
+    height: 27px;
+  }
+  .progress-circular2{
+    width: 103px;
+    height: 102px;
+  }
+  .progress-circular2::after{
+    width: 85px;
+    height: 87px;
+  }
+  .value2{
+    padding: 16px;
+    padding-right: 27px;
+    padding-left: 25px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 14px;
+  }
+  #estado-3 div p{
+    font-size: 12px;
+  }
+  #estado-3 div img{
+    width: 27px;
+    height: 27px;
+  }
+  #estado-4 div p{
+    font-size: 12px;
+  }
+  #estado-4 div img{
+    width: 27px;
+    height: 27px;
+  }
+  .perfil-estadistica-desempeño{
+    width: 351.6px;
+  }
+  #encabezado-estadistica h6{
+    width: 220px;
+    font-size: 13px;
+  }
+  #estadistica-desempeño div div p{
+    font-size: 11px;
+  }
+  .ver-mas{
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .ver-mas a{
+    font-size: 11px;
+  }
+  .perfil-logros{
+    width: 351.6px;
+  }
+  #flower-body{
+    width: 220px;
+  }
+  .flower-body-1{
+    left: -38px;
+    transform: rotate(90deg) translate(-22%);
+  }
+  .nota-flower1{
+    left: 37%;
+    transform: translate(-50%, -133%);
+  }
+  .flower-body-2{
+    top: calc(100% - 198px);
+    left: calc(50% - 100px - 108px);
+    transform: rotate(365deg);
+  }
+  .nota-flower2{
+    left: 19%;
+    transform: translate(-50%, -200%);
+  }
+  .flower-body-3{
+    transform: rotate(173deg);
+    top: calc(100% - 289px);
+    left: calc(50% - 98px);
+  }
+  .nota-flower3{
+    left: 54%;
+    transform: translate(-50%,-206%);
+  }
+  .petal-1-1{
+    width: 70px;
+    height: 110px;
+  }
+  .petal-1-2{
+    width: 39px;
+    height: 19px;
+    margin-top: 18.9px;
+    margin-left: 83px;
+  }
+  .petal-1-3{
+    width: 42px;
+    height: 29px;
+    margin-left: 83px;
+    margin-top: 22.4px;
+  }
+  .petal-2-1{
+    width: 70px;
+    height: 110px;
+  }
+  .petal-2-2{
+    width: 39px;
+    height: 19px;
+    margin-top: 18.9px;
+    margin-left: 83px;
+  }
+  .petal-2-3{
+    width: 42px;
+    height: 29px;
+    margin-left: 83px;
+    margin-top: 22.4px;
+  }
+  .petal-3-1{
+    width: 70px;
+    height: 110px;
+  }
+  .petal-3-2{
+    width: 39px;
+    height: 19px;
+    margin-top: 18.9px;
+    margin-left: 83px;
+  }
+  .petal-3-3{
+    width: 42px;
+    height: 29px;
+    margin-left: 83px;
+    margin-top: 22.4px;
+  }
+  .legend{
+    width: 135px;
+  }
+  #logros .encabezado h6{
+    font-size: 15px;
+  }
+  #logros .encabezado a{
+    font-size: 15px;
+  }
+  .circle-logro{
+    width: 70px;
+    height: 70px;
+  }
+  .circle-logro2{
+    width: 70px;
+    height: 70px;
+  }
+  .circle-logro .imagen-logro{
+    width: 103px !important;
+    height: 103px !important;
+    margin-top: 3px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+  }
+  .circle-logro2 .imagen-logro{
+    width: 93px !important;
+    height: 96px !important;
+    margin-top: 3px;
+  }
+  #logros div p{
+    font-size: 13px;
+  }
+}
+@media (min-width: 1257px) and (max-width: 1420px){
+  #grid-perfil{
+    place-items: center;
+    margin-left: 160px;
+  }
+  .posicion{
+    margin-left: 100px;
+  }
+}
+@media (min-width: 1420px) and (max-width: 2560px){
+  #grid-perfil{
+    place-items: center;
+    margin-left: 15%;
   }
 }
