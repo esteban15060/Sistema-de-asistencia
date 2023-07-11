@@ -3,10 +3,10 @@
 <?php
   include 'admin/vista-coneccion.php';
 
-  $stmt1 = $pdo->query("SELECT * FROM imagen_frase LIMIT 1");
+  $stmt1 = $pdo->query("SELECT * FROM imagen_frase ORDER BY RAND() LIMIT 1");
   $imagen1 = $stmt1->fetch();
 
-  $stmt4 = $pdo->query("SELECT * FROM fondo LIMIT 1");
+  $stmt4 = $pdo->query("SELECT * FROM fondo ORDER BY RAND() LIMIT 1");
   $imagen4 = $stmt4->fetch();
 ?>
 <body style="background-image: url(<?='admin/fondo/'. $imagen4['nombre'] ?>);">
