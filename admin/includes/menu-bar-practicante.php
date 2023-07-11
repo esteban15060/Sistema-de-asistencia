@@ -20,6 +20,7 @@
    <?php include 'includes/cambio_logo.php'?>
    </div>
    <div class="nav-items">
+      <br>
       <div class="enlaces" href="home-practicante.php" id="button1" >
          <form method="post" action="home-practicante.php" class="form__ver-perfil">
             <input id="idPracticante" type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
@@ -37,7 +38,7 @@
             <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
                <a class="enlaces" href="#" id="button1" >
-                  <img class="icono-centrar" src="../img/icono-perfil.webp" height="40" width="40">
+                  <img class="icono-centrar" src="../img/icono-perfil.webp">
                   <h6 class="text-center text-light letraNavBar">MI PERFIL</h6>
                </a>
             </button>
@@ -49,7 +50,7 @@
             <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
                <a class="enlaces" href="#" id="button1" >
-                  <img class="icono-centrar" src="../img/icono-estadistica.webp" height="40" width="40">
+                  <img class="icono-centrar" src="../img/icono-estadistica.webp" >
                   <h6 class="text-center text-light letraNavBar" style="width: 120px; margin-left: 15px;">ESTADISTICAS Y LOGROS</h6>
                </a>
             </button>
@@ -61,12 +62,25 @@
             <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
                <a class="enlaces" href="#" id="button1" >
-                  <img class="icono-centrar" src="../img/icono-calendario.webp" height="40" width="40">
+                  <img class="icono-centrar" src="../img/icono-calendario.webp" >
                   <h6 class="text-center text-light letraNavBar" style="width: 110px; margin-left: 20px;">CALENDARIO O AGENDA</h6>
                </a>
             </button>
          </form>
       </div>
+      <br>
+      <div class="enlaces" id="button1" >
+         <form method="post" action="home-practicante.php" class="form__ver-perfil">
+            <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+            <button type="submit" class="enlaces__btn" id="button1">
+               <a class="enlaces" href="#" id="button1" >
+                  <img class="icono-centrar" src="../img/icono-buzon-sugerencia.webp">
+                  <h6 class="text-center text-light letraNavBar" style="width: 110px; margin-left: 20px;">BUZON DE SUGERENCIAS</h6>
+               </a>
+            </button>
+         </form>
+      </div>
+      <br>
    </div>
    <div class="mb-3 salir">
       <a class="enlaces" onclick="salirMiPerfil()">
