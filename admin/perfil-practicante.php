@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="card perfil-estadistica-desempeño" id="estadistica-desempeño">
-            <div class="d-flex encabezado">
+            <div class="d-flex encabezado" id="encabezado-estadistica">
                 <div>
                     <h6 class="letraNavBar colorletraperfil">Estadísticas de desempeño</h6>
                     <p class="letraNavBar colorletraperfil">Última semana</p>
@@ -89,15 +89,15 @@
                     </div>          
                 </div>
                 <div id="graph-legend">
-                    <div class="d-flex">
+                    <div class="d-flex legend">
                         <div class="square-legend-1"></div>
                         <p class="letraNavBar colorletraperfil">Aspectos Personales</p>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex legend">
                         <div class="square-legend-2"></div>
                         <p class="letraNavBar colorletraperfil">Aspectos academicos</p>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex legend">
                         <div class="square-legend-3"></div>
                         <p class="letraNavBar colorletraperfil">Aspectos profesionales</p>
                     </div>
@@ -156,7 +156,7 @@
                 <h6 class="letraNavBar colorletraperfil">Logros</h6>
                 <a class="letraNavBar colorletraperfil">Ver más >></a>
             </div>
-            <div class="d-flex">
+            <div class="d-flex logros-logrados">
                 <div class="circle-logro"><img class="imagen-logro"  src="../img/bronce-insignia.webp"></img></div>
                 <div class="circle-logro2"><img class="imagen-logro"  src="../img/plata-insignia_1.webp"></div>
                 <div class="circle-logro2"><img class="imagen-logro"  src="../img/oro-insignia_1.webp"></div>
