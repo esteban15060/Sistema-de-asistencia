@@ -19,25 +19,35 @@
       </ol>
     </section>
     <!-- Main content -->
-    <section class="content">
+    <section class="content py-5">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="container container__sd">
-                <h2>Agregar Plantilla</h2>
-                <form action="vista-guarda.php" method="post" enctype="multipart/form-data">
+                <h3 class="letraAgregarNuevaPlantilla">Agregar Nueva Plantilla</h3>
+                <form action="vista-guarda.php" method="post" enctype="multipart/form-data" class="py-5">
                 <div class="form-group">
-                    <label for="imagen">Imagen:</label>
-                    <div class="container__sds">
-                      <span class="form-control-file container__file2">selecionar archivo</span>
-                      <input class="form-control-file container__file" type="file" name="imagen" id="imagen" required>
+                 
+                  <div class="container__sds ">
+                    <span class="form-control-file container__file2 "><i class="fa fa-file"></i>    Seleccionar archivo/imagen</span>
+                    <input class="form-control-file container__file" type="file" name="imagen" id="imagen" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="mb-3 row group-frase">
+                    <label for="frase" class="col-sm-2 col-form- label-frase">Frase motivacional</label>
+                    <div class="col-sm-1">
+                      <textarea class="container__frase" name="frase" id="frase" ></textarea>
                     </div>
+                  </div>   
                 </div>
-                <div class="form-group">
-                    <label for="frase">Frase motivacional:</label><br>
-                    <input type="text" name="frase" id="frase" class="container__frase" required>
+                <div>
+                  <button type="submit" class="btn btn-primary px-5 btn-lg"><i class="fa fa-plus"></i> Agregar</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Agregar</button>
+                              
+                             
+                
+                
                 </form>
             </div>
           </div>
@@ -48,7 +58,5 @@
   <?php include 'includes/footer.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
-
-<?php include 'vista-editaFraseModal.php'; ?>
 </body>
 </html>

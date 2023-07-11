@@ -24,16 +24,16 @@
         <div class="col-xs-12">
           <div class="box">
           <div class="container container__sd">
-            <h2>Agregar nuevo fondo</h2>
+            <h2 class="letraAgregarNuevaPlantilla">Agregar nuevo fondo</h2>
               <form action="vista-guarda-fondo.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                  <label for="imagen">Imagen:</label>
-                  <div class="container__sds">
-                    <span span class="form-control-file container__file2">selecionar archivo</span>
+                <label for="imagen">Imagen:</label>
+                  <div class="container__sds">                  
+                    <span span class="form-control-file container__file2"><i class="fa fa-file"></i> Seleccionar archivo</span>
                     <input class="form-control-file container__file" type="file" name="imagen" id="imagen" required>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Agregar</button>
+                <button type="submit" class="btn btn-primary px-5 btn-lg mt-5"><i class="fa fa-plus"></i> Agregar</button>
               </form>
             </div>
           </div>

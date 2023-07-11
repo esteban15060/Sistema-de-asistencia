@@ -43,7 +43,7 @@
                   <span class="container__tittle">Imagenes de fondo</span>
                   <div>
                     <a href="vista-nuevo-fondo.php" class="btn btn-primary">Agregar fondo</a>
-                    <a href="#" class="btn btn-danger" onclick="closseModalFondo()">cerrar</a>
+                    <a href="#" class="btn btn-danger" onclick="closseModalFondo()">Cerrar</a>
                   </div>
                 </div>
                 <div class="modal-fondo__fondos">
