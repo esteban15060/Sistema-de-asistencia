@@ -26,7 +26,7 @@
                     <div class="col-sm-3">
                       <input type="date" class="form-control" id="date_out" name="date_out" required>
                     </div>  
-                    <label for="time_practice" class="col-sm-1 control-label">Tiempo (meses)</label>
+                    <label for="time_practice" class="col-sm-1 control-label">Tiempo </label>
 
                     <div class="col-sm-3"> 
                       <select class="form-control" name="time_practice" id="time_practice" required>
@@ -44,8 +44,8 @@
                     <div class="col-sm-3"> 
                       <select class="form-control" name="type_practice" id="type_practice" required>
                         <option value="" selected>- Seleccionar -</option>
-                        <option value="Pre Profesionales">Pre Profesionales</option>
-                        <option value="Profesionales">Profesionales</option>
+                        <option value="PREPROFESIONALES">PREPROFESIONALES</option>
+                        <option value="PROFESIONALES">PROFESIONALES</option>
                       </select>
                     </div>
                     <label for="dni" class="col-sm-1 control-label">DNI</label>
@@ -147,25 +147,66 @@
                       </select>
                     </div>
                 </div>                
-                <div class="form-group">
-                    <label for="schedule" class="col-sm-2 control-label">Horario</label>
-
-                    <div class="col-sm-10">
-                      <select class="form-control" id="schedule" name="schedule" required>
-                        <option value="" selected>- Seleccionar -</option>
-                        <?php
-                          $sql = "SELECT * FROM schedules";
-                          $query = $conn->query($sql);
-                          while($srow = $query->fetch_assoc()){
-                            echo "
-                              <option value='".$srow['id']."'>".$srow['time_in'].' - '.$srow['time_out']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
-                    </div>
+                        <div class="form-group">
+          <label for="schedule" class="col-sm-3 control-label">Horario semanal</label>
+          <div class="col-sm-9">
+            <div class="row" style="margin-bottom: 10px;">
+              <div class="col-sm-3">&nbsp;</div>
+              <div class="col-sm-4">Entrada</div>
+              <div class="col-sm-4">Salida</div>
+            </div>
+            <?php 
+            $days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+            foreach ($days as $index => $day): ?>
+              <div class="row" style="margin-bottom: 10px;">
+                <div class="col-sm-3"><?= $day ?></div>
+                <div class="col-sm-4">
+                  <select class="form-control" name="schedule[<?= strtolower($day) ?>_in]" id="schedule_<?= strtolower($day) ?>_in" onchange="updateScheduleOut(this)">
+                    <option value="" selected>- Seleccionar -</option>
+                    <?php
+                    $sql = "SELECT * FROM schedules";
+                    $query = $conn->query($sql);
+                    while ($srow = $query->fetch_assoc()): ?>
+                      <option value="<?= $srow['id'] ?>"><?= $srow['time_in'] ?></option>
+                    <?php endwhile; ?>
+                    <option value="Personalizado">Personalizado</option>
+                  </select>
                 </div>
-                
+                <div class="col-sm-4">
+                  <select class="form-control" name="schedule[<?= strtolower($day) ?>_out]" id="schedule_<?= strtolower($day) ?>_out">
+                    <option value="" selected>- Seleccionar -</option>
+
+                    <?php
+                    $query->data_seek(0);
+                    while ($srow = $query->fetch_assoc()): ?>
+                      <option value="<?= $srow['id'] ?>"><?= $srow['time_out'] ?></option>
+                    <?php endwhile; ?>
+
+                    <option value="Personalizado">Personalizado</option>
+                  </select>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <script>
+        function updateScheduleOut(selectElement) {
+          var selectedValue = selectElement.value;
+          var selectId = selectElement.id;
+          var day = selectId.split('_')[1];
+
+          var scheduleOutSelect = document.getElementById('schedule_' + day + '_out');
+          var scheduleOutOptions = scheduleOutSelect.options;
+
+          for (var i = 0; i < scheduleOutOptions.length; i++) {
+            var option = scheduleOutOptions[i];
+            if (option.value === selectedValue) {
+              option.selected = true;
+              break;
+            }
+          }
+        }
+        </script>
           	</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
@@ -205,11 +246,11 @@
                     <div class="col-sm-3">
                       <input type="date" class="form-control" id="edit_date_out" name="date_out" required>
                     </div>  
-                    <label for="edit_time_practice" class="col-sm-1 control-label">Tiempo (meses)</label>
+                    <label for="edit_time_practice" class="col-sm-1 control-label">Tiempo</label>
 
                     <div class="col-sm-3"> 
                       <select class="form-control" name="time_practice" id="edit_time_practice" required>
-                       <option selected id="time_practice_val"></option>
+                        <option value="" selected>- Seleccionar -</option>
                         <option value="3">3 meses</option>
                         <option value="5">5 meses</option>
                       </select>
@@ -221,9 +262,9 @@
 
                     <div class="col-sm-3"> 
                       <select class="form-control" name="type_practice" id="edit_type_practice" required>
-                        <option selected id="type_practice_val"></option>
-                        <option value="Pre Profesionales">Pre Profesionales</option>
-                        <option value="Profesionales">Profesionales</option>
+                        <option value="" selected>- Seleccionar -</option>
+                        <option value="PREPROFESIONALES">PREPROFESIONALES</option>
+                        <option value="PROFESIONALES">PROFESIONALES</option>
                       </select>
                     </div>
                     <label for="edit_dni" class="col-sm-1 control-label">DNI</label>
@@ -339,7 +380,7 @@
                           $query = $conn->query($sql);
                           while($srow = $query->fetch_assoc()){
                             echo "
-                              <option value='".$srow['id']."'>".$srow['time_in'].' - '.$srow['time_out']."</option>
+                              <option value='".$srow['id']."'>".$srow['time_in'].' - '.$srow['time_out']."</option>;
                             ";
                           }
                         ?>
@@ -580,5 +621,3 @@
     </div>
   </div>
 </div>
-
-
