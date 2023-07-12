@@ -913,3 +913,27 @@
     margin-right: 5%;
   }
 }
+
+
+.circular-progress {
+  position: relative;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.value-container {
+  position: relative;
+  font-size: 20px;
+  color: black;
+}

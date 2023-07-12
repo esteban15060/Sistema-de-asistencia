@@ -114,12 +114,15 @@
             <hr class="mt-0 colorlinea">
             <div id="estados-evaluados">
                 <div id="estado-1">
+                    <?php include "includes/horas_realizadas.php"; ?>
                     <div class="d-flex">
                         <img src="../img/horas-realizadas.webp">
                         <p class="letraNavBar colorletraperfil">Total horas realizadas</p>
                     </div>
                     <div class="progress-circular">
-                            <span class="letraNavBar value">160<span class="letraNavBar letra-pequena">Horas</span></span>
+                        <div class="circular-progress" style="background: conic-gradient(#D9D9D9 <?php echo $percentageDeg * 3.6; ?>deg, #00D7C9 0deg);">
+                            <div class="letraNavBar value"><?php echo $percentage; ?> <span class="letraNavBar letra-pequena">Horas</span></div>
+                        </div>
                     </div>
                 </div>
                 <div id="estado-2">
