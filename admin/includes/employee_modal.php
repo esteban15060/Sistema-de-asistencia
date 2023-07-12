@@ -222,8 +222,8 @@
                     <div class="col-sm-3"> 
                       <select class="form-control" name="type_practice" id="edit_type_practice" required>
                         <option selected id="type_practice_val"></option>
-                        <option value="PREPROFESIONALES">PREPROFESIONALES</option>
-                        <option value="PROFESIONALES">PROFESIONALES</option>
+                        <option value="Pre Profesionales">Pre Profesionales</option>
+                        <option value="Profesionales">Profesionales</option>
                       </select>
                     </div>
                     <label for="edit_dni" class="col-sm-1 control-label">DNI</label>
