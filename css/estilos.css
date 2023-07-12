@@ -4,6 +4,10 @@ body{
   background-position: left top;
   background-attachment: fixed;
 }
+.modal-tamanio {
+  position: relative;
+  padding: 40px !important;
+}
 .formulario {
   background: rgba(0, 0, 0, .1);
   padding: 20px;
