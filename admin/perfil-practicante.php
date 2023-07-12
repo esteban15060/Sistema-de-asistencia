@@ -6,7 +6,7 @@
         <div class="d-flex estilo-card-perfil">
             
             <div class="tarjeta-perfil" id="perfil">
-                <div class="target-perfil">
+                <div>
                     <?php
                         $cadena = $row['firstname'];
                         $separador = " ";
@@ -23,14 +23,14 @@
                 </div>
                 <div class="d-flex perfil-presentacion">
                     <h6 class="letraNavBar  colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['position'] ;?></h6>
-                    <h6 class="letraNavBar colorletraperfil fw-normal tipo-job" style="margin-left: 70px;"><?php echo $row['type_practice'] ;?></h6>
+                    <h6 class="letraNavBar colorletraperfil fw-normal tipo-job" style="margin-left: 70px;">Pre Profesional</h6>
                 </div>
                 <h6 class="letraNavBar perfil-presentacion2 colorletraperfil fw-normal" style="margin-left: 30px;"><?php echo $row['negocio'] ;?></h6>
                 <div class="d-flex perfil-contrato">
                     <h6 class="letraNavBar diseñoFechaIngreso">Ingreso:</h6>
                     <div class="ps-1 d-flex contenedor-fecha ms-2">
                         <?php
-                            $cadena2 = $row['date_in'];
+                            $cadena2 = $row['created_on'];
                             $separador2 = "-";
                             $array2 = explode($separador2, $cadena2);
                         ?>
@@ -40,14 +40,9 @@
                     </div>
                     <h6 class="letraNavBar diseñoFechaSalida">Salida:</h6>
                     <div class="ps-1 d-flex contenedor-fecha ms-2">
-                        <?php
-                            $cadena3 = $row['date_out'];
-                            $separador3 = "-";
-                            $array3 = explode($separador3, $cadena3);
-                        ?>
-                        <h6 class="letraNavBar posicion-border3  diseñofecha text-center"><?php echo $array3[2] ;?></h6>
-                        <h6 class="letraNavBar posicion-border1  diseñofecha text-center" style="margin-left: 10px;"><?php echo $array3[1] ;?></h6>
-                        <h6 class="letraNavBar posicion-border2  diseñofecha text-center" style="margin-left: 10px;"><?php echo $array3[0][2].$array3[0][3] ;?></h6>
+                        <h6 class="letraNavBar posicion-border3  diseñofecha text-center">09</h6>
+                        <h6 class="letraNavBar posicion-border1  diseñofecha text-center" style="margin-left: 10px;">08</h6>
+                        <h6 class="letraNavBar posicion-border2  diseñofecha text-center" style="margin-left: 10px;">23</h6>
                     </div>
                 </div>
             </div>
@@ -56,7 +51,7 @@
             </div>
         </div>
         <div class="card perfil-estadistica-desempeño" id="estadistica-desempeño">
-            <div class="d-flex encabezado" id="encabezado-estadistica">
+            <div class="d-flex encabezado">
                 <div>
                     <h6 class="letraNavBar colorletraperfil">Estadísticas de desempeño</h6>
                     <p class="letraNavBar colorletraperfil">Última semana</p>
@@ -94,15 +89,15 @@
                     </div>          
                 </div>
                 <div id="graph-legend">
-                    <div class="d-flex legend">
+                    <div class="d-flex">
                         <div class="square-legend-1"></div>
                         <p class="letraNavBar colorletraperfil">Aspectos Personales</p>
                     </div>
-                    <div class="d-flex legend">
+                    <div class="d-flex">
                         <div class="square-legend-2"></div>
                         <p class="letraNavBar colorletraperfil">Aspectos academicos</p>
                     </div>
-                    <div class="d-flex legend">
+                    <div class="d-flex">
                         <div class="square-legend-3"></div>
                         <p class="letraNavBar colorletraperfil">Aspectos profesionales</p>
                     </div>
@@ -119,13 +114,17 @@
             <hr class="mt-0 colorlinea">
             <div id="estados-evaluados">
                 <div id="estado-1">
+                <?php include "includes/horas_realizadas.php"; ?>
                     <div class="d-flex">
                         <img src="../img/horas-realizadas.webp">
                         <p class="letraNavBar colorletraperfil">Total horas realizadas</p>
                     </div>
                     <div class="progress-circular">
-                            <span class="letraNavBar value">160<span class="letraNavBar letra-pequena">Horas</span></span>
+                        <div class="circular-progress" style="background: conic-gradient(#D9D9D9 <?php echo $percentageDeg * 3.6; ?>deg, #00D7C9 0deg);">
+                            <div class="letraNavBar value"><?php echo $percentage; ?> <span class="letraNavBar letra-pequena">Horas</span></div>
+                        </div>
                     </div>
+                    
                 </div>
                 <div id="estado-2">
                     <div class="d-flex">
@@ -161,7 +160,7 @@
                 <h6 class="letraNavBar colorletraperfil">Logros</h6>
                 <a class="letraNavBar colorletraperfil">Ver más >></a>
             </div>
-            <div class="d-flex logros-logrados">
+            <div class="d-flex">
                 <div class="circle-logro"><img class="imagen-logro"  src="../img/bronce-insignia.webp"></img></div>
                 <div class="circle-logro2"><img class="imagen-logro"  src="../img/plata-insignia_1.webp"></div>
                 <div class="circle-logro2"><img class="imagen-logro"  src="../img/oro-insignia_1.webp"></div>
