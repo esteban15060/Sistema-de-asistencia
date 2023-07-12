@@ -155,6 +155,16 @@ function getRow(id){
       $('#position_val').val(response.position_id).html(response.description);
       $('#negocio_val').val(response.negocio_id).html(response.nombre_negocio);
       $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+      $('#edit_date_in').val(response.date_in).html(response.date_in);
+      $('#edit_date_out').val(response.date_out).html(response.date_out);
+      $('#edit_birthday').val(response.birthday).html(response.birthday);
+      $('#type_practice_val').val(response.type_practice).html(response.type_practice);
+      $('#time_practice_val').val(response.time_practice).html(response.time_practice);    
+      $('#edit_dni').val(response.dni);
+      $('#edit_personal_email').val(response.personal_email);
+      $('#edit_institutional_email').val(response.institutional_email);
+      $('#edit_university').val(response.university);
+      $('#edit_career').val(response.career);
     }
   });
 }

@@ -34,22 +34,5 @@
 		$_SESSION['error'] = 'Seleccione el elemento para eliminar primero';
 		header('location: employee.php');
 	}
-
-	/*if(isset($_POST['delete'])){
-		$id = $_POST['id'];
-		$sql = "INSERT INTO papelera SELECT*FROM employees WHERE id = '$id';
-		        DELETE FROM employees WHERE id='$id'";
-		if($conn->query($sql)){
-			$_SESSION['success'] = 'Empleado eliminado con éxito';
-		}
-		else{
-			$_SESSION['error'] = $conn->error;
-		}
-	}
-	else{
-		$_SESSION['error'] = 'Seleccione el elemento para eliminar primero';
-	}
-
-	header('location: employee.php');*/
 	
 ?>

@@ -23,9 +23,25 @@
 		for($i = 0; $i < 10; $i++){
 			$numbers .= $i;
 		}
+		//campos nuevos agregados a la BD
+		$date_in = $_POST['date_in'];
+		$date_out= $_POST['date_out'];
+		$time_practice = $_POST['time_practice'];
+		$type_practice = $_POST['type_practice'];
+		$birthday = $_POST['birthday'];
+		$dni = $_POST['dni'];
+		$personal_email= $_POST['personal_email'];
+		$institutional_email = $_POST['institutional_email'];
+		$university = $_POST['university'];
+		$career = $_POST['career'];
+		//
 		$employee_id = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
 		//
-		$sql = "INSERT INTO employees (employee_id, firstname, lastname, address, contact_info, gender, negocio_id, position_id, schedule_id, photo, created_on) VALUES ('$employee_id', '$firstname', '$lastname', '$address', '$contact', '$gender', '$negocio', '$position', '$schedule', '$filename', NOW())";
+		$sql = "INSERT INTO employees (employee_id, firstname, lastname, address, contact_info, gender, negocio_id, position_id,
+		 schedule_id, photo, created_on, date_in, date_out, time_practice, type_practice,birthday, dni, personal_email,
+		 institutional_email,university,career) VALUES ('$employee_id', '$firstname', '$lastname', '$address', '$contact', '$gender',
+		  '$negocio', '$position', '$schedule', '$filename', NOW(), '$date_in' , '$date_out','$time_practice','$type_practice','$birthday',
+		  '$dni','$personal_email','$institutional_email','$university','$career')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Empleado añadido satisfactoriamente';
 		}

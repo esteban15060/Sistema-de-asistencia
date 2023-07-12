@@ -26,7 +26,7 @@
                     <div class="col-sm-3">
                       <input type="date" class="form-control" id="date_out" name="date_out" required>
                     </div>  
-                    <label for="time_practice" class="col-sm-1 control-label">Tiempo </label>
+                    <label for="time_practice" class="col-sm-1 control-label">Tiempo (meses)</label>
 
                     <div class="col-sm-3"> 
                       <select class="form-control" name="time_practice" id="time_practice" required>
@@ -205,11 +205,11 @@
                     <div class="col-sm-3">
                       <input type="date" class="form-control" id="edit_date_out" name="date_out" required>
                     </div>  
-                    <label for="edit_time_practice" class="col-sm-1 control-label">Tiempo</label>
+                    <label for="edit_time_practice" class="col-sm-1 control-label">Tiempo (meses)</label>
 
                     <div class="col-sm-3"> 
                       <select class="form-control" name="time_practice" id="edit_time_practice" required>
-                        <option value="" selected>- Seleccionar -</option>
+                       <option selected id="time_practice_val"></option>
                         <option value="3">3 meses</option>
                         <option value="5">5 meses</option>
                       </select>
@@ -221,7 +221,7 @@
 
                     <div class="col-sm-3"> 
                       <select class="form-control" name="type_practice" id="edit_type_practice" required>
-                        <option value="" selected>- Seleccionar -</option>
+                        <option selected id="type_practice_val"></option>
                         <option value="PREPROFESIONALES">PREPROFESIONALES</option>
                         <option value="PROFESIONALES">PROFESIONALES</option>
                       </select>
