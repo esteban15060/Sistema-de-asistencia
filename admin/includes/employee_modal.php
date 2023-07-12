@@ -155,6 +155,7 @@
               <div class="col-sm-4">Entrada</div>
               <div class="col-sm-4">Salida</div>
             </div>
+            
             <?php 
             $days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
             foreach ($days as $index => $day): ?>
@@ -611,7 +612,6 @@
               <input type="text" class="form-control text-center" name="subtotal" id="subtotal" readonly style="background-color: white;">
             </div>           
           </div>
-          
         
         </form>
       </div>
