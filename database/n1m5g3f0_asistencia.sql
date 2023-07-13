@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 12-07-2023 a las 11:46:41
+-- Tiempo de generación: 12-07-2023 a las 12:18:12
 -- Versión del servidor: 5.7.23-23
 -- Versión de PHP: 8.1.16
 
@@ -14644,7 +14644,10 @@ INSERT INTO `attendance` (`id`, `employee_id`, `date`, `time_in`, `status`, `tim
 (14575, 332, '2023-07-12', '09:48:45', 0, '00:00:00', 0),
 (14576, 318, '2023-07-12', '10:14:41', 0, '00:00:00', 0),
 (14577, 290, '2023-07-12', '11:40:51', 0, '00:00:00', 0),
-(14578, 378, '2023-07-12', '12:30:36', 1, '00:00:00', 0);
+(14578, 378, '2023-07-12', '12:30:36', 1, '00:00:00', 0),
+(14579, 347, '2023-07-12', '12:49:15', 1, '00:00:00', 0),
+(14580, 301, '2023-07-12', '12:56:02', 1, '00:00:00', 0),
+(14581, 324, '2023-07-12', '13:01:36', 0, '00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -14921,6 +14924,37 @@ CREATE TABLE `overtime` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `papelera`
+--
+
+CREATE TABLE `papelera` (
+  `id` int(11) NOT NULL,
+  `employee_id` varchar(15) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  `contact_info` varchar(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `negocio_id` int(11) NOT NULL,
+  `position_id` int(11) NOT NULL,
+  `schedule_id` int(11) NOT NULL,
+  `photo` varchar(200) NOT NULL,
+  `created_on` date NOT NULL,
+  `time_practice` int(2) DEFAULT NULL,
+  `type_practice` varchar(30) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `dni` varchar(8) DEFAULT NULL,
+  `personal_email` varchar(60) DEFAULT NULL,
+  `institutional_email` varchar(60) DEFAULT NULL,
+  `university` varchar(50) DEFAULT NULL,
+  `career` varchar(40) DEFAULT NULL,
+  `date_in` date DEFAULT NULL,
+  `date_out` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `position`
 --
 
@@ -15048,7 +15082,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14579;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14582;
 
 --
 -- AUTO_INCREMENT de la tabla `cashadvance`
