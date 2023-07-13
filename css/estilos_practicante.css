@@ -616,6 +616,10 @@
 }
 
 /* Calendario Practicante */
+#calendario-agenda{
+  margin-left: 240px; 
+  margin-top: 30px;
+}
 .buttons {
   margin-bottom: 40px;
 }
@@ -628,7 +632,51 @@
   color: white;
   margin: 0 25px;
 }
-
+#calendar{
+  width: 80%;
+  max-width: 600px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.calendar_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 2em;
+  font-size: 1.2em;
+  text-transform: uppercase; 
+}
+.calendar_prev, .calendar_next {
+  color: #2733bf;
+  cursor: pointer;
+  font-size: 1.3em; 
+}
+.calendar_prev {
+  margin-right: auto; 
+}
+.calendar_next {
+  margin-left: auto; 
+}
+.calendar_dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px; 
+  text-align: center;
+  line-height: 2;
+}
+.calendar_month, .calendar_year {
+  padding: .5em 1em; 
+}
+.calendar_today {
+  background: lightcoral;
+  color: white;
+}
+.calendar_last-days {
+  opacity: .3; 
+}
 /*  ESTILOS HOME PRACTICANTE*/
 #home-practicante {
   display: grid;

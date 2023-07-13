@@ -36,7 +36,7 @@
          </form>
       </div>
       <br>
-      <div class="enlaces" href="home-practicante.php" id="button1" >
+      <div class="enlaces" href="perfil-practicante.php" id="button1" >
          <form method="post" action="perfil-practicante.php" class="form__ver-perfil">
             <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
@@ -60,8 +60,8 @@
          </form>
       </div>
       <br>
-      <div class="enlaces" id="button1" >
-         <form method="post" action="home-practicante.php" class="form__ver-perfil">
+      <div class="enlaces" href="calendario-practicante.php" id="button1">
+         <form method="post" action="calendario-practicante.php" class="form__ver-perfil">
             <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
                <a class="enlaces" href="#" id="button1" >
