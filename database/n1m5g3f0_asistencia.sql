@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-07-2023 a las 19:38:40
+-- Tiempo de generación: 14-07-2023 a las 19:42:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -14931,7 +14931,6 @@ CREATE TABLE `papelera` (
   `employee_id` varchar(15) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
-  `address` text NOT NULL,
   `contact_info` varchar(100) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `negocio_id` int(11) NOT NULL,
