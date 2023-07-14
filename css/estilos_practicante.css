@@ -633,8 +633,8 @@
   margin: 0 25px;
 }
 #calendar{
-  width: 80%;
-  max-width: 600px;
+  width: 1151.6px;
+  height: 811.6px;
   padding-left: 30px;
   padding-right: 20px;
 }
@@ -648,6 +648,7 @@
   padding: 0 2em;
   font-size: 1.2em;
   text-transform: uppercase; 
+  justify-content: center;
 }
 .calendar_prev, .calendar_next {
   color: #2733bf;
@@ -655,17 +656,33 @@
   font-size: 1.3em; 
 }
 .calendar_prev {
-  margin-right: auto; 
+  margin-right: 2px; 
 }
 .calendar_next {
-  margin-left: auto; 
+  margin-left: 2px; 
+}
+.calendar_date{
+  display: grid;
+  grid-template-columns: repeat(7, .1fr);
+  width: 1057.8px;
 }
 .calendar_dates {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 10px; 
-  text-align: center;
-  line-height: 2;
+  border-right: 1px solid #1E4DA9;
+  border-bottom: 1px solid #1E4DA9;
+  width: 151px;
+  height: 120px;
+}
+.calendar_dates:nth-child(7n) {
+  border-right: none;
+}
+.calendar_dates:nth-child(-n+7) {
+  border-top: 1px solid #1E4DA9;
+}
+.calendar_date > .calendar_dates:nth-last-child(-n+7) {
+  border-bottom: none;
+}
+.calendar_month{
+  font-weight: bold;
 }
 .calendar_month, .calendar_year {
   padding: .5em 1em; 
@@ -674,7 +691,11 @@
   background: lightcoral;
   color: white;
 }
+.calendar_next-days{
+  opacity: .3; 
+}
 .calendar_last-days {
+  border-top: 1px solid #1E4DA9;
   opacity: .3; 
 }
 /*  ESTILOS HOME PRACTICANTE*/

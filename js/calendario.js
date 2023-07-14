@@ -20,21 +20,33 @@ nextMonthDOM.addEventListener('click', ()=>nextMonth());
 
 
 const writeMonth = (month) => {
+    const totalDays = getTotalDays(month);
+    const startDayOfWeek = startDay();
+    const totalCells = 42; // Total number of cells in a 7x6 grid
 
-    for(let i = startDay(); i>0;i--){
-        dates.innerHTML += ` <div class="calendar_dates calendar_last-days">
-            ${getTotalDays(monthNumber-1)-(i-1)}
-        </div>`;
+    // Clear the dates element
+    dates.innerHTML = '';
+
+    // Add the dates from the previous month
+    for (let i = startDayOfWeek; i > 0; i--) {
+        const day = getTotalDays(month - 1) - (i - 1);
+        dates.innerHTML += `<div class="calendar_dates calendar_last-days">${day}</div>`;
     }
 
-    for(let i=1; i<=getTotalDays(month); i++){
-        if(i===currentDay) {
-            dates.innerHTML += ` <div class="calendar_dates calendar_today">${i}</div>`;
-        }else{
-            dates.innerHTML += ` <div class="calendar_dates">${i}</div>`;
-        }
+    // Add the dates of the current month
+    for (let i = 1; i <= totalDays; i++) {
+        const className = i === currentDay ? 'calendar_today calendar_border-top' : 'calendar_border-top';
+        dates.innerHTML += `<div class="calendar_dates ${className}">${i}</div>`;
     }
-}
+
+    // Add additional dates from the next month if necessary
+    const remainingCells = totalCells - startDayOfWeek - totalDays;
+    const nextMonth = month + 1 > 11 ? 0 : month + 1;
+    for (let i = 1; i <= remainingCells; i++) {
+        dates.innerHTML += `<div class="calendar_dates calendar_next-days">${i}</div>`;
+    }
+};
+
 
 const getTotalDays = month => {
     if(month === -1) month = 11;

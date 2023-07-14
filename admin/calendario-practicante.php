@@ -100,13 +100,14 @@
     <div class="card" id="calendar">
         <div class="calendar_info">
             <div class="calendar_prev" id="prev-month">&#9664;</div>
-            <div class="calendar_month" id="month"></div>
+            <div class="letraNavBar colorletraperfil calendar_month" id="month"></div>
             <div class="calendar_next" id="next-month">&#9654;</div> 
         </div>
         <div>
-            <div class="calendar_dates" id="dates"></div>
+            <div class="letraNavBar calendar_date" id="dates"></div>
         </div>
     </div>
+    <br>
    <script>
       let idPracticante = document.getElementById("idPracticante");
       if (idPracticante.value.length > 15) {
