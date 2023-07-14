@@ -93,15 +93,15 @@
    </aside>
    <div class="container-fluid" id="calendario-agenda">
    <div class="buttons">
-      <button class="active">MIS TAREAS</button>
-      <button>EVENTOS</button>
-      <button>GENERAL</button>
+      <button class="active letraNavBar">MIS TAREAS</button>
+      <button class="letraNavBar">EVENTOS</button>
+      <button class="letraNavBar">GENERAL</button>
    </div>
     <div class="card" id="calendar">
         <div class="calendar_info">
-            <div class="calendar_prev" id="prev-month">&#9664;</div>
+            <div class="calendar_prev" id="prev-month"><img src="../img/flecha-izquierda.webp" style="width: 10px; height=10px;"></div>
             <div class="letraNavBar colorletraperfil calendar_month" id="month"></div>
-            <div class="calendar_next" id="next-month">&#9654;</div> 
+            <div class="calendar_next" id="next-month"><img src="../img/flecha-derecha.webp" style="width: 10px; height=10px;"></div> 
         </div>
         <div>
             <div class="letraNavBar calendar_date" id="dates"></div>
