@@ -688,7 +688,7 @@
   padding: .5em 1em; 
 }
 .calendar_today {
-  background: lightcoral;
+  background: #1E4DA9;
   color: white;
 }
 .calendar_next-days{
