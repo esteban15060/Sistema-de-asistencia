@@ -9,13 +9,6 @@
           	</div>
           	<div class="modal-body modal-tamanio">
             	<form class="form-horizontal" method="POST" action="employee_add.php" enctype="multipart/form-data">
-              <div class="form-group">
-                    <label for="photo" class="col-sm-5 control-label">Foto del practicante</label>
-
-                    <div class="col-sm-7">
-                      <input type="file" name="photo" id="photo">
-                    </div>
-                </div>
                 <div class="form-group">
                   <label for="date_in" class="col-sm-1 control-label">Fecha Ingreso</label>
                     <div class="col-sm-3">
@@ -82,11 +75,11 @@
                     <div class="col-sm-3">
                       <input type="date" class="form-control" id="birthday" name="birthday" required>
                     </div>               
-                    <label for="address" class="col-sm-2 control-label">Dirección</label>
+                    <label for="photo" class="col-sm-2 control-label">Foto </label>
 
-                <div class="col-sm-5">
-                  <textarea class="form-control" name="address" id="address"></textarea>
-                </div>
+                      <div class="col-sm-5">
+                        <input type="file" name="photo" id="photo">
+                      </div>
                   
                    
                 </div>
@@ -188,13 +181,7 @@
           	<div class="modal-body modal-tamanio">
             	<form class="form-horizontal" method="POST" action="employee_edit.php">
             		<input type="hidden" class="empid" name="id">
-                <div class="form-group">
-                    <label for="edit_photo" class="col-sm-5 control-label">Foto del practicante</label>
-
-                    <div class="col-sm-7">
-                      <input type="file" name="photo" id="edit_photo">
-                    </div>
-                </div>
+               
                 <div class="form-group">
                   <label for="edit_date_in" class="col-sm-1 control-label">Fecha Ingreso</label>
                     <div class="col-sm-3">
@@ -263,10 +250,10 @@
                     <div class="col-sm-3">
                       <input type="date" class="form-control" id="edit_birthday" name="birthday" required>
                     </div>                  
-                    <label for="edit_address" class="col-sm-2 control-label">Dirección</label>
+                    <label for="edit_photo" class="col-sm-2 control-label">Foto </label>
 
                     <div class="col-sm-5">
-                      <textarea class="form-control" name="address" id="edit_address"></textarea>
+                      <input type="file" name="photo" id="edit_photo">
                     </div>
                     
                 </div>

@@ -152,7 +152,7 @@ function getRow(id){
       $('#employee_name').html(response.firstname+' '+response.lastname);
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
-      $('#edit_address').val(response.address);
+      //$('#edit_address').val(response.address);
       $('#datepicker_edit').val(response.birthdate);
       $('#edit_contact').val(response.contact_info);
       $('#gender_val').val(response.gender).html(response.gender);

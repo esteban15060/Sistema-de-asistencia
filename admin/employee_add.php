@@ -4,7 +4,7 @@
 	if(isset($_POST['add'])){
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
-		$address = $_POST['address'];
+		//$address = $_POST['address'];
 		$contact = $_POST['contact'];
 		$gender = $_POST['gender'];
 		$negocio = $_POST['negocio'];
@@ -37,9 +37,9 @@
 		//
 		$employee_id = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
 		//
-		$sql = "INSERT INTO employees (employee_id, firstname, lastname, address, contact_info, gender, negocio_id, position_id,
+		$sql = "INSERT INTO employees (employee_id, firstname, lastname, contact_info, gender, negocio_id, position_id,
 		 schedule_id, photo, created_on, date_in, date_out, time_practice, type_practice,birthday, dni, personal_email,
-		 institutional_email,university,career) VALUES ('$employee_id', '$firstname', '$lastname', '$address', '$contact', '$gender',
+		 institutional_email,university,career) VALUES ('$employee_id', '$firstname', '$lastname', '$contact', '$gender',
 		  '$negocio', '$position', '$schedule', '$filename', NOW(), '$date_in' , '$date_out','$time_practice','$type_practice','$birthday',
 		  '$dni','$personal_email','$institutional_email','$university','$career')";
 		if($conn->query($sql)){

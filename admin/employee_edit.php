@@ -5,7 +5,7 @@
 		$empid = $_POST['id'];
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
-		$address = $_POST['address'];
+		//$address = $_POST['address'];
 		$contact = $_POST['contact'];
 		$gender = $_POST['gender'];
 		$negocio = $_POST['negocio'];
@@ -24,7 +24,7 @@
 		$career = $_POST['career'];
 		//
 		
-		$sql = "UPDATE employees SET firstname = '$firstname', lastname = '$lastname', address = '$address', contact_info = '$contact',
+		$sql = "UPDATE employees SET firstname = '$firstname', lastname = '$lastname', contact_info = '$contact',
 		 gender = '$gender', negocio_id = '$negocio', position_id = '$position', schedule_id = '$schedule' , date_in= '$date_in',
 		 date_out ='$date_out', time_practice='$time_practice' , type_practice= '$type_practice', birthday ='$birthday', dni='$dni', 
 		 personal_email= '$personal_email', institutional_email='$institutional_email', university= '$university', career = '$career'
