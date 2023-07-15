@@ -93,7 +93,7 @@
    </aside>
    <div class="container-fluid" id="calendario-agenda">
    <div class="buttons">
-      <a class="active letraNavBar" href="#">MIS TAREAS</a>
+      <a class="active letraNavBar" href="calendario-practicante.php">MIS TAREAS</a>
       <a class="letraNavBar" href="calendario-eventos-practicante.php">EVENTOS</a>
       <a class="letraNavBar" href="calendario-general-practicante.php">GENERAL</a>
    </div>
@@ -108,12 +108,12 @@
         </div>
     </div>
     <br>
-   <!--<script>
+   <script>
       let idPracticante = document.getElementById("idPracticante");
       if (idPracticante.value.length > 15) {
          window.location.href = "../index.php";
       }
-   </script>-->
+   </script>
    <script>
       function salirMiPerfil() {
          Swal.fire({
@@ -142,5 +142,5 @@
           button.classList.add("clicked");
       }
    </script>
-   <script src="../js/calendario.js"></script>
+   <script src="../js/calendario3.js"></script>
 </body>

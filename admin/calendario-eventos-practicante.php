@@ -62,7 +62,7 @@
          <div class="enlaces clicked" href="calendario-practicante.php" id="button1" >
             <form method="post" action="calendario-practicante.php" class="form__ver-perfil">
                <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
-               <button type="submit" class="enlaces__btn" id="button1">
+               <button type="text" class="enlaces__btn" id="button1">
                   <a class="enlaces" href="#" id="button1" >
                      <img class="icono-centrar" src="../img/icono-calendario.webp" >
                      <h6 class="text-center text-light letraNavBar" style="width: 110px; margin-left: 20px;">CALENDARIO O AGENDA</h6>
@@ -93,7 +93,7 @@
    </aside>
    <div class="container-fluid" id="calendario-agenda">
    <div class="buttons">
-      <a class="active letraNavBar" href="#">MIS TAREAS</a>
+      <a class="active letraNavBar" href="calendario-practicante.php">MIS TAREAS</a>
       <a class="letraNavBar" href="calendario-eventos-practicante.php">EVENTOS</a>
       <a class="letraNavBar" href="calendario-general-practicante.php">GENERAL</a>
    </div>
@@ -108,12 +108,12 @@
         </div>
     </div>
     <br>
-   <!--<script>
+   <script>
       let idPracticante = document.getElementById("idPracticante");
       if (idPracticante.value.length > 15) {
          window.location.href = "../index.php";
       }
-   </script>-->
+   </script>
    <script>
       function salirMiPerfil() {
          Swal.fire({
@@ -142,5 +142,5 @@
           button.classList.add("clicked");
       }
    </script>
-   <script src="../js/calendario.js"></script>
+   <script src="../js/calendario2.js"></script>
 </body>
