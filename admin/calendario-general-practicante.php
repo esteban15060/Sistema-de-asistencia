@@ -153,5 +153,5 @@
           button.classList.add("clicked");
       }
    </script>
-   <script src="../js/calendario3.js"></script>
+   <script src="../js/calendario.js"></script>
 </body>
