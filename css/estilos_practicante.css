@@ -553,6 +553,29 @@
   font-size: 10px;
   font-weight: 500;
 }
+.circular-progress {
+  position: relative;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.value-container {
+  position: relative;
+  font-size: 20px;
+  color: black;
+}
+
 #estados-evaluados{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -624,14 +647,28 @@
   margin-bottom: 40px;
   margin-left: 8%;
 }
-
-.buttons button {
+.buttons .calendar-button-color {
+  background-color: #c5cdbf;
+  border: none;
+  padding: 8px 75px;
+  border-radius: 54px;
+  margin: 0 25px;
+}
+.btn__calendar{
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border:none;
+}
+.btn__calendar--active{
   background-color: #54af0c;
   border: none;
   padding: 8px 75px;
   border-radius: 54px;
-  color: white;
   margin: 0 25px;
+}
+.form__calendar{
+  width: fit-content;
+  display: inline-block;
 }
 #calendar{
   width: 1151.6px;
@@ -1584,41 +1621,4 @@
 }
 
 
-.circular-progress {
-  position: relative;
-  height: 110px;
-  width: 110px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-}
-.circular-progress::before {
-  content: "";
-  display: block !important;
-  position: absolute;
-  height: 84%;
-  width: 84%;
-  background-color: #fff;
-  border-radius: 50%;
-}
-.value-container {
-  position: relative;
-  font-size: 20px;
-  color: black;
-}
 
-.btn__calendar{
-  background-color: rgba(255, 255, 255, 0);
-  outline: none;
-  border:none;
-}
-.btn__calendar--active{
-  background-color: rgba(255, 255, 255, 0);
-  outline: none;
-  border:none;
-  text-decoration: underline;
-}
-.form__calendar{
-  width: fit-content;
-  display: inline-block;
-}

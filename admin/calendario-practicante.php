@@ -96,15 +96,15 @@
 
       <form method="post" action="calendario-practicante.php" class="form__calendar">
          <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
-         <input type="submit" value="MIS TAREAS" class="btn__calendar--active letraNavBar">
+         <input type="submit" value="MIS TAREAS" class="btn__calendar--active letraNavBar text-light">
       </form>
-      <form method="post" action="calendario-eventos-practicante.php" class="form__calendar">
+      <form method="post" action="calendario-eventos-practicante.php" class="form__calendar calendar-button-color">
          <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
-         <input type="submit" value="EVENTOS" class="btn__calendar letraNavBar">
+         <input type="submit" value="EVENTOS" class="btn__calendar letraNavBar text-light ">
       </form>
-      <form method="post" action="calendario-general-practicante.php" class="form__calendar">
+      <form method="post" action="calendario-general-practicante.php" class="form__calendar calendar-button-color">
          <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
-         <input type="submit" value="GENERAL" class="btn__calendar letraNavBar">
+         <input type="submit" value="GENERAL" class="btn__calendar letraNavBar text-light">
       </form>
 
    </div>
