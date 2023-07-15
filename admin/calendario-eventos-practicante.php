@@ -93,9 +93,20 @@
    </aside>
    <div class="container-fluid" id="calendario-agenda">
    <div class="buttons">
-      <a class="active letraNavBar" href="calendario-practicante.php">MIS TAREAS</a>
-      <a class="letraNavBar" href="calendario-eventos-practicante.php">EVENTOS</a>
-      <a class="letraNavBar" href="calendario-general-practicante.php">GENERAL</a>
+
+   <form method="post" action="calendario-practicante.php" class="form__calendar">
+         <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+         <input type="submit" value="MIS TAREAS" class="btn__calendar letraNavBar">
+      </form>
+      <form method="post" action="calendario-eventos-practicante.php" class="form__calendar">
+         <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+         <input type="submit" value="EVENTOS" class="btn__calendar--active letraNavBar">
+      </form>
+      <form method="post" action="calendario-general-practicante.php" class="form__calendar">
+         <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
+         <input type="submit" value="GENERAL" class="btn__calendar letraNavBar">
+      </form>
+
    </div>
     <div class="card" id="calendar">
         <div class="calendar_info">
@@ -108,12 +119,12 @@
         </div>
     </div>
     <br>
-   <script>
+   <!--<script>
       let idPracticante = document.getElementById("idPracticante");
       if (idPracticante.value.length > 15) {
          window.location.href = "../index.php";
       }
-   </script>
+   </script>-->
    <script>
       function salirMiPerfil() {
          Swal.fire({

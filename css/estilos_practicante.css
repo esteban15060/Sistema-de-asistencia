@@ -1606,3 +1606,19 @@
   font-size: 20px;
   color: black;
 }
+
+.btn__calendar{
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border:none;
+}
+.btn__calendar--active{
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border:none;
+  text-decoration: underline;
+}
+.form__calendar{
+  width: fit-content;
+  display: inline-block;
+}
