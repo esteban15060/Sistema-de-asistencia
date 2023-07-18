@@ -104,7 +104,7 @@
     <main class="buzon-container">
         <div class="sugerencia-recibida">
             <div>
-                <p>¡Hemos recibido tu <b>sugerencia</b>!</p>
+                <p class="text-center" style="margin-top: 22%;">¡Hemos recibido tu <b>sugerencia</b>!</p>
                 <img src="../images/carita-pagina-nhl.webp" alt="carita-feliz">
                 <form method="post" action="buzon.php">
                     <input type="hidden" name="employee_id" value="<?php echo $row['employee_id']; ?>">
