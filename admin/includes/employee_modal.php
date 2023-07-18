@@ -25,7 +25,7 @@
                       <select class="form-control" name="time_practice" id="time_practice" required>
                         <option value="" selected>- Seleccionar -</option>
                         <option value="3">3 meses</option>
-                        <option value="5">5 meses</option>
+                        <option value="4">4 meses</option>
                       </select>
                     </div>  
                     
@@ -95,7 +95,7 @@
                     </div>  
                 </div>
                 <div class="form-group">
-                  <label for="university" class="col-sm-2 control-label">Universidad</label>
+                  <label for="university" class="col-sm-2 control-label">Centro de estudios</label>
                     <div class="col-sm-4">
                       <input type="text" class="form-control" id="university" name="university" required>
                     </div>                  
@@ -198,7 +198,7 @@
                       <select class="form-control" name="time_practice" id="edit_time_practice" required>
                        <option selected id="time_practice_val"></option>
                         <option value="3">3 meses</option>
-                        <option value="5">5 meses</option>
+                        <option value="4">4 meses</option>
                       </select>
                     </div>  
                 </div>
@@ -269,7 +269,7 @@
                     </div>  
                 </div>
                 <div class="form-group">
-                  <label for="edit_university" class="col-sm-2 control-label">Universidad</label>
+                  <label for="edit_university" class="col-sm-2 control-label">Centro de estudios</label>
                     <div class="col-sm-4">
                       <input type="text" class="form-control" id="edit_university" name="university" required>
                     </div>                  
