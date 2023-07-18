@@ -16,8 +16,8 @@ if ($resultHr->num_rows > 0) {
 $percentage= $total_num_hr;
 if ($row['time_practice'] == 3) {
     $total = 320;
-} elseif ($row['time_practice'] == 5) {
-    $total = 533;
+} elseif ($row['time_practice'] == 4) {
+    $total = 427;
 }  else{
     $total = 320;
 }
