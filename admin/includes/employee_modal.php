@@ -1,5 +1,6 @@
-
 <!-- Add -->
+<?php include 'includes/scripts.php'; ?>
+<?php include 'includes/employee_modal_personalizar.php'; ?>
 <div class="modal fade" id="addnew">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -212,6 +213,7 @@
         </script>
           	</div>
           	<div class="modal-footer">
+              <a href="secondmodal" data-dismiss="modal">Personalizar</a>
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
             	</form>
