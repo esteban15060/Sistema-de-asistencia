@@ -83,8 +83,8 @@
                           <td><?php echo date('h:i A', strtotime($row['time_in'])).' - '.date('h:i A', strtotime($row['time_out'])); ?></td>
                        
                           <td>
-                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
-                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
+                            <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar Datos</button>
+                            <button class="btn btn-danger btn-sm delete btn-flat" style="padding-right: 15px;padding-left: 15px;margin-left: 15px;" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                             <br>
                             <button class="btn btn-primary btn-sm add_grades btn-flat" data-id="<?php echo $row['empid']; ?>" style="margin-top: 10px;"><i class="fa fa-pencil"></i> Agregar Nota</button>                          
                             <a href="employee_grades.php?id=<?php echo $row['empid']; 
@@ -94,7 +94,7 @@
                                                   ?>&fecha_inicio=<?php echo urldecode($row['date_in']);
                                                   ?>&fecha_fin=<?php echo urldecode($row['date_out']);
                                                   ?>&codigo_practicante=<?php echo($row['employee_id']);?>" 
-                              class="btn btn-warning btn-sm see_grades btn-flat" style="margin-top: 10px;"><i class="fa fa-eye"></i> Ver Notas</a>
+                              class="btn btn-warning btn-sm see_grades btn-flat" style="margin-top: 10px; margin-left: 15px;"><i class="fa fa-eye"></i> Ver Notas</a>
 
                           </td>
                         </tr>
