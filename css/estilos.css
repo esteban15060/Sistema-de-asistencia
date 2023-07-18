@@ -4,19 +4,6 @@ body{
   background-position: left top;
   background-attachment: fixed;
 }
-#addnew{
-    position: fixed;
-    z-index: 50;
-    top: 80px;
-    left: 50px;
-    background-color: #1e3c8f;
-}
-#secondmodal{
-  position: absolute;
-  z-index: 100;
-  top: 20px;
-  left: 250px;
-}
 .modal-tamanio {
   position: relative;
   padding: 40px !important;
@@ -592,4 +579,10 @@ body{
   background-color: #2f34bc;
   border-radius: 10px;
   border: 3px solid #ffffff;
+}
+.modal_addnew{
+  
+}
+.modal_second{
+  z-index: 10000;
 }

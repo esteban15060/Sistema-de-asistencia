@@ -100,9 +100,8 @@
       </div>
     </section>   
   </div>
-    
-  <?php include 'includes/footer.php'; ?>
   <?php include 'includes/employee_modal.php'; ?>
+  <?php include 'includes/footer.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>

@@ -1,7 +1,6 @@
 <!-- Add -->
 <?php include 'includes/scripts.php'; ?>
-<?php include 'includes/employee_modal_personalizar.php'; ?>
-<div class="modal fade" id="addnew">
+<div class="modal" id="addnew">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
           	<div class="modal-header">
@@ -191,7 +190,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="secondmodal" style="position: fixed; top: 80px; left: 150px;">
+<div class="modal" id="secondmodal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
