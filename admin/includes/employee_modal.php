@@ -149,39 +149,44 @@
                       </select>
                     </div>
                 </div>                
-                        <div class="form-group">
-          <label for="schedule" class="col-sm-3 control-label">Horario semanal</label>
-          <div class="col-sm-9">
-            <div class="row" style="margin-bottom: 10px;">
-              <div class="col-sm-3">&nbsp;</div>
-              <div class="col-sm-4">Entrada</div>
-              <div class="col-sm-4">Salida</div>
-            </div>
-              <div class="row" style="margin-bottom: 10px;">
-                <div class="col-sm-3"><?= $day ?></div>
-                <div class="col-sm-4">
-                  <select class="form-control" name="schedule[<?= strtolower($day) ?>_in]" id="schedule_<?= strtolower($day) ?>_in" onchange="updateScheduleOut(this)">
-                    <option value="" selected>- Seleccionar -</option>
-                    <?php
-                    $sql = "SELECT * FROM schedules";
-                    $query = $conn->query($sql);
-                    while ($srow = $query->fetch_assoc()): ?>
-                      <option value="<?= $srow['id'] ?>"><?= $srow['time_in'] ?></option>
-                    <?php endwhile; ?>
-                  </select>
-                </div>
-                <div class="col-sm-4">
-                  <select class="form-control" name="schedule[<?= strtolower($day) ?>_out]" id="schedule_<?= strtolower($day) ?>_out">
-                    <option value="" selected>- Seleccionar -</option>
-                    <option value="Personalizado">Personalizado</option>
-                  </select>
+                <div class="form-group">
+                <label for="schedule" class="col-sm-3 control-label">Horario semanal</label>
+                <div class="col-sm-9">
+                  <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-sm-3">&nbsp;</div>
+                    <div class="col-sm-4">Entrada</div>
+                    <div class="col-sm-4">Salida</div>
+                  </div>
+                  <div class="row" style="margin-bottom: 10px;">
+
+                    <div class="col-sm-4">
+                      <select class="form-control" id="time_in_select" onchange="updateScheduleOut(this)">
+                        <option value="" selected>- Seleccionar -</option>
+                        <?php
+                        $sql = "SELECT * FROM schedules";
+                        $query = $conn->query($sql);
+                        while ($srow = $query->fetch_assoc()): ?>
+                          <option value="<?= $srow['id'] ?>"><?= $srow['time_in'] ?></option>
+                        <?php endwhile; ?>
+                        <option value="Personalizado">Personalizado</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-4">
+                      <select class="form-control" id="time_out_select" onchange="updateScheduleIn(this)">
+                        <option value="" selected>- Seleccionar -</option>
+                        <?php
+                        $query->data_seek(0);
+                        while ($srow = $query->fetch_assoc()): ?>
+                          <option value="<?= $srow['id'] ?>"><?= $srow['time_out'] ?></option>
+                        <?php endwhile; ?>
+                        <option value="Personalizado">Personalizado</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
-          </div>
-        </div>
           	</div>
           	<div class="modal-footer">
-              <a href="#secondmodal" class="z-0 position-absolute p-5 rounded-3" class="btn btn-primary btn-flat" data-toggle="modal" >Personalizar</a>
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
             	</form>
@@ -190,7 +195,56 @@
     </div>
 </div>
 
-<div class="modal" id="secondmodal">
+<script>
+
+  const timeInSelect = document.getElementById('time_in_select');
+  const timeOutSelect = document.getElementById('time_out_select');
+
+  timeInSelect.addEventListener('change', handleSelectChange);
+  timeOutSelect.addEventListener('change', handleSelectChange);
+
+  function handleSelectChange() {
+    const timeInSelectedValue = timeInSelect.value;
+    const timeOutSelectedValue = timeOutSelect.value;
+
+    if (timeInSelectedValue === 'Personalizado' || timeOutSelectedValue === 'Personalizado') {
+      $('#secondmodal').modal('show');
+    }
+  }
+
+  function updateScheduleOut(selectElement) {
+    var selectedValue = selectElement.value;
+    var timeOutSelect = document.getElementById('time_out_select');
+    var timeOutOptions = timeOutSelect.options;
+
+    for (var i = 0; i < timeOutOptions.length; i++) {
+      var option = timeOutOptions[i];
+      if (option.value === selectedValue) {
+        option.selected = true;
+        break;
+      }
+    }
+  }
+
+  function updateScheduleIn(selectElement) {
+    var selectedValue = selectElement.value;
+    var timeInSelect = document.getElementById('time_in_select');
+    var timeInOptions = timeInSelect.options;
+
+    for (var i = 0; i < timeInOptions.length; i++) {
+      var option = timeInOptions[i];
+      if (option.value === selectedValue) {
+        option.selected = true;
+        break;
+      }
+    }
+  }
+</script>
+
+
+<!--Edit horario-->
+
+<div class="modal fade" id="secondmodal" tabindex="-1" role="dialog" aria-labelledby="secondmodalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -219,29 +273,14 @@
                 <div class="row" style="margin-bottom: 10px;">
                   <div class="col-sm-3"><?php echo $day; ?></div>
                   <div class="col-sm-4">
-                    <select class="form-control" name="schedule[<?php echo $day_lower; ?>_in]" id="schedule_<?php echo $day_lower; ?>_in" onchange="updateScheduleOut(this)">
-                      <option value="" selected>- Seleccionar -</option>
-                      <?php
-                      $sql = "SELECT * FROM schedules";
-                      $query = $conn->query($sql);
-                      while ($srow = $query->fetch_assoc()) {
-                        echo '<option value="' . $srow['id'] . '">' . $srow['time_in'] . '</option>';
-                      }
-                      ?>
-                      <option value="Personalizado">Personalizado</option>
-                    </select>
+                    <div class="bootstrap-timepicker">
+                      <input type="text" class="form-control timepicker" name="schedule[<?php echo $day_lower; ?>_in]" id="schedule_<?php echo $day_lower; ?>_in">
+                    </div>
                   </div>
                   <div class="col-sm-4">
-                    <select class="form-control" name="schedule[<?php echo $day_lower; ?>_out]" id="schedule_<?php echo $day_lower; ?>_out">
-                      <option value="" selected>- Seleccionar -</option>
-                      <?php
-                      $query->data_seek(0);
-                      while ($srow = $query->fetch_assoc()) {
-                        echo '<option value="' . $srow['id'] . '">' . $srow['time_out'] . '</option>';
-                      }
-                      ?>
-                      <option value="Personalizado">Personalizado</option>
-                    </select>
+                    <div class="bootstrap-timepicker">
+                      <input type="text" class="form-control timepicker" name="schedule[<?php echo $day_lower; ?>_out]" id="schedule_<?php echo $day_lower; ?>_out">
+                    </div>
                   </div>
                 </div>
 
@@ -250,32 +289,15 @@
               ?>
             </div>
           </div>
+          <div class="modal-footer">
+            	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+            	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  
-  function updateScheduleOut(selectElement) {
-    var selectedValue = selectElement.value;
-    var selectId = selectElement.id;
-    var day = selectId.split('_')[1];
-
-    var scheduleOutSelect = document.getElementById('schedule_' + day + '_out');
-    var scheduleOutOptions = scheduleOutSelect.options;
-
-    for (var i = 0; i < scheduleOutOptions.length; i++) {
-      var option = scheduleOutOptions[i];
-      if (option.value === selectedValue) {
-        option.selected = true;
-        break;
-      }
-    }
-  }
-</script>
-
+</div>
 <!-- Edit -->
 <div class="modal fade" id="edit">
     <div class="modal-dialog modal-lg">
