@@ -31,14 +31,16 @@
             <li><a href="schedule.php"><i class="fa fa-circle-o"></i> Horarios</a></li>
           </ul>
         </li>
-
-        <li><a href="position.php"><i class="fa fa-suitcase"></i> Cargos</a></li>
+        
         <li><a href="negocio.php"><i class="fa fa-suitcase"></i> Unidad de Negocio</a></li>
         <li><a href="vista-asistencia.php"><i class="fa fa-eye"></i> Vista de asistencia</a></li>
         <li class="header">CONSULTAS</li>
         <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Horarios</span></a></li>
-        <li class="header">EXPORTAR</li>
         
+        <li class="header">METRICAS DE EVALUACIÓN</li>
+        <li><a href="criterios.php"><i class="fa fa-table"></i><span>Criterios</span></a></li>
+        <li><a href="subcriterios.php"><i class="fa fa-list"></i><span>Subcriterios</span></a></li>
+        <li class="header">EXPORTAR</li>
         <li><a href="exportar.php"><i class="glyphicon glyphicon-cloud-download"></i> <span>Exportar Asistencias</span></a></li>
         <li><a href="employee_export.php"><i class="glyphicon glyphicon-cloud-download"></i> <span>Exportar por Practicantes</span></a></li>
 
