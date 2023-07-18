@@ -120,19 +120,31 @@
                </form>
             </div>
             <div id="estadistica-logro-practicante">
-               <div class="card" id="estadistica-desempeño-1">
-
+               <div class="card card-color" id="estadistica-desempeño-1">
+                  <h6 class="letraNavBar text-light text-center">Estadísticas de desempeño</h6>
+                  <hr style=" border: none; border-top: 2px solid white; opacity: 1; margin-bottom: 28px;">
+                  <div class="d-flex">
+                     <div>
+                        <h1 class="letraNavBar text-light">MAYO</h1>
+                        <p class="letraNavBar text-light">1/05 al 31/05</p>
+                     </div>
+                     <div class="progress-circular-desempeño">
+                        <div class="circular-progress-desempeño">
+                            <div class="letraNavBar value-desempeño-1 text-light">15</div>
+                        </div>
+                    </div>
+                  </div>
                </div>
                <div class="card" id="resumen-estadistica-1">
 
                </div>
-               <div class="card" id="estadistica-desempeño-2">
+               <div class="card card-color" id="estadistica-desempeño-2">
 
                </div>
                <div class="card" id="resumen-estadistica-2">
 
                </div>
-               <div class="card" id="estadistica-desempeño-3">
+               <div class="card card-color" id="estadistica-desempeño-3">
 
                </div>
                <div class="card" id="resumen-estadistica-3">
@@ -142,7 +154,17 @@
             
         </div>
         <div class="card" id="logros-obtenidos-practicante">
-
+            <h6 class="letraNavBar colorletraperfil">LOGROS</h6>
+            <div>
+               <div class="circle-logros-a-obtener-1"><img src="../img/bronce-insignia.webp"></div>
+               <p class="letraNavBar colorletraperfil">Obtenido</p>
+               <div class="circle-logros-a-obtener-2"><img src="../img/plata-insignia_1.webp"></div>
+               <p class="letraNavBar colorletraperfil"></p>
+               <div class="circle-logros-a-obtener-3"><img src="../img/oro-insignia_1.webp"></div>
+               <p class="letraNavBar colorletraperfil"></p>
+               <div class="circle-logros-a-obtener-4"><img src="../img/maxima-insignia.webp"></div>
+               <p class="letraNavBar colorletraperfil"></p>
+            </div>
         </div>
     </div>
 </body>

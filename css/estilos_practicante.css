@@ -906,10 +906,80 @@
   width: 418.6px;
   height: 262.6px;
 }
+#estadistica-desempeño-1 h6{
+  margin-top: 10px;
+  font-size: 18px;
+}
+#estadistica-desempeño-1 p{
+  background-color: #54af0c;
+  text-align: center;
+  border-radius: 10px;
+}
+#estadistica-desempeño-1 div{
+  justify-content: center;
+}
+#estadistica-desempeño-1 div div h1{
+  font-size: 58px;
+}
+#estadistica-desempeño-1 div div p{
+  font-size: 17px;
+}
 #resumen-estadistica-1{
   grid-area: resumen-estadistica-1;
   width:588.6px;
   height: 299.6px;
+}
+.progress-circular-desempeño{
+  position: relative;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background: conic-gradient(#00D7C9 330deg, #1e4da9 0deg);
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  transform: rotate(180deg);
+}
+.progress-circular-desempeño::after{
+  position: absolute;
+  content: '';
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #1e4da9;
+}
+
+.value-desempeño-1{
+  padding: 21px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+  border: 2px solid black;
+  border-radius: 50%;
+  font-size: 48px;
+  font-weight: 600;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: rotate(180deg);
+}
+
+.circular-progress-desempeño {
+  position: relative;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress-desempeño::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  border-radius: 50%;
 }
 #estadistica-desempeño-2{
   grid-area: estadistica-desempeño-2;
@@ -933,12 +1003,88 @@
 }
 #logros-obtenidos-practicante{
   grid-area: logros-obtenidos-practicante;
-  width: 141.6px;
-  height: 441.6px;
+  width: 111.6px;
+  height: 511.6px;
   margin-top: 10px;
+}
+#logros-obtenidos-practicante h6{
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+}
+#logros-obtenidos-practicante div{
+  width: 90px;
+  margin-left: -9px;
+  text-align: -webkit-right;
+  margin-bottom: 12px;
+}
+#logros-obtenidos-practicante p{
+  text-align: center;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.circle-logros-a-obtener-1{
+  width: 90px;
+  height: 90px;
+  background-color:  #1e4da9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0 !important;
+}
+.circle-logros-a-obtener-1 img{
+  width: 120px;
+  height: 120px;
+  margin-top: -11px;
+  margin-left: 6px;
+}
+.circle-logros-a-obtener-2{
+  width: 90px;
+  height: 90px;
+  background-color:  #D9D9D9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.circle-logros-a-obtener-2 img{
+  width: 100px;
+  height: 100px;
+  margin-top: -3px;
+  margin-left: 6px;
+}
+.circle-logros-a-obtener-3{
+  width: 90px;
+  height: 90px;
+  background-color:  #D9D9D9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.circle-logros-a-obtener-3 img{
+  width: 100px;
+  height: 100px;
+  margin-top: -3px;
+  margin-left: 6px;
+}
+.circle-logros-a-obtener-4{
+  width: 90px;
+  height: 90px;
+  background-color:  #D9D9D9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.circle-logros-a-obtener-4 img{
+  width: 100px;
+  height: 100px;
+  margin-top: -3px;
+  margin-left: 6px;
 }
 .insignia-logro{
   width: 33px;
+}
+.card-color{
+  background-color:  #1e4da9;
 }
 
 /*pantallas*/
