@@ -86,7 +86,16 @@
                             <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['empid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                             <br>
-                            <button class="btn btn-primary btn-sm add_grades btn-flat" data-id="<?php echo $row['empid']; ?>" style="margin-top: 10px;"><i class="fa fa-pencil"></i> Agregar Nota</button>
+                            <button class="btn btn-primary btn-sm add_grades btn-flat" data-id="<?php echo $row['empid']; ?>" style="margin-top: 10px;"><i class="fa fa-pencil"></i> Agregar Nota</button>                          
+                            <a href="employee_grades.php?id=<?php echo $row['empid']; 
+                                                  ?>&nombre=<?php echo urlencode($row['firstname'].' '.$row['lastname'] );
+                                                  ?>&negocio=<?php echo urlencode($row['nombre_negocio']);
+                                                  ?>&position=<?php echo urldecode($row['description']);
+                                                  ?>&fecha_inicio=<?php echo urldecode($row['date_in']);
+                                                  ?>&fecha_fin=<?php echo urldecode($row['date_out']);
+                                                  ?>&codigo_practicante=<?php echo($row['employee_id']);?>" 
+                              class="btn btn-warning btn-sm see_grades btn-flat" style="margin-top: 10px;"><i class="fa fa-eye"></i> Ver Notas</a>
+
                           </td>
                         </tr>
                       <?php
@@ -169,5 +178,19 @@ function getRow(id){
   });
 }
 </script>
+<script>
+  // Obtener el botón "Ver Notas"
+  var seeGradesButtons = document.getElementsByClassName("see_grades");
+  // Recorrer los botones y agregar el evento de clic a cada uno
+  for (var i = 0; i < seeGradesButtons.length; i++) {
+    seeGradesButtons[i].addEventListener("click", function() {
+      // Obtener la URL del archivo PHP del atributo data-url del botón actual
+      var url = this.getAttribute("data-url");
+      // Redirigir al archivo PHP
+      window.location.href = url;
+    });
+  }
+</script>
+
 </body>
 </html>
