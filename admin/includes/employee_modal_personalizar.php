@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="secondmodal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -17,7 +18,6 @@
                 <div class="col-sm-4">Entrada</div>
                 <div class="col-sm-4">Salida</div>
               </div>
-
               <?php
               $days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 
