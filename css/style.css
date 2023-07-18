@@ -2,6 +2,19 @@ p{
     margin: 0;
     padding: 0;
 }
+#addnew{
+    position: fixed;
+    z-index: 50;
+    top: 80px;
+    left: 50px;
+    background-color: black;
+}
+#secondmodal{
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  left: 250px;
+}
 .reloj{
     font-family: 'Share Tech Mono', monospace;
     color: #ffffff;
