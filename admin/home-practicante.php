@@ -48,8 +48,8 @@
          </form>
       </div>
       <br>
-      <div class="enlaces" id="button1" >
-         <form method="post" action="home-practicante.php" class="form__ver-perfil">
+      <div class="enlaces" href="estadisticas-y-logros-practicante.php" id="button1" >
+         <form method="post" action="estadisticas-y-logros-practicante.php" class="form__ver-perfil">
             <input type="hidden" name="employee_id" value="<?php echo $row['employee_id'] ;?>">
             <button type="submit" class="enlaces__btn" id="button1">
                <a class="enlaces" href="#" id="button1" >

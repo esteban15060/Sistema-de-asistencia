@@ -808,6 +808,139 @@
   border-bottom: 1px solid #1e4da9;
 }
 
+/*  ESTILOS ESTADISTICA PRACTICANTE*/
+#logros-semanal{
+  width: 441.6px;
+  margin-left: 170px;
+  height: 71.6px;
+  margin-top: 10px;
+  margin-bottom: 26px;
+  display: -webkit-box;
+}
+.circle-logro-semanal-1 {
+  width: 30px;
+  height: 30px;
+  background-color:  #1e4da9;
+  border-radius: 50%;
+}
+.line-logro-semanal-1 {
+  width: 60px;
+  height: 5px;
+  margin-top: 12px;
+  background-color:  #1e4da9;
+}
+.circle-logro-semanal-2 {
+  width: 30px;
+  height: 30px;
+  background-color:  #1e4da9;
+  border-radius: 50%;
+}
+.line-logro-semanal-2 {
+  width: 60px;
+  height: 2px;
+  margin-top: 14px;
+  background-color: #1e4da9;
+}
+.circle-logro-semanal-3 {
+  width: 30px;
+  height: 30px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+}
+.line-logro-semanal-3 {
+  width: 60px;
+  height: 2px;
+  margin-top: 14px;
+  background-color: #1e4da9;
+}
+.circle-logro-semanal-4 {
+  width: 30px;
+  height: 30px;
+  background-color: #D9D9D9ed;
+  border-radius: 50%;
+}
+.line-logro-semanal-4 {
+  width: 60px;
+  height: 2px;
+  margin-top: 14px;
+  background-color: #1e4da9;
+}
+.circle-logro-semanal-5 {
+  width: 30px;
+  height: 30px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+}
+.buttons-estadistica{
+  margin-bottom: 40px;
+  margin-left: 15%;
+}
+.buttons-estadistica .calendar-button-color {
+  background-color: #c5cdbf;
+  border: none;
+  padding: 8px 75px;
+  border-radius: 54px;
+  margin: 0 25px;
+}
+#grid-estadistica-general{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto; 
+  grid-template-areas: "estadistica-logro-practicante logros-obtenidos-practicante";
+}
+#estadistica-logro-practicante{
+  grid-area: estadistica-logro-practicante;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr auto; 
+  grid-template-areas: "estadistica-desempeño-1 resumen-estadistica-1"
+                       "estadistica-desempeño-2 resumen-estadistica-2"
+                       "estadistica-desempeño-3 resumen-estadistica-3";
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+  width: 1050px;
+  margin-left: 170px;
+}
+#estadistica-desempeño-1{
+  grid-area: estadistica-desempeño-1;
+  width: 418.6px;
+  height: 262.6px;
+}
+#resumen-estadistica-1{
+  grid-area: resumen-estadistica-1;
+  width:588.6px;
+  height: 299.6px;
+}
+#estadistica-desempeño-2{
+  grid-area: estadistica-desempeño-2;
+  width: 418.6px;
+  height: 262.6px;
+}
+#resumen-estadistica-2{
+  grid-area: resumen-estadistica-2;
+  width: 588.6px;
+  height: 299.6px;
+}
+#estadistica-desempeño-3{
+  grid-area: estadistica-desempeño-3;
+  width: 418.6px;
+  height: 262.6px;
+}
+#resumen-estadistica-3{
+  grid-area: resumen-estadistica-3;
+  width: 588.6px;
+  height: 299.6px;
+}
+#logros-obtenidos-practicante{
+  grid-area: logros-obtenidos-practicante;
+  width: 141.6px;
+  height: 441.6px;
+  margin-top: 10px;
+}
+.insignia-logro{
+  width: 33px;
+}
+
 /*pantallas*/
 /* Estilos generales aquí */
 
