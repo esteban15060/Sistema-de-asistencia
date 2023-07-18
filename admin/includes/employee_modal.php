@@ -16,6 +16,7 @@
                       <input type="file" name="photo" id="photo">
                     </div>
                 </div>
+              
                 <div class="form-group">
                   <label for="date_in" class="col-sm-1 control-label">Fecha Ingreso</label>
                     <div class="col-sm-3">
