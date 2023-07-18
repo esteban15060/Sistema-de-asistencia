@@ -119,12 +119,12 @@
         </div>
     </div>
     <br>
-   <!--<script>
+    <script>
       let idPracticante = document.getElementById("idPracticante");
       if (idPracticante.value.length > 15) {
          window.location.href = "../index.php";
       }
-   </script>-->
+   </script>
    <script>
       function salirMiPerfil() {
          Swal.fire({

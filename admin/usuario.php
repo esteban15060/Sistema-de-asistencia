@@ -1,21 +1,11 @@
-<?php include 'includes/session.php'; 
-
-$filas=mysqli_fetch_array($query);
-if($filas['cargo']==1){//admin
-  header("location:usuario.php");
-}else{
-  if($filas['cargo']==2){
-    header("location:home.php");
-  }
-}
-?>
+<?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 
 <body class="hold-transition skin-purple-light sidebar-mini">
   <div class="wrapper">
 
     <?php include 'includes/navbar.php'; ?>
-    <?php include 'includes/menubar.php'; ?>
+    <?php include 'includes/menubar.php';?>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -56,6 +46,7 @@ if($filas['cargo']==1){//admin
             <div class="box">
               <div class="box-header with-border">
                 <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
+                <a href="gestion_rango.php" class="btn btn-warning btn-sm btn-flat">Administrar rangos</a>
               </div>
               <div class="box-body">
                 <table id="example1" class="table table-bordered">
@@ -63,12 +54,15 @@ if($filas['cargo']==1){//admin
                     <th>Usuario</th>
                     <th>Contraseña</th>
                     <th>Nombre</th>
-                    <th>rango</th>
-                    <th>Acción</th>
+                    <th>Rango</th>
+                    <th>Acciones</th>
                   </thead>
                   <tbody>
-                    <?php
-                    $sql = "SELECT * FROM admin";
+                  <?php
+                    $sql = "SELECT admin.*, rango.nombre_rango 
+                            FROM admin 
+                            LEFT JOIN rango ON admin.id_rango = rango.id";
+
                     $query = $conn->query($sql);
                     while ($row = $query->fetch_assoc()) {
                       echo "
@@ -76,7 +70,7 @@ if($filas['cargo']==1){//admin
                           <td>" . $row['username'] . "</td>
                           <td>" . $row['password'] . "</td>
                           <td>" . $row['firstname'] . ' ' . $row['lastname'] . "</td>
-                          <td>" . $row['rango'] . "</td>
+                          <td>" . $row['nombre_rango'] . "</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='" . $row['id'] . "'><i class='fa fa-edit'></i> Editar</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='" . $row['id'] . "'><i class='fa fa-trash'></i> Eliminar</button>
@@ -122,17 +116,15 @@ if($filas['cargo']==1){//admin
         },
         dataType: 'json',
         success: function(response) {
-          $('.empid').val(response.empid);
-          $('.del_usuario_name').html(response.firstname + ' ' + response.lastname);
+          $('.id').val(response.id);
           $('#edit_username').val(response.username);
           $('#edit_password').val(response.password);
           $('#edit_firstname').val(response.firstname);
           $('#edit_lastname').val(response.lastname);
-          $('#rango_val').val(response.rango).html(response.rango);
+          $('#edit_rango').val(response.rango);
         }
       });
     }
   </script>
 </body>
-
 </html>
