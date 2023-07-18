@@ -37,40 +37,42 @@
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	  <![endif]-->
-	  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<link rel="stylesheet" href="../css/estilos_practicante.css">
+	<!-- ESTILOS BUZON SUGERENCIAS -->
+	<link rel="stylesheet" href="../css/buzon.css">
 	<!-- Google Font -->
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<?php
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Conexión a la base de datos
-        include 'includes/conn.php';
 
-        // Obtener el código del practicante
-        $codigo = $_POST['employee_id'];
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		// Conexión a la base de datos
+		include 'includes/conn.php';
 
-        // Consultar los datos del practicante
+		// Obtener el código del practicante
+		$codigo = $_POST['employee_id'];
+
+		// Consultar los datos del practicante
 		$query = "SELECT e.*, p.description AS position, n.nombre_negocio AS negocio, s.time_in AS ingreso, s.time_out AS salida FROM employees e
               LEFT JOIN position p ON e.negocio_id = p.id
 			  LEFT JOIN negocio n ON e.negocio_id = n.id
 			  LEFT JOIN schedules s ON e.negocio_id = s.id
               WHERE e.employee_id='$codigo'";
-        // $query = "SELECT * FROM employees WHERE employee_id='$codigo'";
-        $result = mysqli_query($conn, $query);
+		// $query = "SELECT * FROM employees WHERE employee_id='$codigo'";
+		$result = mysqli_query($conn, $query);
 
-        // Verificar si se encontraron resultados
-        if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        } else {
-        echo "<div class='alert alert-danger'>No se encontró ningún practicante con el código ingresado.</div>";
-        }
+		// Verificar si se encontraron resultados
+		if (mysqli_num_rows($result) > 0) {
+			$row = mysqli_fetch_assoc($result);
+		} else {
+			echo "<div class='alert alert-danger'>No se encontró ningún practicante con el código ingresado.</div>";
+		}
 
-        // Cerrar la conexión a la base de datos
-         mysqli_close($conn);
-    }
-?>
+		// Cerrar la conexión a la base de datos
+		mysqli_close($conn);
+	}
+	?>
 </head>
