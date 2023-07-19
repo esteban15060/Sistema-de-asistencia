@@ -32,9 +32,9 @@
           </ul>
         </li>
 
-        <li><a href="position.php"><i class="fa fa-suitcase"></i> Cargos</a></li>
-        <li><a href="negocio.php"><i class="fa fa-suitcase"></i> Unidad de Negocio</a></li>
-        <li><a href="vista-asistencia.php"><i class="fa fa-eye"></i> Vista de asistencia</a></li>
+        <li><a href="position.php"><i class="fa fa-suitcase"></i> <span>Cargos</span></a></li>
+        <li><a href="negocio.php"><i class="fa fa-suitcase"></i> <span>Unidad de Negocio</span></a></li>
+        <li><a href="vista-asistencia.php"><i class="fa fa-eye"></i> <span>Vista de asistencia</span></a></li>
         <li class="header">CONSULTAS</li>
         <li><a href="schedule_employee.php"><i class="fa fa-clock-o"></i> <span>Horarios</span></a></li>
         <li class="header">EXPORTAR</li>
@@ -46,8 +46,8 @@
         <li><a href="mural.php"><i class="fa fa-solid fa-camera-retro"></i> <span>Publicaciones</span></a></li>
 
         <li class="header">USUARIOS</li>
-        <li><a href="usuario.php"><i class="fa fa-light fa-user"></i> <spam>Lista de Usuarios</spam></a></li>
-        <li><a href="papelera.php"><i class="fa fa-light fa-trash"></i> <spam>Papelera</spam></a></li>
+        <li><a href="usuario.php"><i class="fa fa-light fa-user"></i> <span>Lista de Usuarios</span></a></li>
+        <li><a href="papelera.php"><i class="fa fa-light fa-trash"></i> <span>Papelera</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
