@@ -112,11 +112,12 @@ function getRow(id){
       $('.id').val(response.id);  
       $('#edit_nombre_subcriterio').val(response.nombre_subcriterio);
       $('#del_nombre').html(response.nombre_subcriterio);
-      $('#cri_nombre').val(response.nombre_criterio);
+      $('#edit_cri_nombre').val(response.id_criterio);
       $('#criterio_val').val(response.id_criterio).html(response.nombre_criterio);
     }
   });
 }
+
 </script>
 </body>
 </html>
