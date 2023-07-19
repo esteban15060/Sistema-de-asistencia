@@ -56,6 +56,7 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="subcriterios_edit.php">
+
             		<input type="hidden" class="id" name="id">
                     <div class="form-group">
                         <label for="edit_nombre_subcriterio" class="col-sm-3 control-label">Nombre de subcriterio</label>
@@ -68,18 +69,18 @@
                   	<label for="edit_id_criterio" class="col-sm-3 control-label">Criterio</label>
 
                   	<div class="col-sm-8">
-                      <select class="form-control" name="cri_nombre" id="edit_cri_nombre" required>
-                        <option selected id="criterio_val"></option>
-                        <?php
-                          $sql = "SELECT * FROM criterios";
-                          $query = $conn->query($sql);
-                          while($prow = $query->fetch_assoc()){
-                            echo "
-                              <option value='".$prow['id']."'>".$prow['nombre_criterio']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
+                    	<select class="form-control" name="edit_cri_nombre" id="edit_cri_nombre" required>
+                        	<option selected id="criterio_val"></option>
+                        	<?php
+							$sql = "SELECT * FROM criterios";
+							$query = $conn->query($sql);
+							while($prow = $query->fetch_assoc()){
+								echo "
+								<option value='".$prow['id']."'>".$prow['nombre_criterio']."</option>
+								";
+							}
+							?>
+                      	</select>
                   	</div>
                   </div>
 
