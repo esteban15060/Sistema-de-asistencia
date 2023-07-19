@@ -4,7 +4,7 @@
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$password = $user['password']!== $_POST['password'] ? $password = password_hash($password, PASSWORD_DEFAULT) : $_POST['password'];
         $nombre = $_POST['firstname'];
 		$last = $_POST['lastname'];
 		$rango = $_POST['rango'];
