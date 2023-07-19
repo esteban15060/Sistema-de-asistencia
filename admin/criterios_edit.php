@@ -2,10 +2,10 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['edit'])){
-		$id = $_POST['id_criterio'];
+		$id_criterio = $_POST['id'];
 		$nombre_criterio = $_POST['nombre_criterio'];	
 
-		$sql = "UPDATE criterios SET nombre_criterio = '$nombre_criterio' WHERE id_criterio = '$id'";
+		$sql = "UPDATE criterios SET nombre_criterio = '$nombre_criterio' WHERE id = '$id_criterio'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Criterio actualizado satisfactoriamente';
 		}

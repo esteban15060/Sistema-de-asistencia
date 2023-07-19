@@ -2,10 +2,10 @@
 	include 'includes/session.php';
 
 	if(isset($_POST['delete'])){
-		$id_criterio = $_POST['id'];
-		$sql = "DELETE FROM criterios WHERE id = '$id_criterio'";
+		$id_subcriterio = $_POST['id'];
+		$sql = "DELETE FROM subcriterios WHERE id = '$id_subcriterio'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Criterio eliminado con éxito';
+			$_SESSION['success'] = 'Subcriterio eliminado con éxito';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
@@ -15,6 +15,6 @@
 		$_SESSION['error'] = 'Seleccione el elemento para eliminar primero';
 	}
 
-	header('location: criterios.php');
+	header('location: subcriterios.php');
 	
 ?>

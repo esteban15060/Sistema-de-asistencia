@@ -5,17 +5,35 @@
           	<div class="modal-header">
             	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
               		<span aria-hidden="true">&times;</span></button>
-            	<h4 class="modal-title"><b>Agregar Criterios</b></h4>
+            	<h4 class="modal-title"><b>Agregar Subcriterios</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="criterios_add.php">
+            	<form class="form-horizontal" method="POST" action="subcriterio_add.php">
           		  <div class="form-group">
-                  	<label for="nombre_criterio" class="col-sm-3 control-label">Nombre de Criterio</label>
+                  	<label for="nombre_subcriterio" class="col-sm-3 control-label">Nombre de Subcriterio</label>
 
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="nombre_criterio" name="nombre_criterio" required>
+                  	<div class="col-sm-8">
+                    	<input type="text" class="form-control" id="nombre_subcriterio" name="nombre_subcriterio" required>
                   	</div>
-                </div>
+                  </div>
+                  <div class="form-group">
+                  	<label for="id_criterio" class="col-sm-3 control-label">Criterio</label>
+
+                  	<div class="col-sm-8">
+                      <select class="form-control" name="id_criterio" id="id_criterio" required>
+                        <option value="" selected>- Seleccionar -</option>
+                        <?php
+                          $sql = "SELECT * FROM criterios";
+                          $query = $conn->query($sql);
+                          while($prow = $query->fetch_assoc()){
+                            echo "
+                              <option value='".$prow['id']."'>".$prow['nombre_criterio']."</option>
+                            ";
+                          }
+                        ?>
+                      </select>
+                  	</div>
+                  </div>
                 
           	</div>
           	<div class="modal-footer">
@@ -37,15 +55,34 @@
             	<h4 class="modal-title"><b>Actualizar Nombre de Criterio</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="criterios_edit.php">
+            	<form class="form-horizontal" method="POST" action="subcriterios_edit.php">
             		<input type="hidden" class="id" name="id">
-                <div class="form-group">
-                    <label for="edit_nombre_criterio" class="col-sm-3 control-label">Nombre de Criterio</label>
+                    <div class="form-group">
+                        <label for="edit_nombre_subcriterio" class="col-sm-3 control-label">Nombre de subcriterio</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_nombre_criterio" name="nombre_criterio">
+                        <div class="col-sm-8">
+                        <input type="text" class="form-control" id="edit_nombre_subcriterio" name="nombre_subcriterio">
+                        </div>
                     </div>
-                </div>
+                    <div class="form-group">
+                  	<label for="edit_id_criterio" class="col-sm-3 control-label">Criterio</label>
+
+                  	<div class="col-sm-8">
+                      <select class="form-control" name="cri_nombre" id="edit_cri_nombre" required>
+                        <option selected id="criterio_val"></option>
+                        <?php
+                          $sql = "SELECT * FROM criterios";
+                          $query = $conn->query($sql);
+                          while($prow = $query->fetch_assoc()){
+                            echo "
+                              <option value='".$prow['id']."'>".$prow['nombre_criterio']."</option>
+                            ";
+                          }
+                        ?>
+                      </select>
+                  	</div>
+                  </div>
+
                 
           	</div>
           	<div class="modal-footer">
@@ -67,10 +104,10 @@
             	<h4 class="modal-title"><b>Eliminando...</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="criterio_delete.php">
+            	<form class="form-horizontal" method="POST" action="subcriterios_delete.php">
             		<input type="hidden" class="id" name="id">
             		<div class="text-center">
-	                	<p>Eliminar Criterio</p>
+	                	<p>Eliminar Subcriterio</p>
 	                	<h2 id="del_nombre" class="bold"></h2>
 	            	</div>
           	</div>

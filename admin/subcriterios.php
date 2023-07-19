@@ -51,17 +51,19 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Área</th>
+                  <th>Nombre de Subcriterio</th>
+                  <th>Criterio</th>
                   <th>Acción</th>
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM negocio";
+                    $sql = "SELECT * FROM subcriterios";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
-                          <td>".$row['nombre_negocio']."</td>
+                          <td>".$row['nombre_subcriterio']."</td>
+                          <td>".$row['id_criterio']."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
@@ -80,7 +82,7 @@
   </div>
     
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/negocio_modal.php'; ?>
+  <?php include 'includes/subcriterios_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
 <script>
@@ -103,15 +105,15 @@ $(function(){
 function getRow(id){
   $.ajax({
     type: 'POST',
-    url: 'negocio_row.php',
+    url: 'subcriterios_row.php',
     data: {id:id},
     dataType: 'json',
     success: function(response){
-      $('#nego').val(response.id);
-      $('#edit_title').val(response.nombre_negocio);
-      $('#edit_rate').val(response.rate);
-      $('#del_nego').val(response.id);
-      $('#del_negocio').html(response.nombre_negocio);
+      $('.id').val(response.id);  
+      $('#edit_nombre_subcriterio').val(response.nombre_subcriterio);
+      $('#del_nombre').html(response.nombre_subcriterio);
+      $('#cri_nombre').val(response.nombre_criterio);
+      $('#criterio_val').val(response.id_criterio).html(response.nombre_criterio);
     }
   });
 }

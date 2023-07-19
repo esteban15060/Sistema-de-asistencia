@@ -63,8 +63,8 @@
                         <tr>
                           <td>".$row['nombre_criterio']."</td>
                           <td>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id_criterio']."'><i class='fa fa-edit'></i> Editar</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id_criterio']."'><i class='fa fa-trash'></i> Eliminar</button>
+                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
+                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
                           </td>
                         </tr>
                       ";
@@ -88,26 +88,26 @@ $(function(){
   $('.edit').click(function(e){
     e.preventDefault();
     $('#edit').modal('show');
-    var id_criterio = $(this).data('id_criterio');
-    getRow(id_criterio);
+    var id = $(this).data('id');
+    getRow(id);
   });
 
   $('.delete').click(function(e){
     e.preventDefault();
     $('#delete').modal('show');
-    var id_criterio = $(this).data('id_criterio');
-    getRow(id_criterio);
+    var id = $(this).data('id');
+    getRow(id);
   });
 });
 
-function getRow(id_criterio){
+function getRow(id){
   $.ajax({
     type: 'POST',
     url: 'criterio_row.php',
-    data: {id_criterio:id_criterio},
+    data: {id:id},
     dataType: 'json',
     success: function(response){      
-      $('.id_criterio').val(response.id_criterio);  
+      $('.id').val(response.id);  
       $('#edit_nombre_criterio').val(response.nombre_criterio);
       $('#del_nombre').html(response.nombre_criterio);
     }
