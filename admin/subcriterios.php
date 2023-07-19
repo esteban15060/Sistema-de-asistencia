@@ -57,13 +57,15 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM subcriterios";
+                    $sql = "SELECT s.id, s.nombre_subcriterio, c.nombre_criterio
+                    FROM subcriterios s
+                    INNER JOIN criterios c ON s.id_criterio = c.id";            
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
                           <td>".$row['nombre_subcriterio']."</td>
-                          <td>".$row['id_criterio']."</td>
+                          <td>".$row['nombre_criterio']."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
@@ -72,6 +74,7 @@
                       ";
                     }
                   ?>
+
                 </tbody>
               </table>
             </div>
