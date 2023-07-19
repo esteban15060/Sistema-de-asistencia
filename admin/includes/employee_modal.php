@@ -370,6 +370,7 @@
          </div>
          <div class="modal-body">
             <form class="form-horizontal" method="POST" action="employee_add_grades.php">
+
                <input type="hidden" class="empid" name="id">
                <div class="text-center">
                   <div class="row" style="display: inline-block;">
