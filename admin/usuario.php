@@ -1,13 +1,7 @@
 <?php include 'includes/session.php'; 
-
-$filas=mysqli_fetch_array($query);
-if($filas['cargo']==1){//admin
-  header("location:usuario.php");
-}else{
-  if($filas['cargo']==2){
+  if($user['rango']!=='admin'){
     header("location:home.php");
   }
-}
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -122,13 +116,14 @@ if($filas['cargo']==1){//admin
         },
         dataType: 'json',
         success: function(response) {
-          $('.empid').val(response.empid);
+          $('.id').val(response.id);
           $('.del_usuario_name').html(response.firstname + ' ' + response.lastname);
           $('#edit_username').val(response.username);
           $('#edit_password').val(response.password);
           $('#edit_firstname').val(response.firstname);
           $('#edit_lastname').val(response.lastname);
-          $('#rango_val').val(response.rango).html(response.rango);
+          $('#edit_photo').val(response.photo);
+          $('#edit_rango').val(response.rango);
         }
       });
     }

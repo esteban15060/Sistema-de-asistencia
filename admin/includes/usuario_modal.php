@@ -43,19 +43,21 @@
 					<div class="col-sm-9">
                         <select class="form-control" name="rango" id="rango" required>
                         <option value="" selected>- Seleccionar -</option>
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
                         <?php
-                          $sql = "SELECT * FROM rango";
+                          /* $sql = "SELECT * FROM rango";
                           $query = $conn->query($sql);
                           while($prow = $query->fetch_assoc()){
                             echo "
                               <option value='".$prow['id']."'>".$prow['rango']."</option>
                             ";
-                          }
+                          } */
                         ?>
                         </select>
                     </div>
                 </div>
-                
+			</div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
@@ -95,21 +97,21 @@
                     <label for="edit_firstname" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
-                      <label class="form-control" name="firstname" id="edit_firstname"></label>
+                      <input type="text" class="form-control" name="firstname" id="edit_firstname"></input>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_lastname" class="col-sm-3 control-label">Apellido</label>
 
                     <div class="col-sm-9">
-                      <label class="form-control" name="lastname" id="edit_lastname"></label>
+                      <input type="text" class="form-control" name="lastname" id="edit_lastname"></input>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_photo" class="col-sm-3 control-label">Foto</label>
 
                     <div class="col-sm-9">
-                      <label class="form-control" name="photo" id="edit_photo"></label>
+                      <input type="text" class="form-control" name="photo" id="edit_photo"></input>
                     </div>
                 </div>
                 <div class="form-group">

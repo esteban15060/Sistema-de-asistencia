@@ -33,6 +33,7 @@ CREATE TABLE `admin` (
   `password` varchar(60) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
+  `rango` VARCHAR(50) NOT NULL,
   `photo` varchar(200) NOT NULL,
   `created_on` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -41,8 +42,8 @@ CREATE TABLE `admin` (
 -- Volcado de datos para la tabla `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `photo`, `created_on`) VALUES
-(1, 'admin', '$2y$10$S7WVh3Ql1N8xrvYtT6zDy.x9X85N09fZYTtk2opOpXt9a80d92MJC', 'Neon House ', 'Led', 'logo1.jpg', '2019-12-18');
+INSERT INTO `admin` (`id`, `username`, `password`, `firstname`, `lastname`, `rango`, `photo`, `created_on`) VALUES
+(1, 'admin', '$2y$10$S7WVh3Ql1N8xrvYtT6zDy.x9X85N09fZYTtk2opOpXt9a80d92MJC', 'Neon House ', 'Led', 'admin', 'logo1.jpg', '2019-12-18');
 
 -- --------------------------------------------------------
 
